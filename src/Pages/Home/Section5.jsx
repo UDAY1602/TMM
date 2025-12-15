@@ -4,10 +4,10 @@ export default function Section5() {
   return (
     <div
       style={{
-        minHeight: "100vh",
+        height: "auto",
         padding: "80px 32px",
         backgroundImage: `
-          linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+          linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
           url(${ContactBg})
         `,
         backgroundSize: "cover",
@@ -31,7 +31,7 @@ export default function Section5() {
       >
         {/* LEFT CONTENT */}
         <div>
-          <h1 style={{ fontSize: "48px", marginBottom: "16px" }}>
+          <h1 style={{ fontSize: "48px", marginBottom: "16px", color: "#eeedd3", fontFamily: 'Oswald' }}>
             Contact Us
           </h1>
           <p style={{ fontSize: "18px", lineHeight: "1.6", color: "#dcdcdc" }}>
@@ -69,7 +69,7 @@ export default function Section5() {
 const inputStyle = {
   width: "100%",
   padding: "12px",
-  background: "rgba(216,212,212,0.5)",
+  background: "rgba(216,212,212,0.6)",
 
   borderRadius: "6px",
   border: "1px solid #ccc",

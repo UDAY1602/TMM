@@ -23,7 +23,7 @@ export default function Footer() {
           <img
             src={Logo}
             alt="Tanujasreekesh"
-            style={{ height: "200px", marginBottom: "20px" ,marginLeft:"45px"}}
+            style={{ height: "200px", marginBottom: "10px" ,marginLeft:"45px"}}
           />
           <p style={{ fontSize: "14px", lineHeight: "1.6", color: "#555" }}>
             Tanujasreekesh is a trusted manufacturer and supplier of premium
