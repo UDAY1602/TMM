@@ -1,6 +1,6 @@
 .section3 {
   height: 500vh;        /* full scroll section */
-  background: #313131;
+  background: #1E1E1E;
   position: relative;
    filter: brightness(1.2) contrast(1.1);
 }
