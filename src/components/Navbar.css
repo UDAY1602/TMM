@@ -1,8 +1,16 @@
 .navbar {
   width: 100%;
-  background-color: #313131;   
   padding: 18px 0;
+
+  background: linear-gradient(
+    to left,
+    #090b0a 50%,   
+    #090b08 65%,
+    #0a0c0b 80%,
+    #151616 100%
+  );
 }
+
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -60,7 +68,7 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  margin-left: auto; /* pushes BOTH links + CTA right */
+  margin-left: auto;
 }
 
 
