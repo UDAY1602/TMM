@@ -1,8 +1,23 @@
+@font-face {
+  font-family: "RebelTypeDog";
+  src: url("../assets/fonts/RebelTypeDog-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .navbar {
   width: 100%;
-  background-color: #313131;   
   padding: 18px 0;
+
+  background: linear-gradient(
+    to left,
+    #090b0a 50%,   
+    #090b08 65%,
+    #0a0c0b 80%,
+    #151616 100%
+  );
 }
+
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -40,13 +55,13 @@
   font-family: "RebelTypeDog", sans-serif;
   font-size: 22px;
   letter-spacing: 2px;
-  color: #ffffff;
+  color: #eeedd3;
 }
 
 .logo-sub {
   font-size: 12px;
   letter-spacing: 3px;
-  color: #dcdcdc;
+  color: #eeedd3;
   margin-top:4px;
   padding-left: 2px;
 }
@@ -60,7 +75,7 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  margin-left: auto; /* pushes BOTH links + CTA right */
+  margin-left: auto;
 }
 
 
@@ -73,11 +88,11 @@
 }
 
 .navbar-links a:hover {
-  color: #ffffff;
+  color: #eeedd3;
 }
 
 .navbar-links .active {
-  color: #ffffff;
+  color: #eeedd3;
 }
 
 
@@ -88,15 +103,15 @@
 
 .navbar-cta .cta-btn {
   padding: 10px 18px;
-  border: 1px solid #ffffff;
+  border: 1px solid #eeedd3;
   border-radius: 6px;
-  color: #ffffff;
+  color: #eeedd3;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
 }
 
 .navbar-cta .cta-btn:hover {
-  background: #ffffff;
+  background: #eeedd3;
   color: #313131;
 }
