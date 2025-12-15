@@ -3,7 +3,7 @@ import section4bg from "../../assets/section4bg.png";
 
 export default function Section4() {
   return (
-    <section className="bg-[#1E1E1E] text-[#eeedd3] w-full">
+    <section className="bg-[#1a1a1a] text-[#eeedd3] w-full">
 
       {/* TOP IMAGE STRIP */}
       <div className="pt-20">
