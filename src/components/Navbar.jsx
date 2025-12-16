@@ -1,8 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 import "./Navbar.css";
 import logo from "../assets/icon.svg"; 
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -18,17 +21,27 @@ function Navbar() {
           </Link>
         </div>
 
-        {/* Links + CTA (WRAPPED TOGETHER) */}
-        <div className="navbar-actions">
-          <ul className="navbar-links ">
-            <li ><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/products">Products</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
+        {/* Hamburger (Mobile Only) */}
+        <div
+          className={`hamburger ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        {/* Links + CTA */}
+        <div className={`navbar-actions ${menuOpen ? "active" : ""}`}>
+          <ul className="navbar-links">
+            <li><NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink></li>
+            <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink></li>
+            <li><NavLink to="/products" onClick={() => setMenuOpen(false)}>Products</NavLink></li>
+            <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink></li>
           </ul>
 
           <div className="navbar-cta">
-            <Link to="/contact" className="cta-btn">
+            <Link to="/contact" className="cta-btn" onClick={() => setMenuOpen(false)}>
               Get in Touch
             </Link>
           </div>
