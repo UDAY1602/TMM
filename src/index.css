@@ -1,5 +1,11 @@
 @import "tailwindcss";
-
+@font-face {
+  font-family: "OswaldCustom";
+  src: url("/Oswald-Bold.ttf") format("truetype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "Oswald";
@@ -10,7 +16,9 @@
   font-family: "Montserrat";
   src: url("./assets/fonts/Montserrat-Light.ttf") format("truetype");
 }
-
+html, body {
+  overscroll-behavior: none;
+}
 /* utility classes */
 .heading-font {
   font-family: "Oswald", sans-serif;
@@ -19,3 +27,4 @@
 .para-font {
   font-family: "Montserrat", sans-serif;
 }
+

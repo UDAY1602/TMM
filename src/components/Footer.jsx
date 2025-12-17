@@ -1,12 +1,22 @@
-import Logo from "../assets/TMM logo 1.png"; 
+import { useEffect, useState } from "react";
+import Logo from "../assets/TMM logo 1.png";
 
 export default function Footer() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       style={{
         backgroundColor: "#eeedd3",
-        padding: "80px 32px",
+        padding: isMobile ? "60px 20px" : "80px 32px",
         color: "#333",
+        overflowX: "hidden", 
       }}
     >
       <div
@@ -14,18 +24,35 @@ export default function Footer() {
           maxWidth: "1200px",
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "2fr 1fr 1fr 1fr",
-          gap: "80px",
+          gridTemplateColumns: isMobile
+            ? "1fr"
+            : "2fr 1fr 1fr 1fr",
+          gap: isMobile ? "40px" : "80px",
         }}
       >
-        {/* LOGO + DESCRIPTION */}
-        <div>
+       
+        <div style={{ textAlign: isMobile ? "center" : "left" }}>
           <img
             src={Logo}
             alt="Tanujasreekesh"
-            style={{ height: "200px", marginBottom: "10px" ,marginLeft:"45px"}}
+            style={{
+              height: "200px",
+              marginBottom: "10px",
+              marginLeft: isMobile ? "0px" : "45px",
+              display: "block",
+              marginInline: isMobile ? "auto" : "unset",
+              maxWidth: "100%",
+            }}
           />
-          <p style={{ fontSize: "14px", lineHeight: "1.6", color: "#555" }}>
+          <p
+            style={{
+              fontSize: "14px",
+              lineHeight: "1.6",
+              color: "#555",
+              maxWidth: "420px",
+              margin: isMobile ? "0 auto" : "0",
+            }}
+          >
             Tanujasreekesh is a trusted manufacturer and supplier of premium
             Quartz Grits, Quartz Powder, and Industrial Fillers for industrial
             and engineered-stone applications. With cutting-edge production
@@ -35,8 +62,8 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* ADDRESS */}
-        <div style={{marginTop:"170px"}}>
+       
+        <div style={{ marginTop: isMobile ? "0px" : "170px" }}>
           <h4 style={titleStyle}>Regd. Address</h4>
           <p style={textStyle}>
             Sy No: 440/Musunuru (V),<br />
@@ -46,17 +73,17 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* CONTACT */}
-        <div style={{marginTop:"170px"}}>
+        
+        <div style={{ marginTop: isMobile ? "0px" : "170px" }}>
           <h4 style={titleStyle}>Contact</h4>
           <p style={textStyle}>
-             +91 961 235 5555<br />
-             info@tanujasreekesh.com
+            +91 961 235 5555<br />
+            info@tanujasreekesh.com
           </p>
         </div>
 
-        {/* QUICK LINKS */}
-        <div style={{marginTop:"170px"}}>
+        
+        <div style={{ marginTop: isMobile ? "0px" : "170px" }}>
           <h4 style={titleStyle}>Quick Links</h4>
           <ul style={{ listStyle: "none", padding: 0, fontSize: "14px" }}>
             <li style={linkStyle}>About</li>
@@ -88,4 +115,3 @@ const linkStyle = {
   cursor: "pointer",
   color: "#333",
 };
-
