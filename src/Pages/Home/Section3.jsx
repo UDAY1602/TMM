@@ -126,18 +126,28 @@ export default function Section3() {
         {/* CONTENT */}
         <div className="stickyBox">
 
-          <h1 ref={textRef} className="textReal">
+          <h1 ref={textRef} className="textReal" style={{fontSize:'64px'}}>
             Premium Quartz Grits, Fillers &<br />
             Powders for Engineered Stone<br />
             and Industrial Applications
           </h1>
 
           <div ref={itemsRef} className="itemsLayer">
-            <div className="item item1"><img src="/grit.png" /><p>0.1–8mm<br />GRIT</p></div>
-            <div className="item item2"><img src="/semi.png" /><p>SEMI-TRANSLUCENT<br />Quartz</p></div>
-            <div className="item item3"><img src="/powder.png" /><p>100–500 mesh<br />POWDER</p></div>
-            <div className="item item4"><img src="/snow.png" /><p>SNOW WHITE<br />Quartz</p></div>
-            <div className="item item5"><img src="/filler.png" /><p>Industrial Quartz<br />FILLERS</p></div>
+            <div className="item item1"><img src="/grit.png" />
+              <p className="oswaldlight" style={{fontSize:'24px'}}>0.1–8mm</p><br /><p className="rebaltypedog" style={{fontSize:'48px'}}>GRIT</p>
+            </div>
+            <div className="item item2"><img src="/semi.png" />
+              <p className="rebaltypedog" style={{fontSize:'24px'}}>SEMI-TRANSLUCENT</p><br/><p className="oswaldregular" style={{fontSize:'48px'}}>Quartz</p>
+            </div>
+            <div className="item item3"><img src="/powder.png" />
+              <p className="oswaldlight" style={{fontSize:'24px'}}>100–500 mesh</p><br/><p className="rebaltypedog" style={{fontSize:'48px'}}>POWDER</p>
+            </div>
+            <div className="item item4"><img src="/snow.png" />
+              <p className="rebaltypedog" style={{fontSize:'24px'}}>SNOW WHITE</p><br/><p className="oswaldregular" style={{fontSize:'48px'}}>Quartz</p>
+            </div>
+            <div className="item item5"><img src="/filler.png" />
+              <p className="oswaldlight" style={{fontSize:'24px'}}>Industrial Quartz</p><br /><p className="rebaltypedog" style={{fontSize:'48px'}}>FILLERS</p>
+            </div>
           </div>
 
           <div ref={bottomRef} className="bottomInfo">

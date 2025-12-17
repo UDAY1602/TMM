@@ -1,4 +1,27 @@
-
+@font-face {
+  font-family: "Oswald-light";
+  src: url("./assets/fonts/Oswald-light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Oswald-regular";
+  src: url("./assets/fonts/Oswald-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Oswald-medium";
+  src: url("./assets/fonts/Oswald-Medium.ttf") format("truetype");
+}
+.oswaldmedium {
+  font-family: "Oswald-medium", sans-serif;
+}
+.oswaldlight {
+  font-family: "Oswald-light", sans-serif;
+}
+.oswaldregular {
+  font-family: "Oswald-regular", sans-serif;
+}
+.rebaltypedog {
+  font-family: "RebelTypeDog", sans-serif;
+}
 
 .section3 {
   height: 420vh;
@@ -16,7 +39,7 @@
 /* FULL MOON — OVERLAPS SECTION ABOVE */
 .fullMoon {
   position: absolute;
-  top: -900px;
+  top: -810px;
   left: 50%;
   transform: translateX(-50%) rotate(0deg);
   width: 1400px;
@@ -45,6 +68,7 @@
 
 /* TEXT ANIMATION */
 .textReal {
+  font-family: "Oswald-medium", sans-serif;
   position: absolute;
   top: 92px;
   height:252px;
@@ -52,7 +76,6 @@
   left: 50%;
   transform: translateX(-50%) translateY(40px); /* slide from below */
   color: #efe8c6;
-  font-family: "OswaldCustom", sans-serif;
   font-weight: 500;
   font-size: 38px;
   line-height: 1.2;
@@ -84,7 +107,7 @@
   position: absolute;
   text-align: center;
   font-family: "Oswald", sans-serif;
-  color: #f4eecf;
+  color: #ffffff;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.5px;
@@ -152,8 +175,8 @@
 /* Text under items */
 .bottomText {
   color: #cfcfcf;
-  font-family: "Oswald", sans-serif;
-  font-size: 18px;
+  font-family: "Montserrat-thin", sans-serif;
+  font-size: 20px;
   text-align: center;
   letter-spacing: 0.4px;
   margin-bottom: 30px;
@@ -166,11 +189,13 @@
   margin: 0 auto;
 
   padding: 10px  60px;
-  font-size: 18px;
+
+  font-family: "Montserrat-thin", sans-serif;
+  font-size: 20px;
 
   color: #e6e1c2;
   background: transparent;
-  border: 2px solid #e6e1c2;
+  border: 1px solid #e6e1c2;
   border-radius: 6px;
 
   cursor: pointer;
