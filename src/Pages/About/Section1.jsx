@@ -1,4 +1,22 @@
-export default function Section1() {
+import { useEffect } from "react";
+
+export default function Section1({ setShowMineral }) {
+  useEffect(() => {
+    if (!setShowMineral) return;
+
+    const onScroll = () => {
+      // 🔑 show mineral after first 100px scroll
+      if (window.scrollY > 100) {
+        setShowMineral(true);
+      } else {
+        setShowMineral(false);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [setShowMineral]);
+
   return (
     <section
       style={{
@@ -12,12 +30,7 @@ export default function Section1() {
         justifyContent: "center",
       }}
     >
-      <div
-        style={{
-          maxWidth: "720px",
-          textAlign: "center",
-        }}
-      >
+      <div style={{ maxWidth: "720px", textAlign: "center" }}>
         <h2
           style={{
             fontFamily: "BankGothic, sans-serif",
