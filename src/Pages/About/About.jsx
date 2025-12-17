@@ -8,15 +8,16 @@ import Section7 from "./Section7";
 
 
 export default function About() {
+  
   return (
-    <>
-      <Section1 />
+    <div style={{ position: "relative" }}>
+      <Section1/>
       <Section2 />
-      <Section3/>
-      <Section4/>
-      <Section5/>
-      <Section6/>
-      <Section7/>
-    </>
+      <Section3 />
+      <Section4 />
+      <Section5 />
+      <Section6 />
+      <Section7 />
+    </div>
   );
 }
