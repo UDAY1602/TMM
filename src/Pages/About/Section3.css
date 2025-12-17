@@ -1,0 +1,57 @@
+
+@font-face {
+  font-family: "mon-thin";
+  src: url("../../assets/fonts/Montserrat-Thin.otf") format("opentype");
+  
+  font-style: normal;
+}
+@font-face {
+  font-family: "OSWBOLD";
+  src: url("../../assets/fonts/Oswald-Bold.otf") format("opentype");
+  
+  font-style: normal;
+}
+.OSWBOLD{
+  font-family: "OSWBOLD", sans-serif;
+  
+}
+
+
+.Montserrat-Thin{
+  font-family: "mon-thin", sans-serif;
+  
+}
+.container {
+  background: #1E1E1E;
+  min-height: 40vh;
+  padding: 40px 30px 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  max-width: 940px;
+  text-align: center;
+  font-family: "mon-thin", sans-serif;
+  color: #9a9a9a;
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.row {
+  font-family: "OSWBOLD", sans-serif;
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  margin-top: 10px;
+  
+}
+
+.row span {
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 5px;
+  
+}
