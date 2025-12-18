@@ -26,15 +26,51 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "oswaldRegular";
+  src: url("../src/assets/fonts/Oswald-Regular.ttf");
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter_28pt-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "montsReg";
+  src: url("../src/assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "interReg";
+  src: url("../src/assets/fonts/Inter_24pt-Regular.ttf");
+}
+
 html, body {
   overscroll-behavior: none;
 }
 /* utility classes */
+
+.section-font{
+  font-family: "Inter";
+}
+
 .heading-font {
   font-family: "Oswald", sans-serif;
 }
 
 .para-font {
   font-family: "Montserrat", sans-serif;
+}
+
+.oswold-reg{
+  font-family: "oswaldRegular";
+}
+
+.monts-reg
+{
+  font-family: "montsreg";
+}
+
+.inter-reg{
+    font-family: "interReg";
 }
 
