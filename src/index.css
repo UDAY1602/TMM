@@ -7,21 +7,46 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "BankGothic";
-  src: url("./assets/fonts/BankGothic Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Oswald";
   src: url("./assets/fonts/Oswald-SemiBold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "BankGothic";
+  src: url("./assets/fonts/BankGothic-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "RebelTypeDog";
+  src: url("./assets/fonts/RebelTypeDog-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MontserratThin";
+  src: url("./assets/fonts/Montserrat-Thin.ttf") format("truetype");
+}
 
 @font-face {
-  font-family: "Montserrat";
-  src: url("./assets/fonts/Montserrat-Light.ttf") format("truetype");
+  font-family: "BankGothicLight";
+  src: url("/BankGothic-Light-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  
 }
+.montserratthin {
+  font-family: "MontserratThin", sans-serif;
+}
+.rebeltypedog {
+  font-family: "RebelTypeDog", sans-serif;
+}
+.oswaldsemibold {
+  font-family: "Oswald", sans-serif;
+}
+.bankgothiclightreg {
+  font-family: "BankGothicLight", sans-serif;
+}
+
 html, body {
   overscroll-behavior: none;
 }
