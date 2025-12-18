@@ -27,11 +27,11 @@ const Section6 = () => {
         {/* TEXT OVER IMAGE (CENTERED) */}
         <div className="absolute inset-0 flex items-center justify-center px-6">
         <div>
-            <p className="para-font text-[#eeedd3] text-xs tracking-widest mb-3 uppercase">
+            <p className="bankgothiclightreg text-[#eeedd3] text-xl tracking-widest mb-3 uppercase">
                 Our ethos
             </p>
 
-        <h1 className=".oswold-reg text-[#eeedd3] text-2xl leading-snug">
+        <h1 className="oswold-reg text-[#eeedd3] text-3xl leading-snug">
             Sustainability & <br />
             Safety Commitment
             </h1>
@@ -48,32 +48,32 @@ const Section6 = () => {
 
           {/* TOP PARAGRAPH */}
           <p className="monts-reg text-[#ffffff] text-xs leading-relaxed mb-6">
-            We follow stringent HSE practices, ensuring safe operations,
+            We follow stringent HSE practices, ensuring safe operations,<br />
             environmentally responsible mining and clean manufacturing
             processes.
             {/* montserrat */}
           </p>
 
           {/* FEATURES GRID (2 COLUMNS) */}
-          <div className="grid grid-cols-2 gap-x-12 gap-y-3 text-[#eeedd3]">
+          <div className="grid grid-cols-2 gap-x-36 gap-y-6 text-[#eeedd3]">
 
             {/* LEFT COLUMN */}
-            <div className="space-y-3">
-              <p className="inter-reg section-font text-sm">
+            <div className="space-y-4">
+              <p className="inter-reg section-font text-xl whitespace-nowrap">
                 ISO & quality certifications
                 {/* inter */}
               </p>
-              <p className=" inter-reg section-font text-sm">
+              <p className=" inter-reg section-font text-xl whitespace-nowrap">
                 Environmental & safety compliance
               </p>
             </div>
 
             {/* RIGHT COLUMN */}
-            <div className="space-y-3">
-              <p className=" inter-reg section-font text-sm">
+            <div className="space-y-4">
+              <p className=" inter-reg section-font text-xl">
                 Dust-free packaging
               </p>
-              <p className="inter-reg section-font text-sm">
+              <p className="inter-reg section-font text-xl">
                 Low-iron processing
               </p>
             </div>

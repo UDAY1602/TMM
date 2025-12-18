@@ -22,8 +22,7 @@ export default function Section1({ setShowMineral }) {
       style={{
         width: "100%",
         minHeight: "600px",
-        background:
-          "linear-gradient(180deg, #1e1f23 0%, #2a2b30 50%, #3a3b40 100%)",
+        background: "linear-gradient(to right,#151615 , #0A0C0B,#1E1E1E, #1E1E1E)",
         color: "#f4f1e8",
         padding: "120px 32px",
         display: "flex",

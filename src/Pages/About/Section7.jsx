@@ -7,11 +7,11 @@ const Section7 = () => {
 
       {/* LEFT TEXT PANEL */}
       <div className="w-2/3 h-full flex flex-col justify-center px-20">
-        <p className="para-font text-[#eeedd3] text-3xl tracking-[0.3em] mb-4">
+        <p className="oswaldlight text-[#eeedd3] text-3xl tracking-[0.3em] mb-4">
           PREMIUM QUARTZ
         </p>
 
-        <h1 className="heading-font text-[#eeedd3] text-3xl tracking-wide">
+        <h1 className="bankgothicbold text-[#eeedd3] text-4xl tracking-wide">
           Grits, Fillers & Powders
         </h1>
       </div>
@@ -23,7 +23,7 @@ const Section7 = () => {
       >
         {/* TEXT ON IMAGE */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="oswald-reg text-black text-3xl tracking-widest">
+          <p className="oswold-reg text-black text-3xl">
             View Products
           </p>
         </div>
