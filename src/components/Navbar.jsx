@@ -5,12 +5,9 @@ import logo from "../assets/icon.svg";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <nav className="navbar">
       <div className="navbar-container">
-
-        {/* Logo + Brand Name */}
         <div className="navbar-logo">
           <Link to="/" className="logo-wrapper">
             <img src={logo} alt="Tanujasreekesh logo" />
@@ -20,8 +17,6 @@ function Navbar() {
             </div>
           </Link>
         </div>
-
-        {/* Hamburger (Mobile Only) */}
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
