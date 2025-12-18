@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+/* =========================
+   BASE NAVBAR (DESKTOP)
+========================= */
+
 .navbar {
   width: 100%;
   padding: 18px 0;
@@ -44,7 +48,7 @@
 
 .logo-wrapper img {
   filter: brightness(0) invert(1);
-  height: 52px; 
+  height: 52px;
   width: auto;
 }
 
@@ -118,12 +122,9 @@
   color: #313131;
 }
 
-@media (max-width: 768px) {
-  .navbar-logo {
-    margin-left: 0;
-  }
-}
-
+/* =========================
+   HAMBURGER
+========================= */
 
 .hamburger {
   display: none;
@@ -138,6 +139,7 @@
   background: #eeedd3;
   transition: all 0.3s ease;
 }
+
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -148,6 +150,45 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* =========================
+   TABLET ONLY (769px–1024px)
+========================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .navbar-logo {
+    margin-left: 0;
+  }
+
+  .logo-wrapper img {
+    height: 44px;
+  }
+
+  .logo-title {
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .navbar-links {
+    gap: 24px;
+  }
+
+  .navbar-actions {
+    gap: 28px;
+  }
+}
+
+/* =========================
+   MOBILE (≤900px)
+========================= */
 
 @media (max-width: 900px) {
   .hamburger {
@@ -183,5 +224,48 @@
 
   .navbar-cta {
     margin-top: 10px;
+  }
+}
+
+/* =========================
+   PHONES (≤768px)
+========================= */
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    margin-left: 0;
+  }
+
+  .logo-wrapper img {
+    height: 38px;
+  }
+
+  .logo-title {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+
+  .logo-sub {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 2px;
+  }
+}
+
+/* =========================
+   SMALL PHONES (≤480px)
+========================= */
+
+@media (max-width: 480px) {
+  .logo-wrapper img {
+    height: 34px;
+  }
+
+  .logo-title {
+    font-size: 14px;
+  }
+
+  .logo-sub {
+    font-size: 8px;
   }
 }
