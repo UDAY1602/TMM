@@ -1,4 +1,31 @@
 
+@font-face {
+  font-family: "Oswald";
+  src: url("../../assets/fonts/Oswald-Medium.otf") format("opentype");
+  
+  font-style: normal;
+}
+@font-face {
+  font-family: "Oswald-light";
+  src: url("../../assets/fonts/Oswald-Light.otf") format("opentype");
+  
+  font-style: normal;
+}
+
+.oswaldmedium {
+  font-family: "Oswald", sans-serif;
+  
+}
+
+.oswaldlight {
+  font-family: "Oswald-light", sans-serif;
+}
+.oswaldregular {
+  font-family: "Oswald-regular", sans-serif;
+}
+.rebaltypedog {
+  font-family: "RebelTypeDog", sans-serif;
+}
 
 .section3 {
   height: 420vh;
@@ -14,24 +41,62 @@
 
 
 /* FULL MOON — OVERLAPS SECTION ABOVE */
+/* Moon container */
 .fullMoon {
   position: absolute;
-  top: -900px;
+  top: -770px;
   left: 50%;
   transform: translateX(-50%) rotate(0deg);
   width: 1400px;
   height: auto;
   z-index: 1;
   pointer-events: none;
-  opacity: 0;  
-  /* filter: brightness(0.25); */
-   /* HIDDEN initially */
-  transition: opacity 0.4s ease, transform 0.1s linear;  /* fade + rotate */
+  opacity: 0.35;
+  transition: opacity 0.4s ease, transform 0.1s linear;
+
+  /* 🔥 MASK EVERYTHING TO THE CIRCLE */
+  -webkit-mask-image:
+    radial-gradient(
+      circle at center,
+      black 58%,
+      transparent 60%
+    );
+  mask-image:
+    radial-gradient(
+      circle at center,
+      black 58%,
+      transparent 60%
+    );
+}
+.fullMoon {
+  /* previous styles stay */
+
+  -webkit-mask-image:
+    radial-gradient(circle at center, black 58%, transparent 60%),
+    linear-gradient(
+      to top,
+      black 0%,
+      rgba(0,0,0,0.8) 35%,
+      rgba(0,0,0,0.4) 55%,
+      transparent 75%
+    );
+
+  -webkit-mask-composite: intersect;
+
+  mask-image:
+    radial-gradient(circle at center, black 58%, transparent 60%),
+    linear-gradient(
+      to top,
+      black 0%,
+      rgba(0,0,0,0.8) 35%,
+      rgba(0,0,0,0.4) 55%,
+      transparent 75%
+    );
+  mask-composite: intersect;
 }
 
-.showMoon{
-  opacity: 1;
-}
+
+
 
 
 /* TEXT + ITEMS LAYER ABOVE MOON */
@@ -45,19 +110,22 @@
 
 /* TEXT ANIMATION */
 .textReal {
+  font-family: "Oswald", sans-serif;
   position: absolute;
-  top: 92px;
+  top: 122px;
   height:252px;
-  width:822px;
+  width:850px;
   left: 50%;
   transform: translateX(-50%) translateY(40px); /* slide from below */
-  color: #efe8c6;
-  font-family: "OswaldCustom", sans-serif;
-  font-weight: 500;
-  font-size: 38px;
+  color: #EEEDD3;
+  font-size:46px;
   line-height: 1.2;
   opacity: 0;
   transition: opacity 1s ease, transform 1s ease;
+  text-shadow:
+    0 2px 55px rgba(0, 0, 0, 0.85),
+    0 10px 55px rgba(0, 0, 0, 0.65),
+    0 25px 55px rgba(0, 0, 0, 0.45);
 }
 
 .showTextReal {
@@ -84,7 +152,7 @@
   position: absolute;
   text-align: center;
   font-family: "Oswald", sans-serif;
-  color: #f4eecf;
+  color: #ffffff;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.5px;
@@ -134,6 +202,54 @@
   left: 48%;
   transform: translateX(calc(-50% + (1366px - 720px - 120px)));
 }
+.itemText {
+  font-size: 18px;
+}
+.item p[class^="p"] {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 180px;
+  text-align: center;
+  line-height: 1.2;
+}
+.item .itemText {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  text-align: center;
+  line-height: 1.1;
+}
+/* Small text – first line */
+
+/* ITEM 1 */
+.item1 .p1 { top: 190px; left:35%; }
+.item1 .grit { top: 210px;left:44% }
+
+/* ITEM 2 */
+.item2 .p2 { top: 130px; width: 200px; left: 0%; }
+.item2 .semi { top: 175px;left: 30% }
+
+/* ITEM 3 */
+.item3 .p3 { top: 170px; left: 50%}
+.item3 .mesh { top: 195px; }
+
+/* ITEM 4 */
+.item4 .p4 { top: 190px;left: 60% }
+.item4 .snow { top: 220px; left: 43%}
+
+/* ITEM 5 */
+.item5 .p5 { top: 130px; left: 120% }
+.item5 .quartz { top: 160px;left: 70% }
+.p1, .p3, .p5 { font-family: "oswald-light"; font-size: 20px; }
+.p2, .p4 { font-family: "RebelTypeDog"; font-size: 20px; }
+
+.grit, .mesh, .quartz { font-family: "RebelTypeDog"; font-size: 35px; }
+.semi, .snow { font-family: "oswald"; font-size: 35px; }
+
+
+
+
 .bottomInfo {
   position: absolute;
   width: 100%;
@@ -152,8 +268,8 @@
 /* Text under items */
 .bottomText {
   color: #cfcfcf;
-  font-family: "Oswald", sans-serif;
-  font-size: 18px;
+  font-family: "Montserrat-thin", sans-serif;
+  font-size: 20px;
   text-align: center;
   letter-spacing: 0.4px;
   margin-bottom: 30px;
@@ -166,11 +282,13 @@
   margin: 0 auto;
 
   padding: 10px  60px;
-  font-size: 18px;
+
+  font-family: "Montserrat-thin", sans-serif;
+  font-size: 20px;
 
   color: #e6e1c2;
   background: transparent;
-  border: 2px solid #e6e1c2;
+  border: 1px solid #e6e1c2;
   border-radius: 6px;
 
   cursor: pointer;
@@ -185,15 +303,15 @@
    RESPONSIVE SIZING
 ===================== */
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .fullMoon {
     width: 1100px;
     top: -700px;
   }
 
   .textReal {
-    width: 90%;
-    font-size: 28px;
+    width: 70%;
+    font-size: 18px;
   }
 }
 
@@ -221,4 +339,4 @@
   .itemsLayer {
     transform: scale(0.65);
   }
-}
+} */
