@@ -1,10 +1,11 @@
 @import "tailwindcss";
 @font-face {
-  font-family: "OswaldCustom";
-  src: url("/Oswald-Bold.ttf") format("truetype");
-  font-weight: 450;
-  font-style: normal;
-  font-display: swap;
+  font-family: "OswaldBold";
+  src: url("./assets/fonts/Oswald-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "OswaldLight";
+  src: url("./assets/fonts/Oswald-Light.otf") format("opentype");
 }
 @font-face {
   font-family: "Oswald";
@@ -34,6 +35,12 @@
   font-style: normal;
   
 }
+.oswaldbold{
+  font-family: "OswaldBold", sans-serif;
+}
+.oswaldlight {
+  font-family: "OswaldLight", sans-serif;
+}
 .montserratthin {
   font-family: "MontserratThin", sans-serif;
 }
@@ -46,16 +53,65 @@
 .bankgothiclightreg {
   font-family: "BankGothicLight", sans-serif;
 }
+.bankgothicbold {
+  font-family: "BankGothic", sans-serif;
+}
+
+@font-face {
+  font-family: "Montserrat-thin";
+  src: url("./assets/fonts/Montserrat-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "RebelTypeDog";
+  src: url("../assets/fonts/RebelTypeDog-Regular.otf") format("opentype");  
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "oswaldRegular";
+  src: url("../src/assets/fonts/Oswald-Regular.ttf");
+}
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter_28pt-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "montsReg";
+  src: url("../src/assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "interReg";
+  src: url("../src/assets/fonts/Inter_24pt-Regular.ttf");
+}
 
 html, body {
   overscroll-behavior: none;
 }
 /* utility classes */
+
+.section-font{
+  font-family: "Inter";
+}
+
 .heading-font {
   font-family: "Oswald", sans-serif;
 }
 
 .para-font {
   font-family: "Montserrat", sans-serif;
+}
+
+.oswold-reg{
+  font-family: "oswaldRegular";
+}
+
+.monts-reg
+{
+  font-family: "montsreg";
+}
+
+.inter-reg{
+    font-family: "interReg";
 }
 
