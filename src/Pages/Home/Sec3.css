@@ -340,3 +340,105 @@
     transform: scale(0.65);
   }
 } */
+/* =====================
+   TABLET RESPONSIVE
+===================== */
+@media (max-width: 1024px) {
+
+  .section3 {
+    height: 360vh;
+  }
+
+  .pinScene {
+    height: 130vh;
+  }
+
+  .fullMoon {
+    width: 1100px;
+    top: -650px;
+  }
+
+  .stickyBox {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+
+  .textReal {
+    width: 75%;
+  }
+
+  .bottomInfo {
+    top: 660px;
+  }
+}
+
+
+/* =====================
+   MOBILE RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+
+  .section3 {
+    height: 300vh;
+  }
+
+  .pinScene {
+    height: 120vh;
+  }
+
+  .fullMoon {
+    width: 900px;
+    top: -560px;
+  }
+
+  .stickyBox {
+    transform: scale(0.78);
+    transform-origin: top center;
+  }
+
+  .itemsLayer {
+    transform: scale(0.95);
+    transform-origin: center top;
+  }
+
+  .textReal {
+    width: 90%;
+  }
+
+  .bottomInfo {
+    top: 600px;
+  }
+}
+
+
+/* =====================
+   SMALL MOBILE (PHONES)
+===================== */
+@media (max-width: 480px) {
+
+  .section3 {
+    height: 260vh;
+  }
+
+  .pinScene {
+    height: 110vh;
+  }
+
+  .fullMoon {
+    width: 750px;
+    top: -480px;
+  }
+
+  .stickyBox {
+    transform: scale(0.7);
+    transform-origin: top center;
+  }
+
+  .itemsLayer {
+    transform: scale(0.9);
+  }
+
+  .bottomInfo {
+    top: 560px;
+  }
+}
