@@ -2,7 +2,12 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "./Sec3.css";
-
+import moon from "../../assets/moon.png";
+import semi from "../../assets/semi.png";
+import grit from "../../assets/grit.png";
+import filler from "../../assets/filler.png";
+import powder from "../../assets/powder.png";
+import snow from "../../assets/snow.png";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Section3() {
@@ -15,11 +20,11 @@ export default function Section3() {
   const bottomRef = useRef(null);
 
   useEffect(() => {
+    ScrollTrigger.config({ ignoreMobileResize: true });
+
     const mm = gsap.matchMedia();
 
-    /* ======================
-       DESKTOP / PC
-    ====================== */
+    /* DESKTOP */
     mm.add("(min-width: 1025px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -39,17 +44,13 @@ export default function Section3() {
       });
 
       tl
-        .to(moonRef.current, { opacity: 0.35, duration: 0.1 })
-        .to({}, { duration: 1 })
-        .to(textRef.current, { opacity: 1, y: 0, duration: 0.5 })
-        .to({}, { duration: 2 })
-        .to(itemsRef.current, { opacity: 1, duration: 1.5 })
-        .to(bottomRef.current, { opacity: 1, duration: 1.7 });
+        .to(moonRef.current, { opacity: 0.35 })
+        .to(textRef.current, { opacity: 1, y: 0 })
+        .to(itemsRef.current, { opacity: 1 })
+        .to(bottomRef.current, { opacity: 1 });
     });
 
-    /* ======================
-       TABLET
-    ====================== */
+    /* TABLET */
     mm.add("(max-width: 1024px) and (min-width: 769px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -62,24 +63,20 @@ export default function Section3() {
           invalidateOnRefresh: true,
           onUpdate: (self) => {
             gsap.set(moonRef.current, {
-              rotate: self.progress * -80,
+              rotate: self.progress * -60,
             });
           },
         },
       });
 
       tl
-        .to(moonRef.current, { opacity: 0.4, duration: 0.15 })
-        .to({}, { duration: 0.8 })
-        .to(textRef.current, { opacity: 1, y: 0, duration: 0.4 })
-        .to({}, { duration: 1.3 })
-        .to(itemsRef.current, { opacity: 1, duration: 1.2 })
-        .to(bottomRef.current, { opacity: 1, duration: 1.3 });
+        .to(moonRef.current, { opacity: 0.4 })
+        .to(textRef.current, { opacity: 1, y: 0 })
+        .to(itemsRef.current, { opacity: 1 })
+        .to(bottomRef.current, { opacity: 1 });
     });
 
-    /* ======================
-       MOBILE (FIXED PROPERLY)
-    ====================== */
+    /* MOBILE */
     mm.add("(max-width: 768px)", () => {
 
       // ✅ SCALE CONTENT (NOT PIN, NOT SELECTOR)
@@ -98,41 +95,24 @@ export default function Section3() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=180%",
+          end: "+=100%",
           scrub: 1.2,
           pin: pinRef.current,
           anticipatePin: 1,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
             gsap.set(moonRef.current, {
-              rotate: self.progress * -720,
+              rotate: self.progress * -120,
             });
           },
         },
       });
 
       tl
-        .to(moonRef.current, { opacity: 0.45, duration: 0.2 })
-        .to({}, { duration: 0.7 })
-        .to(textRef.current, { opacity: 1, y: 0, duration: 0.4 })
-        .to({}, { duration: 1 })
-        .to(itemsRef.current, { opacity: 1, duration: 1 })
-        .to(bottomRef.current, { opacity: 1, duration: 1 });
-    });
-
-    /* ======================
-       SMALL MOBILE
-    ====================== */
-    mm.add("(max-width: 480px)", () => {
-      gsap.set(stickyRef.current, {
-        scale: 0.66,
-        transformOrigin: "top center",
-      });
-
-      gsap.set(moonRef.current, {
-        width: 700,
-        top: -440,
-      });
+        .to(moonRef.current, { opacity: 0.45 })
+        .to(textRef.current, { opacity: 1, y: 0 })
+        .to(itemsRef.current, { opacity: 1 })
+        .to(bottomRef.current, { opacity: 1 });
     });
 
     return () => mm.revert();
@@ -142,18 +122,15 @@ export default function Section3() {
     <section ref={sectionRef} className="section3">
       <div ref={pinRef} className="pinScene">
 
-        {/* MOON */}
-        <div className="moonWrap">
-          <img
-            ref={moonRef}
-            src="/moon.png"
-            className="fullMoon"
-            alt="moon"
-          />
-        </div>
+        <img
+          ref={moonRef}
+          src={moon}
+          className="fullMoon"
+          alt="moon"
+        />
 
-        {/* CONTENT */}
-        <div ref={stickyRef} className="stickyBox">
+        <div className="stickyBox">
+
           <h1 ref={textRef} className="textReal">
             Premium Quartz Grits, Fillers &<br />
             Powders for Engineered Stone<br />
@@ -161,35 +138,11 @@ export default function Section3() {
           </h1>
 
           <div ref={itemsRef} className="itemsLayer">
-            <div className="item item1">
-              <img src="/grit.png" />
-              <p className="p1">0.1–8mm</p>
-              <p className="itemText grit">GRIT</p>
-            </div>
-
-            <div className="item item2">
-              <img src="/semi.png" />
-              <p className="p2">SEMI-<br />TRANSLUCENT</p>
-              <p className="itemText semi">Quartz</p>
-            </div>
-
-            <div className="item item3">
-              <img src="/powder.png" />
-              <p className="p3">100–500 mesh</p>
-              <p className="itemText mesh">POWDER</p>
-            </div>
-
-            <div className="item item4">
-              <img src="/snow.png" />
-              <p className="p4">SNOW WHITE</p>
-              <p className="itemText snow">Quartz</p>
-            </div>
-
-            <div className="item item5">
-              <img src="/filler.png" />
-              <p className="p5">Industrial Quartz</p>
-              <p className="itemText quartz">FILLERS</p>
-            </div>
+            <div className="item item1"><img src={grit} /><p className="p1">0.1–8mm</p><p className="itemText grit">GRIT</p></div>
+            <div className="item item2"><img src={semi} /><p className="p2">SEMI-<br />TRANSLUCENT</p><p className="itemText semi">Quartz</p></div>
+            <div className="item item3"><img src={powder} /><p className="p3">100–500 mesh</p><p className="itemText mesh">POWDER</p></div>
+            <div className="item item4"><img src={snow} /><p className="p4">SNOW WHITE</p><p className="itemText snow">Quartz</p></div>
+            <div className="item item5"><img src={filler} /><p className="p5">Industrial Quartz</p><p className="itemText quartz">FILLERS</p></div>
           </div>
 
           <div ref={bottomRef} className="bottomInfo">
