@@ -3,13 +3,14 @@ import abtsec6 from "../../assets/abtsec6.jpg";
 
 const Section6 = () => {
   return (
-    <div className="w-full h-[320px] flex">
+    <div className="w-full flex flex-col md:flex-row md:min-h-[320px] bg-[#1E1E1E]">
 
       {/* LEFT IMAGE PANEL */}
       <div
         className="
-          w-1/3 h-full
-          bg-cover bg-left
+          w-full md:w-1/3
+          h-[220px] md:h-auto
+          bg-cover bg-center
           relative
         "
         style={{ backgroundImage: `url(${abtsec6})` }}
@@ -24,56 +25,48 @@ const Section6 = () => {
           "
         />
 
-        {/* TEXT OVER IMAGE (CENTERED) */}
-        <div className="absolute inset-0 flex items-center justify-center px-6">
-        <div>
-            <p className="bankgothiclightreg text-[#eeedd3] text-xl tracking-widest mb-3 uppercase">
-                Our ethos
+        {/* TEXT OVER IMAGE */}
+        <div className="absolute inset-0 flex items-center justify-center px-4 text-center md:text-left">
+          <div>
+            <p className="bankgothiclightreg text-[#eeedd3] text-sm md:text-xl tracking-widest mb-2 uppercase">
+              Our ethos
             </p>
 
-        <h1 className="oswold-reg text-[#eeedd3] text-3xl leading-snug">
-            Sustainability & <br />
-            Safety Commitment
+            <h1 className="oswold-reg text-[#eeedd3] text-xl md:text-3xl leading-snug">
+              Sustainability & <br className="hidden md:block" />
+              Safety Commitment
             </h1>
+          </div>
         </div>
-
-    </div>
-
       </div>
-      
 
       {/* RIGHT CONTENT PANEL */}
-      <div className="w-2/3 h-full bg-[#1E1E1E] flex items-center px-12">
-        <div className="max-w-xl">
+      <div className="w-full md:w-2/3 flex items-center px-6 md:px-12 py-6 md:py-0">
+        <div className="max-w-xl w-full">
 
-          {/* TOP PARAGRAPH */}
-          <p className="monts-reg text-[#ffffff] text-xs leading-relaxed mb-6">
-            We follow stringent HSE practices, ensuring safe operations,<br />
-            environmentally responsible mining and clean manufacturing
-            processes.
-            {/* montserrat */}
+          {/* PARAGRAPH */}
+          <p className="monts-reg text-[#ffffff] text-xs md:text-sm leading-relaxed mb-6">
+            We follow stringent HSE practices, ensuring safe operations,
+            environmentally responsible mining and clean manufacturing processes.
           </p>
 
-          {/* FEATURES GRID (2 COLUMNS) */}
-          <div className="grid grid-cols-2 gap-x-36 gap-y-6 text-[#eeedd3]">
+          {/* FEATURES GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-x-36 text-[#eeedd3]">
 
-            {/* LEFT COLUMN */}
-            <div className="space-y-4">
-              <p className="inter-reg section-font text-xl whitespace-nowrap">
+            <div className="space-y-3">
+              <p className="inter-reg section-font text-base md:text-xl">
                 ISO & quality certifications
-                {/* inter */}
               </p>
-              <p className=" inter-reg section-font text-xl whitespace-nowrap">
+              <p className="inter-reg section-font text-base md:text-xl">
                 Environmental & safety compliance
               </p>
             </div>
 
-            {/* RIGHT COLUMN */}
-            <div className="space-y-4">
-              <p className=" inter-reg section-font text-xl">
+            <div className="space-y-3">
+              <p className="inter-reg section-font text-base md:text-xl">
                 Dust-free packaging
               </p>
-              <p className="inter-reg section-font text-xl">
+              <p className="inter-reg section-font text-base md:text-xl">
                 Low-iron processing
               </p>
             </div>
