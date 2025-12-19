@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "./Sec3.css";
@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Section3() {
   const sectionRef = useRef(null);
   const pinRef = useRef(null);
+  const stickyRef = useRef(null);   
   const moonRef = useRef(null);
   const textRef = useRef(null);
   const itemsRef = useRef(null);
@@ -28,9 +29,10 @@ export default function Section3() {
           scrub: 1,
           pin: pinRef.current,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
             gsap.set(moonRef.current, {
-              rotate: self.progress * -80, // 4 rotations
+              rotate: self.progress * -80,
             });
           },
         },
@@ -46,7 +48,7 @@ export default function Section3() {
     });
 
     /* ======================
-       TABLETS + LARGE PHONES
+       TABLET
     ====================== */
     mm.add("(max-width: 1024px) and (min-width: 769px)", () => {
       const tl = gsap.timeline({
@@ -57,6 +59,7 @@ export default function Section3() {
           scrub: 1,
           pin: pinRef.current,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
             gsap.set(moonRef.current, {
               rotate: self.progress * -80,
@@ -75,20 +78,34 @@ export default function Section3() {
     });
 
     /* ======================
-       MOBILE (ANDROID + iPHONE)
+       MOBILE (FIXED PROPERLY)
     ====================== */
     mm.add("(max-width: 768px)", () => {
+
+      // ✅ SCALE CONTENT (NOT PIN, NOT SELECTOR)
+      gsap.set(stickyRef.current, {
+        scale: 0.72,
+        transformOrigin: "top center",
+      });
+
+      // ✅ MAKE MOON VISIBLE ON MOBILE
+      gsap.set(moonRef.current, {
+        width: 780,
+        top: -480,
+      });
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
           end: "+=180%",
-          scrub: 1.2, // smoother on mobile
+          scrub: 1.2,
           pin: pinRef.current,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
             gsap.set(moonRef.current, {
-              rotate: self.progress * -720, // slower spin
+              rotate: self.progress * -720,
             });
           },
         },
@@ -103,19 +120,29 @@ export default function Section3() {
         .to(bottomRef.current, { opacity: 1, duration: 1 });
     });
 
+    /* ======================
+       SMALL MOBILE
+    ====================== */
+    mm.add("(max-width: 480px)", () => {
+      gsap.set(stickyRef.current, {
+        scale: 0.66,
+        transformOrigin: "top center",
+      });
+
+      gsap.set(moonRef.current, {
+        width: 700,
+        top: -440,
+      });
+    });
+
     return () => mm.revert();
   }, []);
 
-
-
-
   return (
     <section ref={sectionRef} className="section3">
-
-      {/* PINNED SCENE */}
       <div ref={pinRef} className="pinScene">
 
-        {/* MOON — NOW INSIDE PIN */}
+        {/* MOON */}
         <div className="moonWrap">
           <img
             ref={moonRef}
@@ -125,10 +152,8 @@ export default function Section3() {
           />
         </div>
 
-
         {/* CONTENT */}
-        <div className="stickyBox">
-
+        <div ref={stickyRef} className="stickyBox">
           <h1 ref={textRef} className="textReal">
             Premium Quartz Grits, Fillers &<br />
             Powders for Engineered Stone<br />
@@ -136,11 +161,35 @@ export default function Section3() {
           </h1>
 
           <div ref={itemsRef} className="itemsLayer">
-            <div className="item item1"><img src="/grit.png" /><p className="p1">0.1–8mm</p><p className="itemText grit">GRIT</p></div>
-            <div className="item item2"><img src="/semi.png" /> <p className="p2">SEMI-<br />TRANSLUCENT</p><p className="itemText semi">Quartz</p></div>
-            <div className="item item3"><img src="/powder.png" /> <p className="p3">100–500 mesh</p><p className="itemText mesh">POWDER</p></div>
-            <div className="item item4"><img src="/snow.png" /> <p className="p4">SNOW WHITE</p><p className="itemText snow">Quartz</p></div>
-            <div className="item item5"><img src="/filler.png" /><p className="p5">Industrial  Quartz</p><p className="itemText quartz">FILLERS</p></div>
+            <div className="item item1">
+              <img src="/grit.png" />
+              <p className="p1">0.1–8mm</p>
+              <p className="itemText grit">GRIT</p>
+            </div>
+
+            <div className="item item2">
+              <img src="/semi.png" />
+              <p className="p2">SEMI-<br />TRANSLUCENT</p>
+              <p className="itemText semi">Quartz</p>
+            </div>
+
+            <div className="item item3">
+              <img src="/powder.png" />
+              <p className="p3">100–500 mesh</p>
+              <p className="itemText mesh">POWDER</p>
+            </div>
+
+            <div className="item item4">
+              <img src="/snow.png" />
+              <p className="p4">SNOW WHITE</p>
+              <p className="itemText snow">Quartz</p>
+            </div>
+
+            <div className="item item5">
+              <img src="/filler.png" />
+              <p className="p5">Industrial Quartz</p>
+              <p className="itemText quartz">FILLERS</p>
+            </div>
           </div>
 
           <div ref={bottomRef} className="bottomInfo">
@@ -149,9 +198,9 @@ export default function Section3() {
             </p>
             <button className="exploreBtn">Explore</button>
           </div>
-
         </div>
       </div>
     </section>
   );
 }
+
