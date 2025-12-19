@@ -3,27 +3,27 @@ import section7right from "../../assets/section7right.png";
 
 const Section7 = () => {
   return (
-    <div className="w-full h-[300px] flex bg-[#313131]">
+    <div className="w-full flex flex-col md:flex-row bg-[#313131] md:min-h-[300px]">
 
       {/* LEFT TEXT PANEL */}
-      <div className="w-2/3 h-full flex flex-col justify-center px-20">
-        <p className="oswaldlight text-[#eeedd3] text-3xl tracking-[0.3em] mb-4">
+      <div className="w-full md:w-2/3 flex flex-col justify-center px-6 md:px-20 py-8 md:py-0">
+        <p className="oswaldlight text-[#eeedd3] text-lg md:text-3xl tracking-[0.25em] md:tracking-[0.3em] mb-3 md:mb-4">
           PREMIUM QUARTZ
         </p>
 
-        <h1 className="bankgothicbold text-[#eeedd3] text-4xl tracking-wide">
+        <h1 className="bankgothicbold text-[#eeedd3] text-2xl md:text-4xl tracking-wide">
           Grits, Fillers & Powders
         </h1>
       </div>
 
       {/* RIGHT IMAGE PANEL */}
       <div
-        className="w-1/3 h-full bg-cover bg-center relative"
+        className="w-full md:w-1/3 h-[200px] md:h-auto bg-cover bg-center relative"
         style={{ backgroundImage: `url(${section7right})` }}
       >
         {/* TEXT ON IMAGE */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="oswold-reg text-black text-3xl">
+          <p className="oswold-reg text-black text-lg md:text-3xl">
             View Products
           </p>
         </div>
