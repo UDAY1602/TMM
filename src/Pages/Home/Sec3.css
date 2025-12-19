@@ -1,16 +1,18 @@
 
+
 @font-face {
   font-family: "Oswald";
   src: url("../../assets/fonts/Oswald-Medium.otf") format("opentype");
-  
-  font-style: normal;
 }
 @font-face {
   font-family: "Oswald-light";
   src: url("../../assets/fonts/Oswald-Light.otf") format("opentype");
-  
-  font-style: normal;
 }
+@font-face {
+  font-family: "RebelTypeDog";
+  src: url("../../assets/fonts/RebelTypeDog.otf") format("opentype");
+}
+
 
 .oswaldmedium {
   font-family: "Oswald", sans-serif;
@@ -31,13 +33,14 @@
   height: 420vh;
   background: #1A1A1A;
   position: relative;
-  overflow: hidden;  /* hides everything except the visible bottom arc */
+  overflow: hidden;
 }
 
- .pinScene {
-  position: relative;   
-  height: 150vh;
+.pinScene {
+  position: relative;
+  height: 250vh;
 }
+
 
 
 /* FULL MOON — OVERLAPS SECTION ABOVE */
@@ -267,7 +270,7 @@
 
 /* Text under items */
 .bottomText {
-  color: #cfcfcf;
+  color: #e6e1c2;
   font-family: "Montserrat-thin", sans-serif;
   font-size: 20px;
   text-align: center;
@@ -299,44 +302,122 @@
   background: #e6e1c2;
   color: #1a1a1a;
 }
-/* =====================
-   RESPONSIVE SIZING
-===================== */
 
-/* @media (max-width: 1024px) {
-  .fullMoon {
-    width: 1100px;
-    top: -700px;
+ @media (min-width: 300px) and (max-width:900px)  {
+
+  .section3 {
+    height: 260vh;
   }
 
+  
+
   .textReal {
-    width: 70%;
-    font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  top: 122px;
+  height:202px;
+  width:400px;
+  left: 50%;
+  
+  color: #EEEDD3;
+  font-size:32px;
+  line-height: 1.2;
+  
+}
+.showTextReal {
+  opacity: 1;
+   /* slide into place */
+}
+
+  .itemsLayer {
+    opacity: 1;
+  }
+
+  .item {
+    position: relative;
+    transform: none !important;
+    left: 30px;
+    top:280px;
+    margin-bottom: 40px;
+  }
+  .item1 .p1 { top: 50px; left:70%; }
+.item1 .grit { top: 80px;left:69% }
+
+/* ITEM 2 */
+.item2 .p2 { top: 60px; left: 67%; }
+.item2 .semi { top: 110px;left: 70% }
+
+/* ITEM 3 */
+.item3 .p3 { top: 70px; left: 72%}
+.item3 .mesh { top: 95px;left:67% }
+
+/* ITEM 4 */
+.item4 .p4 { top: 55px;left: 69% }
+.item4 .snow { top: 85px; left:69%}
+
+/* ITEM 5 */
+.item5 .p5 { top: 80px; left:72% }
+.item5 .quartz { top: 105px;left: 65% }
+
+ 
+
+  .bottomInfo {
+    position: absolute;
+    top: auto;
+    margin-top: 600px;
+    padding: 0 16px;
+  }
+
+  .bottomText {
+    font-size: 14px;
+  }
+
+  
+}
+
+
+
+
+
+@media (max-width: 900px) {
+.section3 {
+    height: 260vh;
+  }
+  
+  .textReal {
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  top: 122px;
+  height:202px;
+  width:400px;
+  left: 50%;
+  
+  color: #EEEDD3;
+  font-size:32px;
+  line-height: 1.2;
+  
+}
+.showTextReal {
+  opacity: 1;
+   /* slide into place */
+}
+  
+
+
+  .item img {
+    width: 180px;
+    height: auto;
+  }
+
+  /* Reduce horizontal spread */
+  .item1 { transform: translateX(calc(-50% + (-300px))); }
+  .item2 { transform: translateX(calc(-50% + (-150px))); }
+  .item3 { transform: translateX(calc(-50% + (0px))); }
+  .item4 { transform: translateX(calc(-50% + (150px))); }
+  .item5 { transform: translateX(calc(-50% + (300px))); }
+
+  .bottomInfo {
+    top: 650px;
   }
 }
 
-@media (max-width: 768px) {
-  .fullMoon {
-    width: 900px;
-    top: -600px;
-  }
-
-  .textReal {
-    font-size: 22px;
-  }
-
-  .itemsLayer {
-    transform: scale(0.75);
-  }
-}
-
-@media (max-width: 480px) {
-  .fullMoon {
-    width: 750px;
-    top: -500px;
-  }
-
-  .itemsLayer {
-    transform: scale(0.65);
-  }
-} */
