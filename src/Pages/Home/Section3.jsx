@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "./Sec3.css";
@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Section3() {
   const sectionRef = useRef(null);
   const pinRef = useRef(null);
+  const stickyRef = useRef(null);   
   const moonRef = useRef(null);
   const textRef = useRef(null);
   const itemsRef = useRef(null);
@@ -33,6 +34,7 @@ export default function Section3() {
           scrub: 1,
           pin: pinRef.current,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
             gsap.set(moonRef.current, {
               rotate: self.progress * -80,
@@ -58,6 +60,7 @@ export default function Section3() {
           scrub: 1,
           pin: pinRef.current,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
             gsap.set(moonRef.current, {
               rotate: self.progress * -60,
@@ -75,6 +78,19 @@ export default function Section3() {
 
     /* MOBILE */
     mm.add("(max-width: 768px)", () => {
+
+      // ✅ SCALE CONTENT (NOT PIN, NOT SELECTOR)
+      gsap.set(stickyRef.current, {
+        scale: 0.72,
+        transformOrigin: "top center",
+      });
+
+      // ✅ MAKE MOON VISIBLE ON MOBILE
+      gsap.set(moonRef.current, {
+        width: 780,
+        top: -480,
+      });
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -83,6 +99,7 @@ export default function Section3() {
           scrub: 1.2,
           pin: pinRef.current,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
             gsap.set(moonRef.current, {
               rotate: self.progress * -120,
@@ -134,9 +151,9 @@ export default function Section3() {
             </p>
             <button className="exploreBtn">Explore</button>
           </div>
-
         </div>
       </div>
     </section>
   );
 }
+
