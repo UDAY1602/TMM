@@ -34,7 +34,7 @@ export default function ScrollTop() {
           onClick={scrollToTop}
           className="
             fixed bottom-6 right-6 z-50
-            bg-[#e7e5be]
+            bg-[#939171]
             p-3 rounded-full
             shadow-lg
             transition-all duration-300
