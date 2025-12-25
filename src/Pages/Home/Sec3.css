@@ -233,7 +233,7 @@
 
 .exploreBtn {
   display: block;
-  margin: 0 auto;
+  margin: 24px auto 0; /* ⬅ moves button DOWN */
   padding: 10px 60px;
   font-size: 20px;
   color: #e6e1c2;
@@ -243,6 +243,7 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
+
 .exploreBtn:hover {
   background: #e6e1c2;
   color: #1a1a1a;
@@ -332,8 +333,8 @@
   .item4 .snow { top: 105px; left: 94%; }
 
   /* ITEM 5 */
-  .item5 .p5 { top: 55px; left: 92%; }
-  .item5 .quartz { top: 85px; left: 95%; }
+  .item5 .p5 { top: 40px; left: 92%; }
+  .item5 .quartz { top: 70px; left: 95%; }
 
   /* Ensure text stays absolute relative to item */
   .item p,
