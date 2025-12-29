@@ -139,8 +139,8 @@ export default function Section3() {
             </div>
           </div>
 
-          <div ref={bottomRef} className="bottomInfo">
-            <p className="bottomText montserratthin pb-3">
+          <div ref={bottomRef} className="bottomInfo montserratthin">
+            <p className="bottomText">
               Optimized for whiteness, purity, consistency, and industry-specific performance.
             </p>
             <button className="exploreBtn">Explore</button>
