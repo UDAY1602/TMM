@@ -140,7 +140,7 @@ export default function Section3() {
           </div>
 
           <div ref={bottomRef} className="bottomInfo">
-            <p className="bottomText">
+            <p className="bottomText montserratthin pb-3">
               Optimized for whiteness, purity, consistency, and industry-specific performance.
             </p>
             <button className="exploreBtn">Explore</button>
