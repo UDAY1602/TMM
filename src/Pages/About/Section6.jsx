@@ -51,27 +51,28 @@ const Section6 = () => {
           </p>
 
           {/* FEATURES GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-x-36 text-[#eeedd3]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 md:gap-x-36 text-[#eeedd3]">
 
             <div className="space-y-3">
-              <p className="inter-reg section-font text-base md:text-xl">
-                ISO & quality certifications
-              </p>
-              <p className="inter-reg section-font text-base md:text-xl">
-                Environmental & safety compliance
-              </p>
-            </div>
+                <p className="inter-reg section-font text-base md:text-xl whitespace-nowrap">
+                    ISO & quality certifications
+                </p>
+                <p className="inter-reg section-font text-base md:text-xl whitespace-nowrap">
+                    Environmental & safety compliance
+                </p>
+                </div>
 
             <div className="space-y-3">
-              <p className="inter-reg section-font text-base md:text-xl">
-                Dust-free packaging
-              </p>
-              <p className="inter-reg section-font text-base md:text-xl">
-                Low-iron processing
-              </p>
-            </div>
+    <p className="inter-reg section-font text-base md:text-xl whitespace-nowrap">
+      Dust-free packaging
+    </p>
+    <p className="inter-reg section-font text-base md:text-xl whitespace-nowrap">
+      Low-iron processing
+    </p>
+  </div>
 
-          </div>
+</div>
+
 
         </div>
       </div>
