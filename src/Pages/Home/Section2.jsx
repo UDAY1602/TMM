@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export default function Section1() {
   return (
@@ -26,10 +27,12 @@ export default function Section1() {
               strict quality control, we deliver quartz products that meet
               global performance standards.
             </p>
-            <a href="/about"
-              className="inline-block mt-6 text-sm text-[#313131] underline underline-offset-4 hover:opacity-70 transition">
+            <Link
+              to="/about"
+                className="inline-block mt-6 text-sm text-[#313131] underline underline-offset-4 hover:opacity-70 transition"
+            >
             Read more
-            </a>
+            </Link>
           </div>
 
         </div>
