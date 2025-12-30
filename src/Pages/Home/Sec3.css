@@ -118,21 +118,17 @@
 }
 
 /* ITEM IMAGES */
-.item1 img { width: 303px; }
-.item2 img { width: 209px; }
-.item3 img { width: 220px; }
-.item4 img { width: 241px; }
-.item5 img { width: 206px; }
+
 /* 1. GRIT */
-.item1 img { width: 303px; height: 223px; }
+.item1 img { width: 244px; height: 127px; }
 .item1 {
-  top: calc(273px - 90px);
+  
   left:55%;
   transform: translateX(calc(-50% + (291px - 720px - 120px)));
 }
 
 /* 2. Semi-Translucent Quartz */
-.item2 img { width: 209px; height: 189px; }
+.item2 img { width: 200px; height: 120px; }
 .item2 {
   top: calc(471px - 110px);
   left: 50%;
@@ -140,7 +136,7 @@
 }
 
 /* 3. Powder */
-.item3 img { width: 220px; height: 194px; }
+.item3 img { width: 224px; height: 106px; }
 .item3 {
   top: calc(498px - 90px);
   left: 50%;
@@ -148,15 +144,15 @@
 }
 
 /* 4. Snow White Quartz */
-.item4 img { width: 241px; height: 227px; }
+.item4 img { width: 234px; height:125px; }
 .item4 {
   top: calc(432px - 100px);
-  left: 50%;
-  transform: translateX(calc(-50% + (1142px - 720px - 120px)));
+  left:4%;
+  transform: translateX(calc(-0% + (1142px - 720px - 120px)));
 }
 
 /* 5. Fillers */
-.item5 img { width: 206px; height: 180px; }
+.item5 img { width: 214px; height:120px; }
 .item5 {
   top: calc(305px - 85px);
   left: 48%;
@@ -183,29 +179,29 @@
 /* Small text – first line */
 
 /* ITEM 1 */
-.item1 .p1 { top: 190px; left:35%; }
-.item1 .grit { top: 210px;left:44% }
+
+.item1 .grit { top: 120px;left:50% }
 
 /* ITEM 2 */
-.item2 .p2 { top: 130px; width: 200px; left: 0%; }
-.item2 .semi { top: 175px;left: 30% }
+
+.item2 .semi { top: 115px;left: 50% }
 
 /* ITEM 3 */
-.item3 .p3 { top: 170px; left: 50%}
-.item3 .mesh { top: 195px; }
+
+.item3 .mesh { top: 115px; }
 
 /* ITEM 4 */
-.item4 .p4 { top: 190px;left: 60% }
-.item4 .snow { top: 220px; left: 43%}
+
+.item4 .snow { top: 110px; left: 55%; width:1000px;}
 
 /* ITEM 5 */
-.item5 .p5 { top: 130px; left: 120% }
-.item5 .quartz { top: 160px;left: 70% }
-.p1, .p3, .p5 { font-family: "oswald-light"; font-size: 20px; }
-.p2, .p4 { font-family: "RebelTypeDog"; font-size: 20px; }
 
-.grit, .mesh, .quartz { font-family: "RebelTypeDog"; font-size: 35px; }
-.semi, .snow { font-family: "oswald"; font-size: 35px; }
+.item5 .quartz { top: 120px;left: 55% }
+/* .p1, .p3, .p5 { font-family: "oswald-light"; font-size: 20px; }
+.p2, .p4 { font-family: "RebelTypeDog"; font-size: 20px; } */ 
+/* to be deleted */
+
+.grit, .mesh, .quartz ,.semi, .snow { font-family: "oswald"; font-size: 35px; }
 
 
 
@@ -241,7 +237,7 @@
   border: 1px solid #e6e1c2;
   border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s ease;  
 }
 .exploreBtn:hover {
   background: #e6e1c2;
@@ -316,24 +312,25 @@
     
   }
   /* ITEM 1 */
-  .item1 .p1 { top: 60px; left: 95%; }
-  .item1 .grit { top: 90px; left: 95%; }
+  
+  .item1 .grit { top: 20px; left: 95%; }
 
   /* ITEM 2 */
-  .item2 .p2 { top: 60px; left: 95%; }
-  .item2 .semi { top: 110px; left: 95%; }
+  
+  .item2 .semi { top: 40px; left: 95%; }
 
   /* ITEM 3 */
-  .item3 .p3 { top: 70px; left: 98%; }
-  .item3 .mesh { top: 95px; left: 97%; }
+  
+  .item3 .mesh { top: 25px; left: 97%; }
 
   /* ITEM 4 */
-  .item4 .p4 { top: 75px; left: 95%; }
-  .item4 .snow { top: 105px; left: 94%; }
+  
+  .item4 .snow { top: 45px; left: 94%; }
+  
 
   /* ITEM 5 */
-  .item5 .p5 { top: 55px; left: 92%; }
-  .item5 .quartz { top: 85px; left: 95%; }
+  
+  .item5 .quartz { top: 10px; left: 95%; }
 
   /* Ensure text stays absolute relative to item */
   .item p,
@@ -374,9 +371,13 @@
   .item img {
     display: block;
     margin: 0 auto;
-    max-width: min(220px, 90vw);
-    width: 100%;
+    max-width: min(220px, 70vw);
+    
+    
     height: auto;
+  }
+  .item4 img {
+    transform: translateX(-20px); /* move LEFT */
   }
 
   .item p,
@@ -409,7 +410,7 @@
     position: relative;
     height: 200vh;
     z-index: 5;
-  }
+  } 
 
   .textReal {
     position: absolute;
@@ -466,8 +467,8 @@
   }
 
   .item4 {
-    left: 50%;
-    top: calc(432px - 100px);
+    left: 49%;
+    top: calc(432px - 80px);
     transform: translateX(calc(-50% + (1142px - 720px - 120px)));
   }
 
