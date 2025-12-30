@@ -4,11 +4,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import "./Sec3.css";
 
 import moon from "../../assets/moon.png";
-import semi from "../../assets/semi.png";
-import grit from "../../assets/grit.png";
-import filler from "../../assets/filler.png";
-import powder from "../../assets/powder.png";
-import snow from "../../assets/snow.png";
+import semi from "../../assets/quartzfiller.png";
+import grit from "../../assets/Quartzite.png";
+import filler from "../../assets/industrial.png";
+import powder from "../../assets/quartzgrits.png";
+import snow from "../../assets/quartslumps.png";
 
 export default function Section3() {
   const sectionRef = useRef(null);
@@ -110,32 +110,28 @@ export default function Section3() {
           <div ref={itemsRef} className="itemsLayer">
             <div className="item item1">
               <img src={grit} alt="" />
-              <p className="p1">0.1–8mm</p>
-              <p className="itemText grit">GRIT</p>
+              
+              <p className="itemText grit">Quartzite<br></br>Lumps</p>
             </div>
 
             <div className="item item2">
               <img src={semi} alt="" />
-              <p className="p2">SEMI-<br />TRANSLUCENT</p>
-              <p className="itemText semi">Quartz</p>
+              <p className="itemText semi">Quartz Filler</p>
             </div>
 
             <div className="item item3">
               <img src={powder} alt="" />
-              <p className="p3">100–500 mesh</p>
-              <p className="itemText mesh">POWDER</p>
+              <p className="itemText mesh">Quartz Grits</p>
             </div>
 
             <div className="item item4">
               <img src={snow} alt="" />
-              <p className="p4">SNOW WHITE</p>
-              <p className="itemText snow">Quartz</p>
+              <p className="itemText snow">Quartz Lumps</p>
             </div>
 
             <div className="item item5">
               <img src={filler} alt="" />
-              <p className="p5">Industrial Quartz</p>
-              <p className="itemText quartz">FILLERS</p>
+              <p className="itemText quartz">Industrial<br></br>By-products</p>
             </div>
           </div>
 
