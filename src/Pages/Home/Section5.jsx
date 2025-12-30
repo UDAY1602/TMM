@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ContactBg from "../../assets/ContactBg.png";
+import ContactBg from "../../assets/ContactBg.png";                                                 
 
 export default function Section5() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
