@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import prodsec2mineral from "../../assets/prodsec2mineral.png";
 import Section2Dropdown from "./dropdownsec2";
+import Section2DropdownMobile from "./dropdownsec2mob";
 
 export default function Section2() {
   const [open, setOpen] = useState(false);
+  const [activeSize, setActiveSize] = useState("0.1-0.4");
 
   return (
     <section
@@ -11,6 +13,7 @@ export default function Section2() {
         backgroundColor: "#ffffff",
         padding: "100px 0",
         width: "100%",
+        overflowX: "hidden",
       }}
     >
       {/* ================= ORIGINAL SECTION 2 ================= */}
@@ -23,7 +26,9 @@ export default function Section2() {
           paddingRight: "32px",
         }}
       >
+        {/* TITLE */}
         <div
+          className="sec2-title"
           style={{
             display: "flex",
             justifyContent: "flex-start",
@@ -43,6 +48,7 @@ export default function Section2() {
           </h2>
         </div>
 
+        {/* GRID */}
         <div style={{ backgroundColor: "#ffffff", width: "100%" }}>
           <div
             className="sec2-grid"
@@ -58,8 +64,9 @@ export default function Section2() {
             {/* LEFT BLOCK */}
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-            {/* IMAGE */}
+            {/* IMAGE — DESKTOP PRESERVED */}
             <div
+              className="sec2-image"
               style={{
                 backgroundColor: "#ffffff",
                 display: "flex",
@@ -81,6 +88,7 @@ export default function Section2() {
 
             {/* CONTENT */}
             <div
+              className="sec2-content"
               style={{
                 backgroundColor: "#EDE4CF",
                 display: "flex",
@@ -96,7 +104,7 @@ export default function Section2() {
               >
                 <p
                   style={{
-                    fontFamily:"monts-semibold",
+                    fontFamily: "monts-semibold",
                     fontSize: "13px",
                     marginBottom: "12px",
                   }}
@@ -157,46 +165,100 @@ export default function Section2() {
         </div>
       </div>
 
-      {/* ================= DROPDOWN (SEPARATE FILE) ================= */}
-      <Section2Dropdown open={open} />
+      {/* ================= DESKTOP DROPDOWN ================= */}
+      <div className="desktop-dropdown">
+        <Section2Dropdown
+          open={open}
+          activeSize={activeSize}
+          setActiveSize={setActiveSize}
+        />
+      </div>
 
-      {/* ================= MOBILE STYLES ================= */}
-      <style>
-        {`
-          @media (max-width: 768px) {
+      {/* ================= MOBILE DROPDOWN ================= */}
+      <div className="mobile-dropdown">
+        <Section2DropdownMobile
+          open={open}
+          activeSize={activeSize}
+          setActiveSize={setActiveSize}
+        />
+      </div>
 
-            .sec2-grid {
-              grid-template-columns: 1fr !important;
-              width: 100% !important;
-              margin-left: 0 !important;
-            }
+      {/* ================= MOBILE RESPONSIVE ONLY ================= */}
+     <style>
+{`
+  /* ================= DESKTOP DEFAULT ================= */
+  .mobile-dropdown {
+    display: none;
+  }
 
-            .sec2-grid img {
-              height: 200px !important;
-              margin: 0 auto;
-            }
+  .desktop-dropdown {
+    display: block;
+  }
 
-            .oswold-reg {
-              font-size: 28px !important;
-              letter-spacing: 4px !important;
-            }
+  /* ================= MOBILE ================= */
+  @media (max-width: 768px) {
 
-            .size-tabs {
-              overflow-x: auto;
-              white-space: nowrap;
-              justify-content: flex-start !important;
-              gap: 16px !important;
-              padding-bottom: 10px;
-            }
+    /* toggle dropdown versions */
+    .desktop-dropdown {
+      display: none;
+    }
 
-            .size-tabs button {
-              font-size: 13px !important;
-              padding: 8px 14px !important;
-              flex-shrink: 0;
-            }
-          }
-        `}
-      </style>
+    .mobile-dropdown {
+      display: block;
+    }
+
+    /* ================= FIX SIDE GAPS (MOST IMPORTANT) ================= */
+    .sec2-wrapper {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      max-width: 100% !important;
+    }
+
+    /* ================= TITLE ================= */
+    .sec2-title {
+      padding-left: 0 !important;
+      justify-content: center !important;
+    }
+
+    .oswold-reg {
+      font-size: 28px !important;
+      letter-spacing: 4px !important;
+      text-align: center;
+    }
+
+    /* ================= GRID COLLAPSE ================= */
+    .sec2-grid {
+      grid-template-columns: 1fr !important;
+      width: 100% !important;
+      margin-left: 0 !important;
+    }
+
+    /* ================= IMAGE ================= */
+    .sec2-image {
+      display: flex !important;
+      justify-content: center !important;
+      padding: 24px !important;
+    }
+
+    .sec2-image img {
+      height: 200px !important;
+      margin: 0 auto !important;
+    }
+
+    /* ================= CONTENT ================= */
+    .sec2-content {
+      width: 100% !important;
+    }
+
+    .sec2-content > div {
+      padding: 24px !important;
+      text-align: center;
+    }
+  }
+`}
+</style>
+
     </section>
   );
 }
+

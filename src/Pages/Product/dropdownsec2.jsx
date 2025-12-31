@@ -1,20 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import dropdownmin from "../../assets/dropdownmin.png";
+import { SIZE_DATA, COLORS } from "./sec2data";
 
-const COLORS = {
-  header1: "#83877b",
-  header2: "#282926",
-  header3: "#83877b",
-
-  paramMainEven: "#F7F0E1",
-  paramMainOdd: "#e7e5be",
-
-  paramSubEven: "#e4e2ac",
-  paramSubOdd: "#d6d392",
-
-  textMuted: "#666",
-};
-
+/* ================= HEADER CELL STYLE ================= */
 const headerCell = (bg) => ({
   backgroundColor: bg,
   padding: "16px",
@@ -23,169 +11,17 @@ const headerCell = (bg) => ({
   textTransform: "uppercase",
 });
 
-const SIZE_DATA = {
-  "0.1-0.4": {
-    label: "0.1 – 0.4 mm",
-    imageText: "Premium Quartz Grits\n0.1 – 0.4 mm",
-    rows: [
-      [
-        "Particle size Distribution",
-        "+0.425mm(%)\n-0.106mm(%)",
-        "6.0 Max\n6.0 Max",
-        "Vibrating Sieve Shaker\nwith ASTM Test Sieve",
-      ],
-      [
-        "Contamination Analysis",
-        "Colour Impurity\nBlack Impurity",
-        "-\n-",
-        "Visual Inspection\nchecking in 500 grams",
-      ],
-      [
-        "Humidity",
-        "Moisture(%)",
-        "0.03 Max",
-        "Moisture Balance\n(Make: Lab Man)",
-      ],
-      [
-        "Shade Analysis",
-        "L\na\nb",
-        "92.00 Min\n0.35 Max\n2.20 Max",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
-      ],
-    ],
-  },
-
-  "0.3-0.7": {
-    label: "0.3 – 0.7 mm",
-    imageText: "Premium Quartz Grits\n0.3 – 0.7 mm",
-    rows: [
-      [
-        "Particle size Distribution",
-        "+0.71mm(%)\n-0.30mm(%)",
-        "8.0 Max\n8.0 Max",
-        "Vibrating Sieve Shaker\nwith ASTM Test Sieve",
-      ],
-      [
-        "Contamination Analysis",
-        "Colour Impurity\nBlack Impurity",
-        "-\n-",
-        "Visual Inspection\nchecking in 500 grams",
-      ],
-      [
-        "Humidity",
-        "Moisture(%)",
-        "0.03 Max",
-        "Moisture Balance\n(Make: Lab Man)",
-      ],
-      [
-        "Shade Analysis",
-        "L\na\nb",
-        "88.00 Min\n0.30 Max\n2.00 Max",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
-      ],
-    ],
-  },
-
-  "0.6-1.2": {
-    label: "0.6 – 1.2 mm",
-    imageText: "Premium Quartz Grits\n0.6 – 1.2 mm",
-    rows: [
-      [
-        "Particle size Distribution",
-        "+1.18mm(%)\n-0.60mm(%)",
-        "8.0 Max\n8.0 Max",
-        "Vibrating Sieve Shaker\nwith ASTM Test Sieve",
-      ],
-      [
-        "Contamination Analysis",
-        "Colour Impurity\nBlack Impurity",
-        "-\n-",
-        "Visual Inspection\nchecking in 500 grams",
-      ],
-      [
-        "Humidity",
-        "Moisture(%)",
-        "0.03 Max",
-        "Moisture Balance\n(Make: Lab Man)",
-      ],
-      [
-        "Shade Analysis",
-        "L\na\nb",
-        "83.00 Min\n0.40 Max\n1.50 Max",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
-      ],
-    ],
-  },
-
-  "1.2-2.5": {
-    label: "1.2 – 2.5 mm",
-    imageText: "Premium Quartz Grits\n1.2 – 2.5 mm",
-    rows: [
-      [
-        "Particle size Distribution",
-        "+2.36mm(%)\n-1.18mm(%)",
-        "10.0 Max\n10.0 Max",
-        "Vibrating Sieve Shaker\nwith ASTM Test Sieve",
-      ],
-      [
-        "Contamination Analysis",
-        "Colour Impurity\nBlack Impurity",
-        "5 Max\n5 Max",
-        "Visual Inspection\nchecking in 500 grams",
-      ],
-      [
-        "Humidity",
-        "Moisture(%)",
-        "0.03 Max",
-        "Moisture Balance\n(Make: Lab Man)",
-      ],
-      [
-        "Shade Analysis",
-        "L\na\nb",
-        "-\n-\n-",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
-      ],
-    ],
-  },
-
-  "2.5-4.0": {
-    label: "2.5 – 4.0 mm",
-    imageText: "Premium Quartz Grits\n2.5 – 4.0 mm",
-    rows: [
-      [
-        "Particle size Distribution",
-        "+4.00mm(%)\n-2.36mm(%)",
-        "10.0 Max\n10.0 Max",
-        "Vibrating Sieve Shaker\nwith ASTM Test Sieve",
-      ],
-      [
-        "Contamination Analysis",
-        "Colour Impurity\nBlack Impurity",
-        "5 Max\n5 Max",
-        "Visual Inspection\nchecking in 500 grams",
-      ],
-      [
-        "Humidity",
-        "Moisture(%)",
-        "0.03 Max",
-        "Moisture Balance\n(Make: Lab Man)",
-      ],
-      [
-        "Shade Analysis",
-        "L\na\nb",
-        "-\n-\n-",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
-      ],
-    ],
-  },
-};
-
-export default function Section2Dropdown({ open }) {
-  const [activeSize, setActiveSize] = useState("0.1-0.4");
+/* ================= COMPONENT ================= */
+export default function Section2Dropdown({
+  open,
+  activeSize,
+  setActiveSize,
+}) {
   const current = SIZE_DATA[activeSize];
 
   return (
     <div
+      className="desktop-dropdown"
       style={{
         maxHeight: open ? "1400px" : "0",
         overflow: "hidden",
@@ -194,12 +30,13 @@ export default function Section2Dropdown({ open }) {
       }}
     >
       <div style={{ padding: "80px 32px" }}>
+        {/* TITLE */}
         <h3
           style={{
             color: "#ffffff",
             textAlign: "center",
             marginBottom: "28px",
-            letterSpacing:"7px",
+            letterSpacing: "7px",
             fontFamily: "monts-bold",
             fontSize: "22px",
           }}
@@ -207,59 +44,51 @@ export default function Section2Dropdown({ open }) {
           Quartz Grits – Premium Product Size
         </h3>
 
-        {/* SIZE TABS */}
-       <div
-  style={{
-    maxWidth: "1150px",
-    margin: "0 auto 32px auto",
-    border: "1px solid rgba(255,255,255,0.08)",
-    height: "49px",
-    display: "flex",
-    alignItems: "center",
-  }}
->
-  <div
-    style={{
-      display: "flex",
-      alignItems: "center",
-      width: "100%",
-      height: "100%",
-    }}
-  >
-    {Object.keys(SIZE_DATA).map((key) => (
-      <React.Fragment key={key}>
-        {/* SIZE SEGMENT */}
-        <button
-          onClick={() => setActiveSize(key)}
+        {/* ================= SIZE TABS ================= */}
+        <div
           style={{
-            flex: 1,                      // 🔥 THIS IS THE FIX
-            height: "100%",
+            maxWidth: "1150px",
+            margin: "0 auto 32px auto",
+            border: "1px solid rgba(255,255,255,0.08)",
+            height: "49px",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
-            backgroundColor:
-              key === activeSize ? "#2a2a2a" : "transparent",
-            border: "none",
-            color: key === activeSize ? "#fff" : "#aaa",
-            fontSize: "14px",
-            fontFamily: "monts-semibold",
-            cursor: "pointer",
-            whiteSpace: "nowrap",
           }}
         >
-          {SIZE_DATA[key].label}
-        </button>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              height: "100%",
+            }}
+          >
+            {Object.keys(SIZE_DATA).map((key) => (
+              <button
+                key={key}
+                onClick={() => setActiveSize(key)}
+                style={{
+                  flex: 1,
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor:
+                    key === activeSize ? "#2a2a2a" : "transparent",
+                  border: "none",
+                  color: key === activeSize ? "#fff" : "#aaa",
+                  fontSize: "14px",
+                  fontFamily: "monts-semibold",
+                  cursor: "pointer",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {SIZE_DATA[key].label}
+              </button>
+            ))}
+          </div>
+        </div>
 
-        {/* VERTICAL DIVIDER */}
-        
-      </React.Fragment>
-    ))}
-  </div>
-</div>
-
-
-
-        {/* IMAGE + TABLE */}
+        {/* ================= IMAGE + TABLE ================= */}
         <div
           style={{
             maxWidth: "1150px",
@@ -273,27 +102,32 @@ export default function Section2Dropdown({ open }) {
               gridTemplateColumns: "280px 1fr",
             }}
           >
-            {/* IMAGE */}
+            {/* IMAGE COLUMN */}
             <div
               style={{
                 padding: "24px",
                 textAlign: "center",
               }}
             >
-              <img src={dropdownmin} alt="" style={{ width: "100%" }} />
+              <img
+                src={dropdownmin}
+                alt="Quartz Grits"
+                style={{ width: "100%" }}
+              />
               <p
                 style={{
                   color: "#e6e6e6",
                   fontSize: "13px",
                   fontFamily: "oswold-reg",
                   whiteSpace: "pre-line",
+                  marginTop: "12px",
                 }}
               >
                 {current.imageText}
               </p>
             </div>
 
-            {/* TABLE */}
+            {/* ================= TABLE ================= */}
             <div style={{ padding: "24px 0" }}>
               <div
                 style={{
@@ -328,12 +162,11 @@ export default function Section2Dropdown({ open }) {
                         columnGap: "16px",
                       }}
                     >
-                      {/* PARAMETER */}
+                      {/* PARAMETER (2 SUB COLUMNS) */}
                       <div
                         style={{
                           display: "grid",
                           gridTemplateColumns: "1fr 1fr",
-                        //   columnGap: "12px",
                         }}
                       >
                         <div
@@ -391,6 +224,7 @@ export default function Section2Dropdown({ open }) {
                 })}
               </div>
             </div>
+            {/* ================= END TABLE ================= */}
           </div>
         </div>
       </div>
