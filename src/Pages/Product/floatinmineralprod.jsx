@@ -8,7 +8,7 @@ export default function FloatingMineral({ visible }) {
         style={{
           position: "absolute",
           left: "80px",
-          bottom: "-100px", // 🔑 SAME LOGIC AS ABOUT PAGE
+          bottom: "-100px", // adjust if needed
           transform: visible
             ? "scale(1)"
             : "translateX(-60px) scale(0.95)",
@@ -31,17 +31,10 @@ export default function FloatingMineral({ visible }) {
 
       <style>
         {`
+          /* 🔑 MOBILE: HIDE MINERAL COMPLETELY */
           @media (max-width: 768px) {
             .floating-mineral-prod {
-              position: relative;
-              bottom: auto;
-              left: auto;
-              margin: 0 auto 40px;
-              text-align: center;
-            }
-
-            .floating-mineral-prod img {
-              height: 260px;
+              display: none !important;
             }
           }
         `}
