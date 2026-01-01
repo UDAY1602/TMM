@@ -5,15 +5,127 @@ export default function Section12() {
     <section
       style={{
         width: "100%",
-        minHeight: "40vh",
-        padding: "120px 32px",
-        backgroundColor: "#ffffff",
-        color: "#000000",
+        backgroundColor: "#1b1b1b",
+        color: "#EEEDD3",
+        padding: "100px 32px",
         boxSizing: "border-box",
       }}
     >
-      <h1>Section 12</h1>
-      <p>This is a basic Section 12 printing component.</p>
+      <div
+        style={{
+          maxWidth: "1400px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "80px",
+          alignItems: "center",
+        }}
+      >
+        {/* LEFT CONTENT */}
+        <div
+          style={{
+            transform: "translateY(-20px)", // 🔼 moved slightly up
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "28px",
+              fontWeight: "500",
+              marginBottom: "24px",
+              lineHeight: "1.3",
+              color: "#EEEDD3",
+            }}
+          >
+            Reach out today for product enquiries, <br />
+            bulk orders, or technical conversations,
+            <br />
+            our team is here to assist.
+          </h2>
+        </div>
+
+        {/* RIGHT FORM */}
+        <form
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "18px",
+          }}
+        >
+          <input type="text" placeholder="Name *" style={inputStyle} />
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "16px",
+            }}
+          >
+            <input type="email" placeholder="Email *" style={inputStyle} />
+            <input
+              type="tel"
+              placeholder="Contact Number *"
+              style={inputStyle}
+            />
+          </div>
+
+          <input type="text" placeholder="Subject" style={inputStyle} />
+
+          <textarea
+            placeholder="Message"
+            rows="4"
+            style={{
+              ...inputStyle,
+              resize: "none",
+            }}
+          />
+
+          <button
+            type="submit"
+            style={{
+              marginTop: "10px",
+              padding: "14px",
+              backgroundColor: "#3a3a3a", // ✅ unchanged
+              color: "#ffffff",
+              border: "none",
+              cursor: "pointer",
+              fontSize: "14px",
+              letterSpacing: "1px",
+            }}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+
+      {/* MOBILE RESPONSIVE */}
+      <style>
+        {`
+          @media (max-width: 768px) {
+            section {
+              padding: 80px 20px !important;
+            }
+
+            section > div {
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
+            }
+
+            h2 {
+              font-size: 22px !important;
+            }
+          }
+        `}
+      </style>
     </section>
   );
 }
+
+const inputStyle = {
+  width: "100%",
+  padding: "14px 12px",
+  backgroundColor: "#d8d4d4", // ✅ requested
+  border: "1px solid #b5b5b5",
+  color: "#1a1a1a",
+  fontSize: "14px",
+  boxSizing: "border-box",
+};

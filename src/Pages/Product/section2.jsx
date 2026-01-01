@@ -9,15 +9,17 @@ export default function Section2() {
 
   return (
     <section
+      className="section2-quartz"
       style={{
         backgroundColor: "#ffffff",
-        padding: "60px  0",
+        padding: "60px 0",
         width: "100%",
         overflowX: "hidden",
       }}
     >
-      {/* ================= ORIGINAL SECTION 2 ================= */}
+      {/* ================= DESKTOP LAYOUT ================= */}
       <div
+        className="sec2-wrapper"
         style={{
           maxWidth: "1550px",
           marginLeft: "0",
@@ -49,7 +51,7 @@ export default function Section2() {
         </div>
 
         {/* GRID */}
-        <div style={{ backgroundColor: "#ffffff", width: "100%" }}>
+        <div style={{ width: "100%" }}>
           <div
             className="sec2-grid"
             style={{
@@ -61,10 +63,10 @@ export default function Section2() {
               marginLeft: "-32px",
             }}
           >
-            {/* LEFT BLOCK */}
+            {/* LEFT CREAM BAR — DESKTOP */}
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-            {/* IMAGE — DESKTOP PRESERVED */}
+            {/* IMAGE — DESKTOP */}
             <div
               className="sec2-image"
               style={{
@@ -86,7 +88,7 @@ export default function Section2() {
               />
             </div>
 
-            {/* CONTENT */}
+            {/* CONTENT — DESKTOP */}
             <div
               className="sec2-content"
               style={{
@@ -96,6 +98,7 @@ export default function Section2() {
               }}
             >
               <div
+                className="sec2-text"
                 style={{
                   maxWidth: "520px",
                   padding: "40px",
@@ -142,7 +145,6 @@ export default function Section2() {
                   and architectural uses.
                 </p>
 
-                {/* TOGGLE BUTTON */}
                 <button
                   onClick={() => setOpen(!open)}
                   style={{
@@ -151,7 +153,6 @@ export default function Section2() {
                     padding: 0,
                     fontFamily: "monts-med",
                     cursor: "pointer",
-                    textAlign: "left",
                   }}
                 >
                   Product Details{" "}
@@ -165,7 +166,7 @@ export default function Section2() {
         </div>
       </div>
 
-      {/* ================= DESKTOP DROPDOWN ================= */}
+      {/* ================= DROPDOWNS ================= */}
       <div className="desktop-dropdown">
         <Section2Dropdown
           open={open}
@@ -174,7 +175,6 @@ export default function Section2() {
         />
       </div>
 
-      {/* ================= MOBILE DROPDOWN ================= */}
       <div className="mobile-dropdown">
         <Section2DropdownMobile
           open={open}
@@ -183,82 +183,83 @@ export default function Section2() {
         />
       </div>
 
-      {/* ================= MOBILE RESPONSIVE ONLY ================= */}
-     <style>
-{`
-  /* ================= DESKTOP DEFAULT ================= */
-  .mobile-dropdown {
-    display: none;
-  }
+      {/* ================= MOBILE — SECTION 2 ONLY ================= */}
+      <style>
+        {`
+        .mobile-dropdown { display: none; }
+        .desktop-dropdown { display: block; }
 
-  .desktop-dropdown {
-    display: block;
-  }
+        @media (max-width: 768px) {
 
-  /* ================= MOBILE ================= */
-  @media (max-width: 768px) {
+          /* switch dropdowns */
+          .desktop-dropdown { display: none; }
+          .mobile-dropdown { display: block; }
 
-    /* toggle dropdown versions */
-    .desktop-dropdown {
-      display: none;
-    }
+          /* remove outer gaps */
+          .section2-quartz {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
 
-    .mobile-dropdown {
-      display: block;
-    }
+          .section2-quartz .sec2-wrapper {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            max-width: 100% !important;
+          }
 
-    /* ================= FIX SIDE GAPS (MOST IMPORTANT) ================= */
-    .sec2-wrapper {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      max-width: 100% !important;
-    }
+          /* title inside cream */
+          .section2-quartz .sec2-title {
+            background: #EDE4CF;
+            padding: 24px 20px 16px !important;
+            margin-bottom: 0 !important;
+            justify-content: center !important;
+          }
 
-    /* ================= TITLE ================= */
-    .sec2-title {
-      padding-left: 0 !important;
-      justify-content: center !important;
-    }
+          .section2-quartz .oswold-reg {
+            font-size: 28px !important;
+            letter-spacing: 4px !important;
+            text-align: left !important;
+          }
 
-    .oswold-reg {
-      font-size: 28px !important;
-      letter-spacing: 4px !important;
-      text-align: center;
-    }
+          /* single cream container */
+          .section2-quartz .sec2-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            margin-left: 0 !important;
+            background: #EDE4CF !important;
+          }
 
-    /* ================= GRID COLLAPSE ================= */
-    .sec2-grid {
-      grid-template-columns: 1fr !important;
-      width: 100% !important;
-      margin-left: 0 !important;
-    }
+          /* text first */
+          .section2-quartz .sec2-content {
+            order: 1 !important;
+            background: transparent !important;
+          }
 
-    /* ================= IMAGE ================= */
-    .sec2-image {
-      display: flex !important;
-      justify-content: center !important;
-      padding: 24px !important;
-    }
+          .section2-quartz .sec2-text {
+            max-width: 100% !important;
+            padding: 30px 20px 20px !important;
+          }
 
-    .sec2-image img {
-      height: 200px !important;
-      margin: 0 auto !important;
-    }
+          /* image white card */
+          .section2-quartz .sec2-image {
+            order: 2 !important;
+            background: transparent !important;
+            padding: 0 20px 30px !important;
+            justify-content: center !important;
+          }
 
-    /* ================= CONTENT ================= */
-    .sec2-content {
-      width: 100% !important;
-    }
-
-    .sec2-content > div {
-      padding: 24px !important;
-      text-align: center;
-    }
-  }
-`}
-</style>
-
+          .section2-quartz .sec2-image img {
+            background: #ffffff !important;
+            padding: 24px !important;
+            border-radius: 4px;
+            height: 260px !important;
+            max-width: 320px !important;
+            width: 100% !important;
+          }
+        }
+        `}
+      </style>
     </section>
   );
 }
-
