@@ -41,6 +41,7 @@ export default function Section2() {
             style={{
               color: "#222",
               letterSpacing: "10px",
+              fontFamily: "MONSMED",
               fontSize: "48px",
             }}
           >
@@ -104,8 +105,8 @@ export default function Section2() {
               >
                 <p
                   style={{
-                    fontFamily: "monts-semibold",
-                    fontSize: "13px",
+                    fontFamily: "MONSMED",
+                    fontSize: "18px",
                     marginBottom: "12px",
                   }}
                 >
@@ -115,15 +116,15 @@ export default function Section2() {
 
                 <h3
                   className="bankgothiclightreg"
-                  style={{ fontSize: "24px", marginBottom: "12px" }}
+                  style={{ fontSize: "29px", marginBottom: "12px",fontFamily:"bankgoB" }}
                 >
                   QUARTZ GRITS – PREMIUM
                 </h3>
 
                 <p
                   style={{
-                    fontFamily: "bankgothicbold",
-                    fontSize: "14px",
+                    fontFamily: "bankgoB",
+                    fontSize: "18px",
                     marginBottom: "16px",
                   }}
                 >
@@ -132,9 +133,10 @@ export default function Section2() {
 
                 <p
                   style={{
-                    fontFamily: "monts-reg",
-                    fontSize: "12px",
+                    fontFamily: "MONSREG",
+                    fontSize: "14px",
                     marginBottom: "16px",
+                    color:"#313131",
                   }}
                 >
                   Optimized quartz grits offering excellent strength, clarity and
