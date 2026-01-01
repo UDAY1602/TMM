@@ -1,19 +1,44 @@
 import React from "react";
+import Sec3 from "../../assets/pr lumps.png";
+import "../Product/sec7.css";
 
 export default function Section7() {
   return (
-    <section
-      style={{
-        width: "100%",
-        minHeight: "40vh",
-        padding: "120px 32px",
-        backgroundColor: "#ffffff",
-        color: "#000000",
-        boxSizing: "border-box",
-      }}
-    >
-      <h1>Section 7</h1>
-      <p>This is a basic Section 7 printing component.</p>
-    </section>
+    <>
+             <div className="quartzOuter">
+               <div className="quartzInner">
+       
+                 {/* LEFT TEXT */}
+                 <div className="quartzTextBox">
+                   <p className="tagline">
+                     Hard dense quartzite material formed under 
+                     natural metamorphic conditions-offering
+                     exceptional durability,strength and thermal
+                     stability.
+                   </p>
+       
+                   <h2 className="title">
+                     QUARTZITE LUMPS
+                   </h2>
+       
+                   
+       
+                   <p className="description">
+                     Ideal for construction,infrasturcture,refractory,and heavy-duty
+                     industrial applications where perfornmance under stress is critical.
+                   </p>
+                 </div>
+       
+                 {/* RIGHT IMAGE */}
+                 {/* RIGHT IMAGE */}
+                 <div className="quartzImageWrap">
+                   <div className="quartzImageBox">
+                     <img src={Sec3} alt="Quartz Grits" />
+                   </div>
+                 </div>
+       
+               </div>
+             </div>
+           </>
   );
 }

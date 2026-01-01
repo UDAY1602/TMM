@@ -49,7 +49,7 @@
 
 /* LEFT TEXT BLOCK */
 .quartzTextBox {
-  width: 450px;
+  width: 460px;
   height:auto;
 }
 
@@ -76,7 +76,7 @@
 
 .size {
     color:#313131;
-  font-family: "bankgoB";
+  font-family: "BankgoB";
   font-size: 18px;
   
   margin-bottom: 10px;
