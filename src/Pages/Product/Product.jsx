@@ -9,6 +9,7 @@ import Section8 from "./section8";
 import Section9 from "./section9";
 import Section10 from "./section10";
 import Section11 from "./section11";
+import Section12 from "./section12";
 
 export default function Product() {
   return (
@@ -24,6 +25,8 @@ export default function Product() {
       <Section9 />
       <Section10 />
       <Section11 />
+      <Section12/>
+      
 
     </>
   );
