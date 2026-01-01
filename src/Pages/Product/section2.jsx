@@ -11,7 +11,7 @@ export default function Section2() {
     <section
       style={{
         backgroundColor: "#ffffff",
-        padding: "100px 0",
+        padding: "60px  0",
         width: "100%",
         overflowX: "hidden",
       }}

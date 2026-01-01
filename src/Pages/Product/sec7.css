@@ -49,15 +49,15 @@
 
 /* LEFT TEXT BLOCK */
 .quartzTextBox {
-  width: 450px;
+  width: 460px;
   height:auto;
 }
 
 .tagline {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: #313131;
-  margin-top:20px;
+  margin-top:0px;
   margin-bottom: 10px;
   font-family: "MONSMED";
   
@@ -74,14 +74,14 @@
   color: #1a1a1a;
 }
 
-.size {
+/* .size {
     color:#313131;
-  font-family: "bankgoB";
+  font-family: "BankgoB";
   font-size: 18px;
   
   margin-bottom: 10px;
   color: #1a1a1a;
-}
+} */
 
 .description {
   font-family: "MONSREG";
