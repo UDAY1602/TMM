@@ -14,127 +14,82 @@ export default function Section9() {
   ];
 
   return (
-    <section
-      style={{
-        width: "100%",
-        backgroundColor: "#2b2b2b",
-        padding: "100px 0",
-        boxSizing: "border-box",
-        overflow: "hidden",
-      }}
-    >
-      {/* HEADER */}
-      <div
-        style={{
-          maxWidth: "1400px",
-          margin: "0 auto 60px",
-          padding: "0 32px",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "40px",
-          color: "#ffffff",
-          alignItems: "center",
-        }}
-      >
-        <div>
-          <p style={{ fontSize: "14px", color: "#d6d6d6", marginBottom: "10px" }}>
-            Precision-crafted quartz solutions for every industry need.
-          </p>
-          <h2 style={{ fontSize: "28px", letterSpacing: "2px", margin: 0 }}>
-            INDUSTRIES SERVED / APPLICATIONS
-          </h2>
-        </div>
+    <section className="relative w-full overflow-hidden">
 
-        <p style={{ fontSize: "14px", lineHeight: "1.6", color: "#cfcfcf" }}>
-          Our quartz products support a wide range of industrial and manufacturing
-          processes. Each material is formulated to deliver optimized performance
-          based on the unique technical needs of the end-use sector.
-        </p>
+      {/* TOP DARK BACKGROUND */}
+      <div className="bg-[#] pt-[100px] pb-[110px]">
+        <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-10 text-white items-center mb-20">
+          <div>
+            <p className="text-sm text-[#d6d6d6] mb-2">
+              Precision-crafted quartz solutions for every industry need.
+            </p>
+            <h2 className="text-[28px] tracking-[2px]">
+              INDUSTRIES SERVED / APPLICATIONS
+            </h2>
+          </div>
+
+          <p className="text-sm leading-relaxed text-[#cfcfcf]">
+            Our quartz products support a wide range of industrial and manufacturing
+            processes. Each material is formulated to deliver optimized performance
+            based on the unique technical needs of the end-use sector.
+          </p>
+        </div>
       </div>
 
-      {/* GRID */}
-      <div className="sec9-grid"
+      {/* GRID (OVERLAPPING) */}
+      <div
+        className="sec9-grid relative z-10 max-w-[1400px] mx-auto px-8 grid grid-cols-4 gap-6"
         style={{
-          maxWidth: "1400px",
-          margin: "0 auto",
-          padding: "0 32px",
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
           gridAutoRows: "140px",
-          gap: "24px",
+          marginTop: "-140px",
         }}
       >
         {items.map((item, i) => (
           <div
             key={i}
-            className="sec9-card"
+            className="relative overflow-hidden rounded-md"
             style={{
               gridColumn: item.col,
               gridRow: `${item.row} / span ${item.span}`,
-              position: "relative",
-              overflow: "hidden",
             }}
           >
             {/* IMAGE PLACEHOLDER */}
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                backgroundColor: "#ffffff",
-              }}
-            />
+            <div className="absolute inset-0 bg-white" />
 
-            {/* CENTERED TEXT */}
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-                fontSize: "14px",
-                fontWeight: "600",
-                letterSpacing: "1px",
-                color: "#ffffff",
-                background: "rgba(0,0,0,0.35)",
-                padding: "16px",
-              }}
-            >
+            {/* OVERLAY TEXT */}
+            <div className="absolute inset-0 flex items-center justify-center text-center text-sm font-semibold tracking-wide text-white bg-black/35 px-4">
               {item.title}
             </div>
           </div>
         ))}
       </div>
 
-      {/* MOBILE STYLES */}
-      <style>
-        {`
-          /* TABLET */
-          @media (max-width: 1024px) {
-            .sec9-grid {
-              grid-template-columns: repeat(2, 1fr) !important;
-            }
+      {/* BOTTOM WHITE SECTION (ENDS HERE) */}
+      <div className="bg-white pt-[200px] pb-[80px] -mt-[120px]">
+        <p className="max-w-[700px] mx-auto text-center text-[13px] leading-relaxed text-[#666] px-6">
+          With continuous monitoring, digital records, and repeatable testing
+          processes, we ensure reliability for high-performance applications,
+          especially for the engineered stone industry where consistency is critical.
+        </p>
+      </div>
+
+      {/* RESPONSIVE */}
+      <style>{`
+        @media (max-width: 1024px) {
+          .sec9-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
           }
+        }
 
-          /* MOBILE */
-          @media (max-width: 640px) {
-            section {
-              padding: 80px 0 !important;
-            }
-
-            .sec9-grid {
-              grid-template-columns: 1fr !important;
-              grid-auto-rows: 220px !important;
-            }
-
-            .sec9-card {
-              grid-column: auto !important;
-              grid-row: auto !important;
-            }
+        @media (max-width: 640px) {
+          .sec9-grid {
+            grid-template-columns: 1fr !important;
+            grid-auto-rows: 220px !important;
+            margin-top: -100px !important;
           }
-        `}
-      </style>
+        }
+      `}</style>
+
     </section>
   );
 }
