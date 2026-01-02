@@ -21,7 +21,7 @@ const ContactInfo = () => {
         style={{ backgroundImage: `url(${section7right})` }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="oswold-reg text-black text-lg md:text-3xl">
+          <p className="oswold-reg text-[#313131] tracking-[0.2em]  md:text-[48px]">
             View Products
           </p>
         </div>

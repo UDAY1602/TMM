@@ -8,7 +8,7 @@ export default function ContactHero() {
       <div className="w-full max-w-[600px]">
 
         {/* TITLE */}
-        <h1 className="text-3xl sm:text-4xl md:text-[46px] font-medium text-[#e6e4d8] mb-8">
+        <h1 className="text-3xl sm:text-4xl md:text-[46px] font-medium oswold-reg text-[#e6e4d8] mb-8">
           Enquire here:
         </h1>
 
@@ -18,7 +18,7 @@ export default function ContactHero() {
           {/* Name */}
           <input
             placeholder="Name *"
-            className="w-full rounded-md text-[14px] text-[#222] placeholder-[#555]"
+            className="w-full rounded-md text-[14px] text-[#222] placeholder-[#313131]"
             style={{
               padding: "14px 16px",
               background: "#bfbfbf",
@@ -30,7 +30,7 @@ export default function ContactHero() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-[14px]">
             <input
               placeholder="Email *"
-              className="w-full rounded-md text-[14px] text-[#222] placeholder-[#555]"
+              className="w-full rounded-md text-[14px] text-[#313131] placeholder-[#313131]"
               style={{
                 padding: "14px 16px",
                 background: "#bfbfbf",
@@ -39,7 +39,7 @@ export default function ContactHero() {
             />
             <input
               placeholder="Contact Number *"
-              className="w-full rounded-md text-[14px] text-[#222] placeholder-[#555]"
+              className="w-full rounded-md text-[14px] text-[#222] placeholder-[#313131]"
               style={{
                 padding: "14px 16px",
                 background: "#bfbfbf",
@@ -52,7 +52,7 @@ export default function ContactHero() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-[14px]">
             <input
               placeholder="Select your country *"
-              className="w-full rounded-md text-[14px] text-[#222] placeholder-[#555]"
+              className="w-full rounded-md text-[14px] text-[#222] placeholder-[#313131]"
               style={{
                 padding: "14px 16px",
                 background: "#bfbfbf",
@@ -61,7 +61,7 @@ export default function ContactHero() {
             />
             <input
               placeholder="Country Code *"
-              className="w-full rounded-md text-[14px] text-[#222] placeholder-[#555]"
+              className="w-full rounded-md text-[14px] text-[#222] placeholder-[#313131]"
               style={{
                 padding: "14px 16px",
                 background: "#bfbfbf",
@@ -96,7 +96,7 @@ export default function ContactHero() {
           <textarea
             rows={6}
             placeholder="Message"
-            className="w-full rounded-md text-[14px] text-[#222] placeholder-[#555] resize-none"
+            className="w-full rounded-md text-[14px] text-[#222] placeholder-[#313131] resize-none"
             style={{
               padding: "14px 16px",
               background: "#bfbfbf",
@@ -107,7 +107,7 @@ export default function ContactHero() {
           {/* Submit */}
           <button
             type="submit"
-            className="mt-2 w-full rounded-md text-sm text-[#e0e0e0] hover:bg-[#1f1f1f] transition"
+            className="mt-2 w-full rounded-md text-sm monts-reg font-thin text-[#eeedd3] hover:bg-[#1f1f1f] transition"
             style={{
               padding: "14px",
               background: "#2b2b2b",
