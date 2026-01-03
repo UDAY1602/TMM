@@ -79,8 +79,8 @@ export default function Section8() {
               >
                 <p
                   style={{
-                    fontFamily: "monts-semibold",
-                    fontSize: "13px",
+                    fontFamily: "MONSMED",
+                    fontSize: "16px",
                     marginBottom: "12px",
                   }}
                 >
@@ -92,15 +92,15 @@ export default function Section8() {
 
                 <h3
                   className="bankgothiclightreg"
-                  style={{ fontSize: "24px", marginBottom: "12px" }}
+                  style={{ fontSize: "24px", marginBottom: "12px" ,fontFamily: "bankgoB"}}
                 >
                   Quartz By-Products
                 </h3>
 
                 <p
                   style={{
-                    fontFamily: "bankgothicbold",
-                    fontSize: "14px",
+                    fontFamily: "bankgoB",
+                    fontSize: "18px",
                     marginBottom: "16px",
                   }}
                 >
@@ -109,8 +109,8 @@ export default function Section8() {
 
                 <p
                   style={{
-                    fontFamily: "monts-reg",
-                    fontSize: "12px",
+                    fontFamily: "MONSREG",
+                    fontSize: "14px",
                     lineHeight: "1.6",
                   }}
                 >

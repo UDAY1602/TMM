@@ -1,3 +1,25 @@
+
+
+@font-face {
+  font-family: "MONSMED";
+  src: url("../../assets/fonts/Montserrat-Medium.otf") format("opentype");
+}
+.monsmed{font-family: "MONSMED",sans-serif;}
+@font-face {
+  font-family: "MONSREG";
+  src: url("../../assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+.monsreg{font-family: "MONSREG",sans-serif;}
+@font-face {
+  font-family: "bankgo";
+  src: url("../../assets/fonts/BankGothic-Light-Regular.otf") format("opentype");
+}
+.Bankgo{font-family: "bankgo",sans-serif;}
+@font-face {
+  font-family: "bankgoB";
+  src: url("../../assets/fonts/BankGothic-Bold.ttf") format("truetype");
+}
+.BankgoB{font-family: "bankgoB",sans-serif;}
 #root {
   max-width: 1280px;
   margin: 0 auto;
