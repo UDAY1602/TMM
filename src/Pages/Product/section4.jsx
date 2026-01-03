@@ -78,8 +78,8 @@ export default function Section4() {
               >
                 <p
                   style={{
-                    fontFamily: "monts-semibold",
-                    fontSize: "13px",
+                    fontFamily: "MONSMED",
+                    fontSize: "18px",
                     marginBottom: "12px",
                   }}
                 >
@@ -93,6 +93,7 @@ export default function Section4() {
                     fontSize: "24px",
                     marginBottom: "12px",
                     letterSpacing: "2px",
+                    fontFamily: "bankgoB"
                   }}
                 >
                   QUARTZ GRITS – SUPREME
@@ -100,9 +101,10 @@ export default function Section4() {
 
                 <p
                   style={{
-                    fontFamily: "bankgothicbold",
-                    fontSize: "14px",
+                   
+                    fontSize: "18px",
                     marginBottom: "16px",
+                    fontFamily: "bankgoB"
                   }}
                 >
                   0.1 – 0.4 MM
@@ -110,8 +112,8 @@ export default function Section4() {
 
                 <p
                   style={{
-                    fontFamily: "monts-reg",
-                    fontSize: "12px",
+                    fontFamily: "MONSREG",
+                    fontSize: "14px",
                     lineHeight: "1.6",
                   }}
                 >

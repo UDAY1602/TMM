@@ -79,8 +79,8 @@ export default function Section6() {
               >
                 <p
                   style={{
-                    fontFamily: "monts-semibold",
-                    fontSize: "13px",
+                    fontFamily: "MONSMED",
+                    fontSize: "16px",
                     marginBottom: "12px",
                   }}
                 >
@@ -90,15 +90,15 @@ export default function Section6() {
 
                 <h3
                   className="bankgothiclightreg"
-                  style={{ fontSize: "24px", marginBottom: "12px" }}
+                  style={{ fontSize: "28px", marginBottom: "12px",fontFamily: "bankgoB" }}
                 >
                   Quartz Lumps
                 </h3>
 
                 <p
                   style={{
-                    fontFamily: "monts-reg",
-                    fontSize: "12px",
+                    fontFamily: "MONSREG",
+                    fontSize: "14px",
                     lineHeight: "1.6",
                   }}
                 >

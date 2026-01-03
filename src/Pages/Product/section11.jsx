@@ -3,7 +3,7 @@ import "../Product/sec11.css";
 
 const infraItems = [
   "Pressure Washing",
-  "Fully automatic crushing & grinding systems",
+  "Fully automatic crushing & grinding systems",    
   "High-precision optical sorting technology",
   "Advanced sieving & classification",
   "In-house quality testing lab",
