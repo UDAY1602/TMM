@@ -4,17 +4,38 @@ import FloatingMineral from "./floatinmineralprod";
 export default function Section1() {
   const [showMineral, setShowMineral] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 100) {
-        setShowMineral(true);
-      } else {
-        setShowMineral(false);
-      }
-    };
+  const heading = "PURE MINERALS.\nPROVEN PERFORMANCE.";
+  const text =
+    "Precision-processed mineral solutions supporting ceramics, glass, construction chemicals, polymers, coatings, foundry, and engineered stone industries.";
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+  const [typedHeading, setTypedHeading] = useState("");
+  const [typedText, setTypedText] = useState("");
+  const [typing, setTyping] = useState(false);
+
+  /* POP MINERAL ON PAGE ENTER */
+  useEffect(() => {
+    const t = setTimeout(() => setShowMineral(true), 50);
+    return () => clearTimeout(t);
+  }, []);
+
+  /* SIMPLE TYPING ANIMATION */
+  useEffect(() => {
+    let i = 0;
+    setTyping(true);
+
+    const interval = setInterval(() => {
+      if (i < heading.length) {
+        setTypedHeading(heading.slice(0, i + 1));
+      } else if (i < heading.length + text.length) {
+        setTypedText(text.slice(0, i - heading.length + 1));
+      } else {
+        clearInterval(interval);
+        setTyping(false); // ✅ cursor disappears
+      }
+      i++;
+    }, 40);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -25,13 +46,11 @@ export default function Section1() {
         boxSizing: "border-box",
         width: "100%",
         position: "relative",
-
-        /* 🔑 THESE TWO LINES FIX EVERYTHING */
-        minHeight: "300px",   // same as About page
-        overflow: "visible",  // allow mineral to cross into Section 2
+        minHeight: "300px",
+        overflow: "visible",
       }}
     >
-      {/* LEFT FLOATING MINERAL ANIMATION */}
+      {/* FLOATING MINERAL */}
       <FloatingMineral visible={showMineral} />
 
       {/* CONTENT */}
@@ -43,8 +62,10 @@ export default function Section1() {
           maxWidth: "720px",
           position: "relative",
           zIndex: 10,
+          whiteSpace: "pre-line",
         }}
       >
+        {/* HEADING */}
         <h1
           className="bankgothiclightreg"
           style={{
@@ -55,11 +76,11 @@ export default function Section1() {
             lineHeight: "1.2",
           }}
         >
-          PURE MINERALS.
-          <br />
-          PROVEN PERFORMANCE.
+          {typedHeading}
+          {typing && typedHeading.length < heading.length && "|"}
         </h1>
 
+        {/* PARAGRAPH */}
         <p
           style={{
             fontFamily: "MontserratThin, sans-serif",
@@ -69,13 +90,15 @@ export default function Section1() {
             maxWidth: "620px",
           }}
         >
-          Precision-processed mineral solutions supporting ceramics, glass,
-          construction chemicals, polymers, coatings, foundry, and engineered
-          stone industries.
+          {typedText}
+          {typing &&
+            typedHeading.length === heading.length &&
+            typedText.length < text.length &&
+            "|"}
         </p>
       </div>
 
-      {/* MOBILE */}
+      {/* STYLES */}
       <style>
         {`
           @media (max-width: 768px) {
