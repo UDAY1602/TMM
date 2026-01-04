@@ -95,10 +95,9 @@ export default function Section6() {
                   Quartz Lumps
                 </h3>
 
-                <p
+                <p className="bankgothicbold"
                   style={{
-                    fontFamily: "MONSREG",
-                    fontSize: "14px",
+                    fontSize: "20px",
                     lineHeight: "1.6",
                   }}
                 >

@@ -33,7 +33,12 @@
   src: url("/BankGothic-Light-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
-  
+}
+@font-face {
+  font-family: "BankGothicmedium";
+  src: url("./assets/fonts/BankGothicBT-Medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 .oswaldbold{
   font-family: "OswaldBold", sans-serif;
@@ -55,6 +60,9 @@
 }
 .bankgothicbold {
   font-family: "BankGothic", sans-serif;
+}
+.bankgothicmed {
+  font-family: "BankGothicmedium", sans-serif;
 }
 
 @font-face {
@@ -97,7 +105,7 @@
 }
 @font-face {
   font-family: "montssemibold";
-  src: url("../src/assets/fonts/Montserrat-Bold.ttf");
+  src: url("../src/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
 }
 html, body {
   overscroll-behavior: none;
@@ -127,11 +135,9 @@ html, body {
 .monts-med{
   font-family: "montsmed";
 }
-.monts-reg
-{
+.monts-reg{
   font-family: "montsreg";
 }
-
 .inter-reg{
     font-family: "interReg";
 }

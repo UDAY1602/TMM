@@ -6,13 +6,13 @@ export default function section10() {
       <div className="relative w-full max-w-5xl flex items-center justify-center">
 
         {/* LEFT LABELS */}
-        <div className="absolute left-0 flex flex-col gap-6">
+        <div className="absolute left-0 flex flex-col gap-6 monts-reg">
           <div className="qa-label">Purity (SiO₂ %)</div>
           <div className="qa-label">Particle Size Distribution</div>
         </div>
 
         {/* RIGHT LABELS */}
-        <div className="absolute right-0 flex flex-col gap-6">
+        <div className="absolute right-0 flex flex-col gap-6 monts-reg">
           <div className="qa-label">Moisture Content</div>
           <div className="qa-label">Iron content (Fe₂O₃)</div>
         </div>
@@ -27,11 +27,11 @@ export default function section10() {
 
           {/* CENTER CIRCLE */}
           <div className="qa-core wobble-on-hover">
-            <h3 className="text-sm tracking-widest mb-2">QUALITY</h3>
-            <h2 className="text-lg font-semibold tracking-wide mb-2">
+            <h3 className="text-m tracking-widest bankgothicmed">QUALITY</h3>
+            <h2 className="text-lg tracking-wide mb-2 bankgothicmed">
               ASSURANCE
             </h2>
-            <p className="text-[11px] leading-relaxed text-gray-600 px-6">
+            <p className="text-[11px] leading-relaxed text-gray-600 px-6 monts-reg">
               We follow strict quality control from raw-material sourcing to delivery.
               Every batch is monitored for:
             </p>

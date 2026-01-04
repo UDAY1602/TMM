@@ -20,15 +20,15 @@ export default function Section9() {
       <div className="bg-[#] pt-[100px] pb-[110px]">
         <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-10 text-white items-center mb-20">
           <div>
-            <p className="text-sm text-[#d6d6d6] mb-2">
+            <p className="text-m text-[#d6d6d6] mb-2 monts-med">
               Precision-crafted quartz solutions for every industry need.
             </p>
-            <h2 className="text-[28px] tracking-[2px]">
+            <h2 className="text-[28px] tracking-[2px] bankgothicbold">
               INDUSTRIES SERVED / APPLICATIONS
             </h2>
           </div>
 
-          <p className="text-sm leading-relaxed text-[#cfcfcf]">
+          <p className="text-sm leading-normal text-[#cfcfcf] monts-reg">
             Our quartz products support a wide range of industrial and manufacturing
             processes. Each material is formulated to deliver optimized performance
             based on the unique technical needs of the end-use sector.
@@ -66,7 +66,7 @@ export default function Section9() {
 
       {/* BOTTOM WHITE SECTION (ENDS HERE) */}
       <div className="bg-white pt-[200px] pb-[80px] -mt-[120px]">
-        <p className="max-w-[700px] mx-auto text-center text-[13px] leading-relaxed text-[#666] px-6">
+        <p className="max-w-[700px] mx-auto text-center text-[16px] leading-relaxed text-[#666] px-6 monts-med">
           With continuous monitoring, digital records, and repeatable testing
           processes, we ensure reliability for high-performance applications,
           especially for the engineered stone industry where consistency is critical.

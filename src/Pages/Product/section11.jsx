@@ -19,7 +19,7 @@ export default function Section11() {
           MANUFACTURING <br /> INFRASTRUCTURE
         </h2>
 
-        <p>
+        <p className="monts-reg">
           Our state-of-the-art manufacturing facility integrates advanced systems
           designed for high output, consistency, and contamination-free
           production. Key infrastructure includes:
