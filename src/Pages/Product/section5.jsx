@@ -16,11 +16,11 @@ export default function Section5() {
                 </p>
     
                 <h2 className="title">
-                  QUARTZ POWDER /FILLER
+                  Quartz Powder/Filler
                 </h2>
     
                 <p className="size">
-                  100 – 400 MESH FILLER PRODUCT
+                  100-400 MESH Filler Product
                 </p>
     
                 <p className="description">

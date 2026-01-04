@@ -5,9 +5,8 @@ import { SIZE_DATA, COLORS } from "./sec2data";
 const headerCell = (bg) => ({
   backgroundColor: bg,
   padding: "10px",
-  fontFamily: "monts-med",
+  fontFamily: "montsbold",
   fontSize: "11px",
-  textTransform: "uppercase",
   boxSizing: "border-box",
 });
 
@@ -39,12 +38,11 @@ export default function Section2DropdownMobile({
       }}
     >
       {/* TITLE */}
-      <h3
+      <h3 className="monts-bold"
         style={{
           color: "#f2e7d1",
           textAlign: "center",
           marginBottom: "12px",
-          fontFamily: "monts-bold",
           fontSize: "16px",
         }}
       >

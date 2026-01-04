@@ -83,8 +83,7 @@ export default function Section4() {
                     marginBottom: "12px",
                   }}
                 >
-                  High-purity powder ideal for composite materials, coatings,
-                  and industrial formulations.
+                  Engineered for engineered stone, glass, and ceramics with controlled whiteness and purity.
                 </p>
 
                 <h3
@@ -96,7 +95,7 @@ export default function Section4() {
                     fontFamily: "bankgoB"
                   }}
                 >
-                  QUARTZ GRITS – SUPREME
+                  Quartz Grits - Grade B
                 </h3>
 
                 <p
@@ -117,9 +116,9 @@ export default function Section4() {
                     lineHeight: "1.6",
                   }}
                 >
-                  High-purity quartz grits with tight granulometry and superior
-                  whiteness, designed for applications demanding maximum
-                  strength, surface finish, and visual consistency.
+              Cost-effective quartz grits with reliable performance for applications 
+              where functional strength matters more than visual uniformity.
+
                 </p>
               </div>
             </div>

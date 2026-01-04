@@ -24,10 +24,10 @@ export default function Section12() {
         {/* LEFT CONTENT */}
         <div
           style={{
-            transform: "translateY(-20px)", // 🔼 moved slightly up
+            transform: "translateY(-20px)",
           }}
         >
-          <h2
+          <h2 className="monts-reg"
             style={{
               fontSize: "28px",
               fontWeight: "500",
@@ -84,7 +84,7 @@ export default function Section12() {
             style={{
               marginTop: "10px",
               padding: "14px",
-              backgroundColor: "#3a3a3a", // ✅ unchanged
+              backgroundColor: "#3a3a3a",
               color: "#ffffff",
               border: "none",
               cursor: "pointer",

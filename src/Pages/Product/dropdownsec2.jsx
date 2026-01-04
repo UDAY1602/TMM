@@ -6,9 +6,8 @@ import { SIZE_DATA, COLORS } from "./sec2data";
 const headerCell = (bg) => ({
   backgroundColor: bg,
   padding: "16px",
-  fontFamily: "monts-med",
+  fontFamily: "montsbold",
   fontSize: "13px",
-  textTransform: "uppercase",
 });
 
 /* ================= COMPONENT ================= */
@@ -31,14 +30,13 @@ export default function Section2Dropdown({
     >
       <div style={{ padding: "80px 32px" }}>
         {/* TITLE */}
-        <h3
+        <h3 className="monts-bold"
           style={{
             color: "#ffffff",
             textAlign: "center",
             marginBottom: "28px",
-            letterSpacing: "7px",
-            fontFamily: "monts-bold",
-            fontSize: "22px",
+            letterSpacing: "5px",
+            fontSize: "28px",
           }}
         >
           Quartz Grits – Premium Product Size
@@ -63,7 +61,7 @@ export default function Section2Dropdown({
             }}
           >
             {Object.keys(SIZE_DATA).map((key) => (
-              <button
+              <button className="monts-semibold"
                 key={key}
                 onClick={() => setActiveSize(key)}
                 style={{
@@ -77,7 +75,6 @@ export default function Section2Dropdown({
                   border: "none",
                   color: key === activeSize ? "#fff" : "#aaa",
                   fontSize: "14px",
-                  fontFamily: "monts-semibold",
                   cursor: "pointer",
                   whiteSpace: "nowrap",
                 }}

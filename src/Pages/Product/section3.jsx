@@ -16,7 +16,7 @@ export default function Section3() {
             </p>
 
             <h2 className="title">
-              QUARTZ GRITS – SUPREME
+              Quartz Grits - Supreme
             </h2>
 
             <p className="size">

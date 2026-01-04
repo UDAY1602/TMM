@@ -43,7 +43,6 @@ export default function Section2() {
             style={{
               color: "#222",
               letterSpacing: "10px",
-              fontFamily: "MONSMED",
               fontSize: "48px",
             }}
           >
@@ -121,7 +120,7 @@ export default function Section2() {
                   className="bankgothiclightreg"
                   style={{ fontSize: "29px", marginBottom: "12px",fontFamily:"bankgoB" }}
                 >
-                  QUARTZ GRITS – PREMIUM
+                  Quartz Grits - Premium
                 </h3>
 
                 <p
@@ -147,13 +146,13 @@ export default function Section2() {
                   and architectural uses.
                 </p>
 
-                <button
+                <button className="monts-semibold"
                   onClick={() => setOpen(!open)}
                   style={{
                     background: "none",
                     border: "none",
                     padding: 0,
-                    fontFamily: "monts-med",
+                    
                     cursor: "pointer",
                   }}
                 >
