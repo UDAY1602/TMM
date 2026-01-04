@@ -1,7 +1,6 @@
 import React from "react";
-import dropdownmin from "../../assets/dropdownmin.png";
-import { SIZE_DATA, COLORS } from "./sec2data";
 
+/* ================= HEADER CELL ================= */
 const headerCell = (bg) => ({
   backgroundColor: bg,
   padding: "10px",
@@ -10,25 +9,31 @@ const headerCell = (bg) => ({
   boxSizing: "border-box",
 });
 
-export default function Section2DropdownMobile({
+/* ================= REUSABLE MOBILE DROPDOWN ================= */
+export default function DropdownMobile({
   open,
-  activeSize,
-  setActiveSize,
+  title,
+  data,            // SAME data as desktop
+  colors,
+  imageSrc,
+  activeKey,
+  setActiveKey,
+  showArrows = true,
 }) {
-  const sizeKeys = Object.keys(SIZE_DATA);
-  const activeIndex = sizeKeys.indexOf(activeSize);
-  const current = SIZE_DATA[activeSize];
+  if (!data || !activeKey) return null;
+
+  const keys = Object.keys(data);
+  const index = keys.indexOf(activeKey);
+  const current = data[activeKey];
 
   const goPrev = () =>
-    activeIndex > 0 && setActiveSize(sizeKeys[activeIndex - 1]);
+    index > 0 && setActiveKey(keys[index - 1]);
 
   const goNext = () =>
-    activeIndex < sizeKeys.length - 1 &&
-    setActiveSize(sizeKeys[activeIndex + 1]);
+    index < keys.length - 1 && setActiveKey(keys[index + 1]);
 
   return (
     <div
-      className="mobile-dropdown"
       style={{
         maxHeight: open ? "3000px" : "0",
         overflow: "hidden",
@@ -38,7 +43,8 @@ export default function Section2DropdownMobile({
       }}
     >
       {/* TITLE */}
-      <h3 className="monts-bold"
+      <h3
+        className="monts-bold"
         style={{
           color: "#f2e7d1",
           textAlign: "center",
@@ -46,7 +52,7 @@ export default function Section2DropdownMobile({
           fontSize: "16px",
         }}
       >
-        Premium Quartz Grits
+        {title}
       </h3>
 
       {/* IMAGE */}
@@ -60,7 +66,7 @@ export default function Section2DropdownMobile({
         }}
       >
         <img
-          src={dropdownmin}
+          src={imageSrc}
           alt=""
           style={{
             width: "100%",
@@ -71,28 +77,37 @@ export default function Section2DropdownMobile({
         />
       </div>
 
-      {/* SIZE NAV */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "32px 1fr 32px",
-          alignItems: "center",
-          marginBottom: "12px",
-        }}
-      >
-        <button onClick={goPrev} disabled={activeIndex === 0}>◀</button>
+      {/* SIZE NAV (same logic as before) */}
+      {showArrows && (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "32px 1fr 32px",
+            alignItems: "center",
+            marginBottom: "12px",
+          }}
+        >
+          <button onClick={goPrev} disabled={index === 0}>◀</button>
 
-        <div style={{ textAlign: "center" }}>
-          <div style={{ fontSize: "11px", color: "#bbb" }}>Product Size</div>
-          <div style={{ fontSize: "16px", color: "#fff" }}>
-            {current.label}
+          <div style={{ textAlign: "center" }}>
+            <div style={{ fontSize: "11px", color: "#bbb" }}>
+              Product Size
+            </div>
+            <div style={{ fontSize: "16px", color: "#fff" }}>
+              {current.label}
+            </div>
           </div>
+
+          <button
+            onClick={goNext}
+            disabled={index === keys.length - 1}
+          >
+            ▶
+          </button>
         </div>
+      )}
 
-        <button onClick={goNext} disabled={activeIndex === sizeKeys.length - 1}>▶</button>
-      </div>
-
-      {/* TABLE */}
+      {/* ================= TABLE (SAME AS DESKTOP STRUCTURE) ================= */}
       <div
         style={{
           backgroundColor: "#313131",
@@ -107,22 +122,20 @@ export default function Section2DropdownMobile({
             gridTemplateColumns: "44% 28% 28%",
           }}
         >
-          <div style={headerCell(COLORS.header1)}>Parameter</div>
-          <div style={headerCell(COLORS.header2)}>Specs</div>
-          <div style={headerCell(COLORS.header3)}>Testing</div>
+          <div style={headerCell(colors.header1)}>Parameter</div>
+          <div style={headerCell(colors.header2)}>Specs</div>
+          <div style={headerCell(colors.header3)}>Testing</div>
         </div>
 
         {/* ROWS */}
         {current.rows.map((row, i) => {
-          const isEven = i % 2 === 0;
+          const even = i % 2 === 0;
 
           const cellBase = {
             padding: "10px",
             fontSize: "11px",
-            boxSizing: "border-box",
-            wordBreak: "break-word",
-            overflowWrap: "anywhere",
             whiteSpace: "pre-line",
+            wordBreak: "break-word",
           };
 
           return (
@@ -133,7 +146,7 @@ export default function Section2DropdownMobile({
                 gridTemplateColumns: "44% 28% 28%",
               }}
             >
-              {/* PARAMETER */}
+              {/* PARAMETER (MAIN + SUB) */}
               <div
                 style={{
                   display: "grid",
@@ -143,9 +156,9 @@ export default function Section2DropdownMobile({
                 <div
                   style={{
                     ...cellBase,
-                    backgroundColor: isEven
-                      ? COLORS.paramMainEven
-                      : COLORS.paramMainOdd,
+                    backgroundColor: even
+                      ? colors.paramMainEven
+                      : colors.paramMainOdd,
                   }}
                 >
                   {row[0]}
@@ -154,22 +167,22 @@ export default function Section2DropdownMobile({
                 <div
                   style={{
                     ...cellBase,
-                    backgroundColor: isEven
-                      ? COLORS.paramSubEven
-                      : COLORS.paramSubOdd,
+                    backgroundColor: even
+                      ? colors.paramSubEven
+                      : colors.paramSubOdd,
                   }}
                 >
                   {row[1]}
                 </div>
               </div>
 
-              {/* SPECS */}
+              {/* SPEC */}
               <div
                 style={{
                   ...cellBase,
-                  backgroundColor: isEven
-                    ? COLORS.paramMainEven
-                    : COLORS.paramMainOdd,
+                  backgroundColor: even
+                    ? colors.paramMainEven
+                    : colors.paramMainOdd,
                 }}
               >
                 {row[2]}
@@ -179,9 +192,9 @@ export default function Section2DropdownMobile({
               <div
                 style={{
                   ...cellBase,
-                  backgroundColor: isEven
-                    ? COLORS.paramMainEven
-                    : COLORS.paramMainOdd,
+                  backgroundColor: even
+                    ? colors.paramMainEven
+                    : colors.paramMainOdd,
                 }}
               >
                 {row[3]}
@@ -193,4 +206,3 @@ export default function Section2DropdownMobile({
     </div>
   );
 }
-

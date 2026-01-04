@@ -1,6 +1,14 @@
+import React, { useState } from "react";
 import prodsec2mineral from "../../assets/prodsec2mineral.png";
+import DropdownDesk from "./dropdowndesk";
+import DropdownMobile from "./dropdownmob";
+import dropdownmin from "../../assets/dropdownmin.png";
+import { SIZE_DATA, COLORS } from "./sec4data";
 
 export default function Section4() {
+  const [open, setOpen] = useState(false);
+  const [activeSize, setActiveSize] = useState("0.1-0.4");
+
   return (
     <section
       className="section4-quartz"
@@ -11,7 +19,7 @@ export default function Section4() {
         overflowX: "hidden",
       }}
     >
-      {/* ================= SECTION 4 LAYOUT ================= */}
+      {/* ================= DESKTOP LAYOUT (UNCHANGED) ================= */}
       <div
         className="sec2-wrapper"
         style={{
@@ -34,10 +42,10 @@ export default function Section4() {
               marginLeft: "-32px",
             }}
           >
-            {/* LEFT CREAM BAR — DESKTOP PRESERVED */}
+            {/* LEFT CREAM BAR */}
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-            {/* IMAGE — DESKTOP PRESERVED */}
+            {/* IMAGE */}
             <div
               className="sec2-image"
               style={{
@@ -59,7 +67,7 @@ export default function Section4() {
               />
             </div>
 
-            {/* CONTENT — DESKTOP PRESERVED */}
+            {/* CONTENT */}
             <div
               className="sec2-content"
               style={{
@@ -83,7 +91,8 @@ export default function Section4() {
                     marginBottom: "12px",
                   }}
                 >
-                  Engineered for engineered stone, glass, and ceramics with controlled whiteness and purity.
+                  Engineered for engineered stone, glass, and ceramics with
+                  controlled whiteness and purity.
                 </p>
 
                 <h3
@@ -92,18 +101,17 @@ export default function Section4() {
                     fontSize: "24px",
                     marginBottom: "12px",
                     letterSpacing: "2px",
-                    fontFamily: "bankgoB"
+                    fontFamily: "bankgoB",
                   }}
                 >
-                  Quartz Grits - Grade B
+                  Quartz Grits – Grade B
                 </h3>
 
                 <p
                   style={{
-                   
                     fontSize: "18px",
                     marginBottom: "16px",
-                    fontFamily: "bankgoB"
+                    fontFamily: "bankgoB",
                   }}
                 >
                   0.1 – 0.4 MM
@@ -114,24 +122,76 @@ export default function Section4() {
                     fontFamily: "MONSREG",
                     fontSize: "14px",
                     lineHeight: "1.6",
+                    marginBottom: "16px",
                   }}
                 >
-              Cost-effective quartz grits with reliable performance for applications 
-              where functional strength matters more than visual uniformity.
-
+                  Cost-effective quartz grits with reliable performance for
+                  applications where functional strength matters more than
+                  visual uniformity.
                 </p>
+
+                {/* PRODUCT DETAILS BUTTON */}
+                <button
+                  className="monts-semibold"
+                  onClick={() => setOpen(!open)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                  }}
+                >
+                  Product Details{" "}
+                  <span style={{ fontSize: "10px" }}>
+                    {open ? "▲" : "▼"}
+                  </span>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ================= MOBILE — SECTION 4 ONLY ================= */}
+      {/* ================= DESKTOP DROPDOWN ================= */}
+      <div className="desktop-dropdown">
+        <DropdownDesk
+          open={open}
+          activeSize={activeSize}
+          setActiveSize={setActiveSize}
+          title="Quartz Grits – Grade B Product Size"
+          sizeData={SIZE_DATA}
+          colors={COLORS}
+          imageSrc={dropdownmin}
+        />
+      </div>
+
+      {/* ================= MOBILE DROPDOWN ================= */}
+      <div className="mobile-dropdown">
+        <DropdownMobile
+          open={open}
+          title="Quartz Grits – Grade B Product Size"
+          data={SIZE_DATA}
+          colors={COLORS}
+          imageSrc={dropdownmin}
+          activeKey={activeSize}
+          setActiveKey={setActiveSize}
+          showArrows={true}
+        />
+      </div>
+
+      {/* ================= MOBILE — SAME AS SECTION 2 ================= */}
       <style>
         {`
+        .mobile-dropdown { display: none; }
+        .desktop-dropdown { display: block; }
+
         @media (max-width: 768px) {
 
-          /* 🔑 REMOVE ALL OUTER GAPS */
+          /* switch dropdowns */
+          .desktop-dropdown { display: none; }
+          .mobile-dropdown { display: block; }
+
+          /* remove outer gaps */
           .section4-quartz {
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -143,7 +203,7 @@ export default function Section4() {
             max-width: 100% !important;
           }
 
-          /* FULL-WIDTH CREAM CONTAINER */
+          /* single cream container */
           .section4-quartz .sec2-grid {
             display: flex !important;
             flex-direction: column !important;
@@ -152,20 +212,18 @@ export default function Section4() {
             background: #EDE4CF !important;
           }
 
-          /* TEXT FIRST */
+          /* text first */
           .section4-quartz .sec2-content {
             order: 1 !important;
             background: transparent !important;
-            width: 100% !important;
           }
 
           .section4-quartz .sec2-text {
             max-width: 100% !important;
             padding: 30px 20px 20px !important;
-            text-align: left !important;
           }
 
-          /* IMAGE WHITE CARD BELOW TEXT */
+          /* image white card */
           .section4-quartz .sec2-image {
             order: 2 !important;
             background: transparent !important;
@@ -175,7 +233,7 @@ export default function Section4() {
 
           .section4-quartz .sec2-image img {
             background: #ffffff !important;
-            padding: 22px !important;
+            padding: 24px !important;
             border-radius: 4px;
             height: 260px !important;
             max-width: 320px !important;
