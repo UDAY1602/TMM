@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import prodsec2mineral from "../../assets/prodsec2mineral.png";
-import Section2Dropdown from "./dropdownsec2";
-import Section2DropdownMobile from "./dropdownsec2mob";
+import dropdownmin from "../../assets/dropdownmin.png";
+
+import DropdownDesk from "./dropdowndesk";
+import DropdownMobile from "./dropdownmob";
+import { SIZE_DATA, COLORS } from "./sec2data";
 
 export default function Section2() {
   const [open, setOpen] = useState(false);
@@ -63,10 +66,10 @@ export default function Section2() {
               marginLeft: "-32px",
             }}
           >
-            {/* LEFT CREAM BAR — DESKTOP */}
+            {/* LEFT CREAM BAR */}
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-            {/* IMAGE — DESKTOP */}
+            {/* IMAGE */}
             <div
               className="sec2-image"
               style={{
@@ -88,7 +91,7 @@ export default function Section2() {
               />
             </div>
 
-            {/* CONTENT — DESKTOP */}
+            {/* CONTENT */}
             <div
               className="sec2-content"
               style={{
@@ -118,9 +121,13 @@ export default function Section2() {
 
                 <h3
                   className="bankgothiclightreg"
-                  style={{ fontSize: "29px", marginBottom: "12px",fontFamily:"bankgoB" }}
+                  style={{
+                    fontSize: "29px",
+                    marginBottom: "12px",
+                    fontFamily: "bankgoB",
+                  }}
                 >
-                  Quartz Grits - Premium
+                  Quartz Grits – Premium
                 </h3>
 
                 <p
@@ -138,7 +145,7 @@ export default function Section2() {
                     fontFamily: "MONSREG",
                     fontSize: "14px",
                     marginBottom: "16px",
-                    color:"#313131",
+                    color: "#313131",
                   }}
                 >
                   Optimized quartz grits offering excellent strength, clarity and
@@ -146,13 +153,14 @@ export default function Section2() {
                   and architectural uses.
                 </p>
 
-                <button className="monts-semibold"
+                {/* TOGGLE */}
+                <button
+                  className="monts-semibold"
                   onClick={() => setOpen(!open)}
                   style={{
                     background: "none",
                     border: "none",
                     padding: 0,
-                    
                     cursor: "pointer",
                   }}
                 >
@@ -167,24 +175,34 @@ export default function Section2() {
         </div>
       </div>
 
-      {/* ================= DROPDOWNS ================= */}
+      {/* ================= DESKTOP DROPDOWN ================= */}
       <div className="desktop-dropdown">
-        <Section2Dropdown
+        <DropdownDesk
           open={open}
           activeSize={activeSize}
           setActiveSize={setActiveSize}
+          title="Quartz Grits – Premium Product Size"
+          sizeData={SIZE_DATA}
+          colors={COLORS}
+          imageSrc={dropdownmin}
         />
       </div>
 
+      {/* ================= MOBILE DROPDOWN ================= */}
       <div className="mobile-dropdown">
-        <Section2DropdownMobile
+        <DropdownMobile
           open={open}
-          activeSize={activeSize}
-          setActiveSize={setActiveSize}
+          title="Quartz Grits – Premium Product Size"
+          data={SIZE_DATA}
+          colors={COLORS}
+          imageSrc={dropdownmin}
+          activeKey={activeSize}
+          setActiveKey={setActiveSize}
+          showArrows={true}
         />
       </div>
 
-      {/* ================= MOBILE — SECTION 2 ONLY ================= */}
+      {/* ================= MOBILE CSS ================= */}
       <style>
         {`
         .mobile-dropdown { display: none; }
@@ -192,11 +210,9 @@ export default function Section2() {
 
         @media (max-width: 768px) {
 
-          /* switch dropdowns */
           .desktop-dropdown { display: none; }
           .mobile-dropdown { display: block; }
 
-          /* remove outer gaps */
           .section2-quartz {
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -208,7 +224,6 @@ export default function Section2() {
             max-width: 100% !important;
           }
 
-          /* title inside cream */
           .section2-quartz .sec2-title {
             background: #EDE4CF;
             padding: 24px 20px 16px !important;
@@ -216,13 +231,6 @@ export default function Section2() {
             justify-content: center !important;
           }
 
-          .section2-quartz .oswold-reg {
-            font-size: 28px !important;
-            letter-spacing: 4px !important;
-            text-align: left !important;
-          }
-
-          /* single cream container */
           .section2-quartz .sec2-grid {
             display: flex !important;
             flex-direction: column !important;
@@ -231,7 +239,6 @@ export default function Section2() {
             background: #EDE4CF !important;
           }
 
-          /* text first */
           .section2-quartz .sec2-content {
             order: 1 !important;
             background: transparent !important;
@@ -242,7 +249,6 @@ export default function Section2() {
             padding: 30px 20px 20px !important;
           }
 
-          /* image white card */
           .section2-quartz .sec2-image {
             order: 2 !important;
             background: transparent !important;
