@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import ContactBg from "../../assets/ContactBg.png";                                                 
+import ContactBg from "../../assets/ContactBg.png";
 
 export default function Section5() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -12,6 +13,11 @@ export default function Section5() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // prevent reload
+    setShowPopup(true);
+  };
 
   return (
     <div
@@ -41,7 +47,7 @@ export default function Section5() {
           paddingTop: isMobile ? "20px" : "60px",
         }}
       >
-  
+        {/* LEFT CONTENT */}
         <div style={{ textAlign: isMobile ? "center" : "left" }}>
           <h1
             style={{
@@ -65,7 +71,10 @@ export default function Section5() {
             Speak to us now.
           </p>
         </div>
+
+        {/* FORM */}
         <form
+          onSubmit={handleSubmit}
           style={{
             padding: isMobile ? "0px" : "32px",
             borderRadius: "12px",
@@ -74,7 +83,7 @@ export default function Section5() {
             color: "#000",
           }}
         >
-          <input placeholder="Name *" style={inputStyle} />
+          <input placeholder="Name *" style={inputStyle} required />
 
           <div
             style={{
@@ -83,15 +92,85 @@ export default function Section5() {
               gap: "12px",
             }}
           >
-            <input placeholder="Email *" style={inputStyle} />
-            <input placeholder="Contact Number *" style={inputStyle} />
+            <input placeholder="Email *" style={inputStyle} required />
+            <input placeholder="Contact Number *" style={inputStyle} required />
           </div>
 
-          <input placeholder="Subject *" style={inputStyle} />
+          <input placeholder="Subject *" style={inputStyle} required />
           <textarea placeholder="Message" rows="4" style={inputStyle} />
-          <button style={buttonStyle}>Submit</button>
+
+          <button type="submit" style={buttonStyle}>
+            Submit
+          </button>
         </form>
       </div>
+
+      {/* ===== POPUP ===== */}
+      {showPopup && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.6)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000,
+            padding: "20px",
+          }}
+        >
+          <div
+            style={{
+              background: "#1e1e1e",
+              padding: "32px",
+              borderRadius: "10px",
+              maxWidth: "420px",
+              width: "100%",
+              textAlign: "center",
+              color: "#fff",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "22px",
+                fontFamily:"oswaldRegular",
+                marginBottom: "12px",
+                color: "#eeedd3",
+              }}
+            >
+              Thank you!
+            </h2>
+
+            <p
+              style={{
+                fontSize: "14px",
+                lineHeight: "1.6",
+                color: "#cfcfcf",
+                marginBottom: "24px",
+              }}
+            >
+              Your enquiry has been successfully submitted.
+              <br />
+              Our team will get back to you shortly.
+            </p>
+
+            <button
+              onClick={() => setShowPopup(false)}
+              style={{
+                padding: "12px",
+                width: "100%",
+                background: "#2d2d2d",
+                color: "#fff",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
