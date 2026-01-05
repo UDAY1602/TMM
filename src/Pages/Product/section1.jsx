@@ -12,13 +12,13 @@ export default function Section1() {
   const [typedText, setTypedText] = useState("");
   const [typing, setTyping] = useState(false);
 
-  /* POP MINERAL ON PAGE ENTER */
+  /* POP MINERAL */
   useEffect(() => {
     const t = setTimeout(() => setShowMineral(true), 50);
     return () => clearTimeout(t);
   }, []);
 
-  /* SIMPLE TYPING ANIMATION */
+  /* SIMPLE TYPING */
   useEffect(() => {
     let i = 0;
     setTyping(true);
@@ -30,7 +30,7 @@ export default function Section1() {
         setTypedText(text.slice(0, i - heading.length + 1));
       } else {
         clearInterval(interval);
-        setTyping(false); 
+        setTyping(false);
       }
       i++;
     }, 20);
@@ -65,37 +65,64 @@ export default function Section1() {
           whiteSpace: "pre-line",
         }}
       >
-        {/* HEADING */}
-        <h1
-          className="bankgothiclightreg"
-          style={{
-            color: "#EEEDD3",
-            fontSize: "38px",
-            letterSpacing: "1.5px",
-            marginBottom: "20px",
-            lineHeight: "1.2",
-          }}
-        >
-          {typedHeading}
-          {typing && typedHeading.length < heading.length && "|"}
-        </h1>
+        {/* ===== INVISIBLE SPACE HOLDER (PREVENTS BG SHIFT) ===== */}
+        <div style={{ visibility: "hidden" }}>
+          <h1
+            className="bankgothiclightreg"
+            style={{
+              fontSize: "38px",
+              letterSpacing: "1.5px",
+              marginBottom: "20px",
+              lineHeight: "1.2",
+            }}
+          >
+            {heading}
+          </h1>
 
-        {/* PARAGRAPH */}
-        <p
-          style={{
-            fontFamily: "MontserratThin, sans-serif",
-            color: "#FFFFFF",
-            fontSize: "18px",
-            lineHeight: "1.6",
-            maxWidth: "620px",
-          }}
-        >
-          {typedText}
-          {typing &&
-            typedHeading.length === heading.length &&
-            typedText.length < text.length &&
-            "|"}
-        </p>
+          <p
+            style={{
+              fontFamily: "MontserratThin, sans-serif",
+              fontSize: "18px",
+              lineHeight: "1.6",
+              maxWidth: "620px",
+            }}
+          >
+            {text}
+          </p>
+        </div>
+
+        {/* ===== TYPED TEXT (ABSOLUTE OVERLAY) ===== */}
+        <div style={{ position: "absolute", top: 0, left: 0 }}>
+          <h1
+            className="bankgothiclightreg"
+            style={{
+              color: "#EEEDD3",
+              fontSize: "38px",
+              letterSpacing: "1.5px",
+              marginBottom: "20px",
+              lineHeight: "1.2",
+            }}
+          >
+            {typedHeading}
+            {typing && typedHeading.length < heading.length && "|"}
+          </h1>
+
+          <p
+            style={{
+              fontFamily: "MontserratThin, sans-serif",
+              color: "#FFFFFF",
+              fontSize: "18px",
+              lineHeight: "1.6",
+              maxWidth: "620px",
+            }}
+          >
+            {typedText}
+            {typing &&
+              typedHeading.length === heading.length &&
+              typedText.length < text.length &&
+              "|"}
+          </p>
+        </div>
       </div>
 
       {/* STYLES */}

@@ -39,7 +39,7 @@ export default function Section1({ setShowMineral }) {
         setTypedText(text.slice(0, i - heading.length + 1));
       } else {
         clearInterval(interval);
-        setTyping(false); 
+        setTyping(false);
       }
       i++;
     }, 20);
@@ -60,35 +60,66 @@ export default function Section1({ setShowMineral }) {
         justifyContent: "center",
       }}
     >
-      <div style={{ maxWidth: "720px", textAlign: "center" }}>
-        {/* HEADING */}
-        <h2
-          style={{
-            fontFamily: "BankGothic, sans-serif",
-            fontSize: "36px",
-            letterSpacing: "4px",
-            fontWeight: "bold",
-            marginBottom: "20px",
-          }}
-        >
-          {typedHeading}
-          {typing && typedHeading.length < heading.length && "|"}
-        </h2>
+      <div
+        style={{
+          maxWidth: "720px",
+          textAlign: "center",
+          display: "grid", // 🔑 grid overlay
+        }}
+      >
+        {/* ===== PLACEHOLDER (LOCKS HEIGHT) ===== */}
+        <div style={{ visibility: "hidden", gridArea: "1 / 1" }}>
+          <h2
+            style={{
+              fontFamily: "BankGothic, sans-serif",
+              fontSize: "36px",
+              letterSpacing: "4px",
+              fontWeight: "bold",
+              marginBottom: "20px",
+            }}
+          >
+            {heading}
+          </h2>
 
-        {/* PARAGRAPH */}
-        <p
-          style={{
-            fontSize: "16px",
-            lineHeight: "1.8",
-            color: "#d6d2c8",
-          }}
-        >
-          {typedText}
-          {typing &&
-            typedHeading.length === heading.length &&
-            typedText.length < text.length &&
-            "|"}
-        </p>
+          <p
+            style={{
+              fontSize: "16px",
+              lineHeight: "1.8",
+            }}
+          >
+            {text}
+          </p>
+        </div>
+
+        {/* ===== TYPED TEXT (SAME GRID CELL) ===== */}
+        <div style={{ gridArea: "1 / 1" }}>
+          <h2
+            style={{
+              fontFamily: "BankGothic, sans-serif",
+              fontSize: "36px",
+              letterSpacing: "4px",
+              fontWeight: "bold",
+              marginBottom: "20px",
+            }}
+          >
+            {typedHeading}
+            {typing && typedHeading.length < heading.length && "|"}
+          </h2>
+
+          <p
+            style={{
+              fontSize: "16px",
+              lineHeight: "1.8",
+              color: "#d6d2c8",
+            }}
+          >
+            {typedText}
+            {typing &&
+              typedHeading.length === heading.length &&
+              typedText.length < text.length &&
+              "|"}
+          </p>
+        </div>
       </div>
     </section>
   );
