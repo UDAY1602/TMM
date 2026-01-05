@@ -89,32 +89,32 @@ export default function Section4() {
         ">
 
           <div>
-            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">XX+ years</h3>
+            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">08+ years</h3>
             <p className="para-font text-sm sm:text-base lg:text-xl">
-              of manufacturing excellence
+              of manufacturing  <br /> excellence
             </p>
           </div>
 
           <div>
-            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">XX+ tons</h3>
+            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">50,000+ tons</h3>
             <p className="para-font text-sm sm:text-base lg:text-xl">
-              Quartz processed annually
+              Quartz processed <br /> annually
             </p>
           </div>
 
           <div>
-            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">X,000 sq.ft.</h3>
+            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">3.24 Acres</h3>
             <p className="para-font text-sm sm:text-base lg:text-xl">
-              of manufacturing infrastructure
+              of manufacturing <br />infrastructure
             </p>
           </div>
 
           <div>
             <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">
-              X+ Product Grades
+              24x7 
             </h3>
             <p className="para-font text-sm sm:text-base lg:text-xl">
-              customized for industries
+                Operational <br />Capability
             </p>
           </div>
 
