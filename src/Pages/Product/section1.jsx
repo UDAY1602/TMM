@@ -30,10 +30,10 @@ export default function Section1() {
         setTypedText(text.slice(0, i - heading.length + 1));
       } else {
         clearInterval(interval);
-        setTyping(false); // ✅ cursor disappears
+        setTyping(false); 
       }
       i++;
-    }, 40);
+    }, 20);
 
     return () => clearInterval(interval);
   }, []);
