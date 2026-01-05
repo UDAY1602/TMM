@@ -39,10 +39,10 @@ export default function Section1({ setShowMineral }) {
         setTypedText(text.slice(0, i - heading.length + 1));
       } else {
         clearInterval(interval);
-        setTyping(false); // ✅ cursor disappears
+        setTyping(false); 
       }
       i++;
-    }, 45);
+    }, 20);
 
     return () => clearInterval(interval);
   }, []);

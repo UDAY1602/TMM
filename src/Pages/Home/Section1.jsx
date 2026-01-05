@@ -31,7 +31,7 @@ export default function Section1() {
         setTyping(false); // ✅ cursor stops here
       }
       i++;
-    }, 45);
+    }, 20);
 
     return () => clearInterval(interval);
   }, []);

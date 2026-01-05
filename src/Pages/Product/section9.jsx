@@ -17,7 +17,7 @@ export default function Section9() {
     <section className="relative w-full overflow-hidden">
 
       {/* TOP DARK BACKGROUND */}
-      <div className="bg-[#] pt-[100px] pb-[110px]">
+      <div className="bg-[#111] pt-[100px] pb-[110px]">
         <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-10 text-white items-center mb-20">
           <div>
             <p className="text-m text-[#d6d6d6] mb-2 monts-med">
@@ -47,7 +47,7 @@ export default function Section9() {
         {items.map((item, i) => (
           <div
             key={i}
-            className="relative overflow-hidden rounded-md"
+            className="sec9-card relative overflow-hidden rounded-md"
             style={{
               gridColumn: item.col,
               gridRow: `${item.row} / span ${item.span}`,
@@ -64,7 +64,7 @@ export default function Section9() {
         ))}
       </div>
 
-      {/* BOTTOM WHITE SECTION (ENDS HERE) */}
+      {/* BOTTOM WHITE SECTION */}
       <div className="bg-white pt-[200px] pb-[80px] -mt-[120px]">
         <p className="max-w-[700px] mx-auto text-center text-[16px] leading-relaxed text-[#666] px-6 monts-med">
           With continuous monitoring, digital records, and repeatable testing
@@ -73,11 +73,17 @@ export default function Section9() {
         </p>
       </div>
 
-      {/* RESPONSIVE */}
+      {/* RESPONSIVE ONLY — NO LAYOUT CHANGE */}
       <style>{`
         @media (max-width: 1024px) {
           .sec9-grid {
             grid-template-columns: repeat(2, 1fr) !important;
+            grid-auto-rows: 160px !important;
+          }
+
+          .sec9-card {
+            grid-column: auto !important;
+            grid-row: auto !important;
           }
         }
 
@@ -86,6 +92,20 @@ export default function Section9() {
             grid-template-columns: 1fr !important;
             grid-auto-rows: 220px !important;
             margin-top: -100px !important;
+          }
+
+          .sec9-card {
+            grid-column: auto !important;
+            grid-row: auto !important;
+          }
+
+          .bankgothicbold {
+            font-size: 22px !important;
+          }
+
+          .monts-med,
+          .monts-reg {
+            font-size: 14px !important;
           }
         }
       `}</style>
