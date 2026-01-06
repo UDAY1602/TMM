@@ -77,7 +77,7 @@ export default function DropdownMobile({
         />
       </div>
 
-      {/* SIZE NAV (same logic as before) */}
+      {/* SIZE NAV */}
       {showArrows && (
         <div
           style={{
@@ -90,10 +90,10 @@ export default function DropdownMobile({
           <button onClick={goPrev} disabled={index === 0}>◀</button>
 
           <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: "11px", color: "#bbb" }}>
+            <div style={{ fontSize: "11px", color: "#EEEDD3" ,fontFamily: "oswaldRegular"}}>
               Product Size
             </div>
-            <div style={{ fontSize: "16px", color: "#fff" }}>
+            <div style={{ fontSize: "16px", color: "#EEEDD3" ,fontFamily: "montssemibold"}}>
               {current.label}
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function DropdownMobile({
         </div>
       )}
 
-      {/* ================= TABLE (SAME AS DESKTOP STRUCTURE) ================= */}
+      {/* ================= TABLE ================= */}
       <div
         style={{
           backgroundColor: "#313131",
@@ -122,9 +122,17 @@ export default function DropdownMobile({
             gridTemplateColumns: "44% 28% 28%",
           }}
         >
-          <div style={headerCell(colors.header1)}>Parameter</div>
-          <div style={headerCell(colors.header2)}>Specs</div>
-          <div style={headerCell(colors.header3)}>Testing</div>
+          <div style={headerCell(colors.header1)}>
+            <span style={{ color: "#313131", fontSize: "10px" }}>Parameter</span>
+          </div>
+
+          <div style={headerCell(colors.header2)}>
+            <span style={{ color: "#FFFFFF", fontSize: "10px" }}>Specification</span>
+          </div>
+
+          <div style={headerCell(colors.header3)}>
+            <span style={{ color: "#313131", fontSize: "10px" }}>Testing Method</span>
+          </div>
         </div>
 
         {/* ROWS */}
@@ -153,9 +161,11 @@ export default function DropdownMobile({
                   gridTemplateColumns: "50% 50%",
                 }}
               >
+                {/* ✅ MAIN PARAMETER — BOLD */}
                 <div
                   style={{
                     ...cellBase,
+                    fontFamily: "montsbold",
                     backgroundColor: even
                       ? colors.paramMainEven
                       : colors.paramMainOdd,
@@ -164,6 +174,7 @@ export default function DropdownMobile({
                   {row[0]}
                 </div>
 
+                {/* SUB PARAMETER — NORMAL */}
                 <div
                   style={{
                     ...cellBase,
