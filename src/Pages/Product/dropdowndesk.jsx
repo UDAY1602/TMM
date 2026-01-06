@@ -1,6 +1,6 @@
 import React from "react";
 
-/* ================= HEADER CELL STYLE ================= */
+/* ================= HEADER CELL ================= */
 const headerCell = (bg) => ({
   backgroundColor: bg,
   padding: "16px",
@@ -8,19 +8,19 @@ const headerCell = (bg) => ({
   fontSize: "13px",
 });
 
-/* ================= REUSABLE DESKTOP DROPDOWN ================= */
 export default function DropdownDesk({
   open,
   activeSize,
   setActiveSize,
-
-  /* dynamic props */
-  title,          // string
-  sizeData,       // SIZE_DATA object
-  colors,         // COLORS object
-  imageSrc,       // image path
+  title,
+  sizeData,
+  colors,
+  imageSrc,
 }) {
   const current = sizeData[activeSize];
+
+  // split imageText into lines
+  const imageLines = current.imageText.split("\n");
 
   return (
     <div
@@ -33,7 +33,7 @@ export default function DropdownDesk({
     >
       <div style={{ padding: "80px 32px" }}>
 
-        {/* ================= TITLE ================= */}
+        {/* TITLE */}
         <h3
           className="monts-bold"
           style={{
@@ -47,7 +47,7 @@ export default function DropdownDesk({
           {title}
         </h3>
 
-        {/* ================= SIZE TABS ================= */}
+        {/* SIZE TABS */}
         <div
           style={{
             maxWidth: "1150px",
@@ -64,8 +64,7 @@ export default function DropdownDesk({
               className="monts-semibold"
               style={{
                 flex: 1,
-                background:
-                  key === activeSize ? "#2a2a2a" : "transparent",
+                background: key === activeSize ? "#2a2a2a" : "transparent",
                 border: "none",
                 color: key === activeSize ? "#fff" : "#aaa",
                 fontSize: "14px",
@@ -77,7 +76,7 @@ export default function DropdownDesk({
           ))}
         </div>
 
-        {/* ================= IMAGE + TABLE ================= */}
+        {/* IMAGE + TABLE */}
         <div
           style={{
             maxWidth: "1150px",
@@ -91,24 +90,40 @@ export default function DropdownDesk({
               gridTemplateColumns: "280px 1fr",
             }}
           >
-            {/* IMAGE COLUMN */}
+            {/* IMAGE */}
             <div style={{ padding: "24px", textAlign: "center" }}>
               <img src={imageSrc} alt="" style={{ width: "100%" }} />
 
-              <p
-                style={{
-                  color: "#e6e6e6",
-                  fontSize: "13px",
-                  fontFamily: "oswold-reg",
-                  whiteSpace: "pre-line",
-                  marginTop: "12px",
-                }}
-              >
-                {current.imageText}
-              </p>
+              {/* IMAGE TEXT (UPDATED TYPOGRAPHY) */}
+              <div style={{ marginTop: "12px" }}>
+                {/* Line 1: Product name */}
+                <div
+                  style={{
+                    fontFamily: "oswaldRegular",
+                    fontSize: "24px",
+                    color: "#EEEDD3",
+                  }}
+                >
+                  {imageLines[0]}
+                </div>
+
+                {/* Line 2: Size */}
+                {imageLines[1] && (
+                  <div
+                    style={{
+                      fontFamily: "montssemibold",
+                      fontSize: "30px",
+                      color: "#EEEDD3",
+                      marginTop: "2px",
+                    }}
+                  >
+                    {imageLines[1]}
+                  </div>
+                )}
+              </div>
             </div>
 
-            {/* ================= TABLE ================= */}
+            {/* TABLE */}
             <div style={{ padding: "24px 0" }}>
               <div
                 style={{
@@ -125,9 +140,23 @@ export default function DropdownDesk({
                     columnGap: "16px",
                   }}
                 >
-                  <div style={headerCell(colors.header1)}>Parameter</div>
-                  <div style={headerCell(colors.header2)}>Specification</div>
-                  <div style={headerCell(colors.header3)}>Testing Method</div>
+                  <div style={headerCell(colors.header1)}>
+                    <span style={{ color: "#313131", fontSize: "20px" }}>
+                      Parameter
+                    </span>
+                  </div>
+
+                  <div style={headerCell(colors.header2)}>
+                    <span style={{ color: "#FFFFFF", fontSize: "20px" }}>
+                      Specification
+                    </span>
+                  </div>
+
+                  <div style={headerCell(colors.header3)}>
+                    <span style={{ color: "#313131", fontSize: "20px" }}>
+                      Testing Method
+                    </span>
+                  </div>
                 </div>
 
                 {/* ROWS */}
@@ -144,18 +173,14 @@ export default function DropdownDesk({
                       }}
                     >
                       {/* PARAMETER */}
-                      <div
-                        style={{
-                          display: "grid",
-                          gridTemplateColumns: "1fr 1fr",
-                        }}
-                      >
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
                         <div
                           style={{
                             background: even
                               ? colors.paramMainEven
                               : colors.paramMainOdd,
-                            padding: "16px",
+                            fontFamily: "montsbold",
+                            padding: "14px",
                           }}
                         >
                           {row[0]}
@@ -175,7 +200,6 @@ export default function DropdownDesk({
                         </div>
                       </div>
 
-                      {/* SPEC */}
                       <div
                         style={{
                           background: even
@@ -188,7 +212,6 @@ export default function DropdownDesk({
                         {row[2]}
                       </div>
 
-                      {/* METHOD */}
                       <div
                         style={{
                           background: even
@@ -207,7 +230,7 @@ export default function DropdownDesk({
             </div>
           </div>
         </div>
-        {/* ================= END ================= */}
+
       </div>
     </div>
   );
