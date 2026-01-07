@@ -1,13 +1,39 @@
 import React from "react";
 import "../Product/sec11.css";
 
+// import images
+import pressureImg from "../../assets/Pressure Washing.png";
+import crushingImg from "../../assets/Fully Automatic Crushing & Grinding.png";
+import opticalImg from "../../assets/High-Precision Optical Sorting.png";
+import sievingImg from "../../assets/Advanced Sieving & Classification.png";
+import labImg from "../../assets/In-house Quality Testing Lab.png";
+import packagingImg from "../../assets/Dust-free Packaging Systems.png";
+
 const infraItems = [
-  "Pressure Washing",
-  "Fully automatic crushing & grinding systems",    
-  "High-precision optical sorting technology",
-  "Advanced sieving & classification",
-  "In-house quality testing lab",
-  "Dust-free packaging systems",
+  {
+    title: "Pressure Washing",
+    image: pressureImg,
+  },
+  {
+    title: "Fully automatic crushing & grinding systems",
+    image: crushingImg,
+  },
+  {
+    title: "High-precision optical sorting technology",
+    image: opticalImg,
+  },
+  {
+    title: "Advanced sieving & classification",
+    image: sievingImg,
+  },
+  {
+    title: "In-house quality testing lab",
+    image: labImg,
+  },
+  {
+    title: "Dust-free packaging systems",
+    image: packagingImg,
+  },
 ];
 
 export default function Section11() {
@@ -30,8 +56,12 @@ export default function Section11() {
       <div className="infra-grid">
         {infraItems.map((item, index) => (
           <div key={index} className="infra-card">
-            <div className="infra-image" />
-            <span>{item}</span>
+            <img
+              src={item.image}
+              alt={item.title}
+              className="infra-image"
+            />
+            <span>{item.title}</span>
           </div>
         ))}
       </div>
@@ -56,6 +86,5 @@ export default function Section11() {
         </div>
       </div>
     </section>
-    
   );
 }
