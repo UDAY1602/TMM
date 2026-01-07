@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "./Sec3.css";
-
+import { useNavigate } from "react-router-dom";
 import moon from "../../assets/moon.png";
 import semi from "../../assets/quartzfiller.png";
 import grit from "../../assets/Quartzite.png";
@@ -17,6 +17,11 @@ export default function Section3() {
   const textRef = useRef(null);
   const itemsRef = useRef(null);
   const bottomRef = useRef(null);
+  const navigate = useNavigate();
+  const goToAbout = () => {
+  navigate("/about");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   useEffect(() => {
     // ✅ HARD EXIT ON MOBILE — DESKTOP REMAINS UNTOUCHED
@@ -139,7 +144,10 @@ export default function Section3() {
             <p className="bottomText">
               Optimized for whiteness, purity, consistency, and industry-specific performance.
             </p>
-            <button className="exploreBtn">Explore</button>
+            <button className="exploreBtn" onClick={goToAbout}>
+  Explore
+</button>
+
           </div>
         </div>
       </div>

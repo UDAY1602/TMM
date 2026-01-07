@@ -1,7 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import section7right from "../../assets/section7right.png";
 
 const Section7 = () => {
+  const navigate = useNavigate();
+
+  const goToProducts = () => {
+    navigate("/products");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="w-full flex flex-col md:flex-row bg-[#313131] md:min-h-[300px]">
 
@@ -23,7 +31,15 @@ const Section7 = () => {
       >
         {/* TEXT ON IMAGE */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="oswold-reg text-black text-lg md:text-3xl">
+          <p
+            onClick={goToProducts}
+            className="
+              oswold-reg text-black text-lg md:text-3xl
+              cursor-pointer
+              hover:opacity-80
+              transition
+            "
+          >
             View Products
           </p>
         </div>

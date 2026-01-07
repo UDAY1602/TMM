@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import Logo from "../assets/TMM logo 1.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const navigate = useNavigate();
+
+const goTo = (path) => {
+  navigate(path);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -85,13 +92,28 @@ export default function Footer() {
         
         <div style={{ marginTop: isMobile ? "0px" : "170px" }}>
           <h4 style={titleStyle}>Quick Links</h4>
-          <ul style={{ listStyle: "none", padding: 0, fontSize: "14px" }}>
-            <li style={linkStyle}>About</li>
-            <li style={linkStyle}>Quartz Grit</li>
-            <li style={linkStyle}>Quartz Powder</li>
-            <li style={linkStyle}>Quartz Fillers</li>
-            <li style={linkStyle}>Industries</li>
-          </ul>
+         <ul style={{ listStyle: "none", padding: 0, fontSize: "14px" }}>
+  <li style={linkStyle} onClick={() => goTo("/products")}>
+    Our Products
+  </li>
+
+  <li style={linkStyle} onClick={() => goTo("/about")}>
+    Our Story
+  </li>
+
+  <li style={linkStyle} onClick={() => goTo("/about")}>
+    Quality Assurance
+  </li>
+
+  <li style={linkStyle} onClick={() => goTo("/products")}>
+    Manufacturing Facility
+  </li>
+
+  <li style={linkStyle} onClick={() => goTo("contact")}>
+    Enquire Now
+  </li>
+</ul>
+
         </div>
       </div>
     </div>
