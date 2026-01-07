@@ -114,9 +114,9 @@ export default function Section3() {
 
           <div ref={itemsRef} className="itemsLayer">
             <div className="item item1">
-              <img src={grit} alt="" />
+              <img src={powder} alt="" />
               
-              <p className="itemText grit">Quartzite<br></br>Lumps</p>
+              <p className="itemText grit">Quartz Grits</p>
             </div>
 
             <div className="item item2">
@@ -125,8 +125,8 @@ export default function Section3() {
             </div>
 
             <div className="item item3">
-              <img src={powder} alt="" />
-              <p className="itemText mesh">Quartz Grits</p>
+              <img src={filler} alt="" />
+              <p className="itemText mesh">Industrial<br></br>By-products</p>
             </div>
 
             <div className="item item4">
@@ -135,8 +135,8 @@ export default function Section3() {
             </div>
 
             <div className="item item5">
-              <img src={filler} alt="" />
-              <p className="itemText quartz">Industrial<br></br>By-products</p>
+              <img src={grit} alt="" />
+              <p className="itemText quartz">Quartzite Lumps</p>
             </div>
           </div>
 
