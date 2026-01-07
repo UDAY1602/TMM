@@ -1,3 +1,6 @@
+import img_01_04 from "../../assets/Prod GradeB Minerals/Grade B - 0.1-0.4.png";
+import img_03_07 from "../../assets/Prod GradeB Minerals/Grade B - 0.3-0.7.png";
+import img_06_12 from "../../assets/Prod GradeB Minerals/Grade B - 0.6-1.2.png";
 export const COLORS = {
   header1: "#83877b",
   header2: "#282926",
@@ -12,6 +15,7 @@ export const COLORS = {
 export const SIZE_DATA = {
   "0.1-0.4": {
     label: "0.1 – 0.4 mm",
+    image:img_01_04,
     imageText: "Grade B Quartz Grits\n0.1 – 0.4 mm",
     rows: [
       [
@@ -43,6 +47,7 @@ export const SIZE_DATA = {
 
   "0.3-0.7": {
     label: "0.3 – 0.7 mm",
+    image:img_03_07,
     imageText: "Grade B Quartz Grits\n0.3 – 0.7 mm",
     rows: [
       [
@@ -74,6 +79,7 @@ export const SIZE_DATA = {
 
   "0.6-1.2": {
     label: "0.6 – 1.2 mm",
+    image:img_06_12,
     imageText: "Grade B Quartz Grits\n0.6 – 1.2 mm",
     rows: [
       [

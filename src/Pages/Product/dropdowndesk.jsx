@@ -15,11 +15,9 @@ export default function DropdownDesk({
   title,
   sizeData,
   colors,
-  imageSrc,
 }) {
   const current = sizeData[activeSize];
 
-  // split imageText into lines
   const imageLines = current.imageText.split("\n");
 
   return (
@@ -90,13 +88,28 @@ export default function DropdownDesk({
               gridTemplateColumns: "280px 1fr",
             }}
           >
-            {/* IMAGE */}
-            <div style={{ padding: "24px", textAlign: "center" }}>
-              <img src={imageSrc} alt="" style={{ width: "100%" }} />
+            {/* IMAGE COLUMN */}
+            <div
+              style={{
+                padding: "24px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: current.image ? "flex-start" : "center",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              {/* IMAGE (only if exists) */}
+              {current.image && (
+                <img
+                  src={current.image}
+                  alt=""
+                  style={{ width: "100%", marginBottom: "12px" }}
+                />
+              )}
 
-              {/* IMAGE TEXT (UPDATED TYPOGRAPHY) */}
-              <div style={{ marginTop: "12px" }}>
-                {/* Line 1: Product name */}
+              {/* IMAGE TEXT */}
+              <div>
                 <div
                   style={{
                     fontFamily: "oswaldRegular",
@@ -107,12 +120,11 @@ export default function DropdownDesk({
                   {imageLines[0]}
                 </div>
 
-                {/* Line 2: Size */}
                 {imageLines[1] && (
                   <div
                     style={{
                       fontFamily: "montssemibold",
-                      fontSize: "30px",
+                      fontSize: "20px",
                       color: "#EEEDD3",
                       marginTop: "2px",
                     }}
@@ -172,8 +184,12 @@ export default function DropdownDesk({
                         columnGap: "16px",
                       }}
                     >
-                      {/* PARAMETER */}
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+                      <div
+                        style={{
+                          display: "grid",
+                          gridTemplateColumns: "1fr 1fr",
+                        }}
+                      >
                         <div
                           style={{
                             background: even

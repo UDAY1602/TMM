@@ -15,7 +15,6 @@ export default function DropdownMobile({
   title,
   data,            // SAME data as desktop
   colors,
-  imageSrc,
   activeKey,
   setActiveKey,
   showArrows = true,
@@ -42,67 +41,108 @@ export default function DropdownMobile({
         padding: open ? "16px 12px" : "0 12px",
       }}
     >
-      {/* TITLE */}
+      {/* ================= TITLE ================= */}
       <h3
         className="monts-bold"
         style={{
           color: "#f2e7d1",
           textAlign: "center",
-          marginBottom: "12px",
+          marginBottom: "14px",
           fontSize: "16px",
         }}
       >
         {title}
       </h3>
 
-      {/* IMAGE */}
-      <div
-        style={{
-          backgroundColor: "#2a2a2a",
-          padding: "14px",
-          borderRadius: "12px",
-          textAlign: "center",
-          marginBottom: "12px",
-        }}
-      >
-        <img
-          src={imageSrc}
-          alt=""
+      {/* ================= IMAGE (OPTIONAL) ================= */}
+      {current.image && (
+        <div
           style={{
-            width: "100%",
-            maxWidth: "220px",
-            margin: "0 auto",
-            display: "block",
+            backgroundColor: "#2a2a2a",
+            padding: "14px",
+            borderRadius: "12px",
+            textAlign: "center",
+            marginBottom: "16px",
           }}
-        />
-      </div>
+        >
+          <img
+            src={current.image}
+            alt=""
+            style={{
+              width: "100%",
+              maxWidth: "220px",
+              margin: "0 auto",
+              display: "block",
+            }}
+          />
+        </div>
+      )}
 
-      {/* SIZE NAV */}
+      {/* ================= SIZE NAV (MATCHES DESIGN) ================= */}
       {showArrows && (
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "32px 1fr 32px",
+            gridTemplateColumns: "40px 1fr 40px",
             alignItems: "center",
-            marginBottom: "12px",
+            marginBottom: "18px",
           }}
         >
-          <button onClick={goPrev} disabled={index === 0}>◀</button>
+          {/* LEFT ARROW */}
+          <button
+            onClick={goPrev}
+            disabled={index === 0}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#EEEDD3",
+              fontSize: "28px",
+              cursor: "pointer",
+              opacity: index === 0 ? 0.3 : 1,
+            }}
+          >
+            ‹
+          </button>
 
+          {/* CENTER TEXT */}
           <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: "11px", color: "#EEEDD3" ,fontFamily: "oswaldRegular"}}>
+            <div
+              style={{
+                fontSize: "20px",
+                color: "#EEEDD3",
+                fontFamily: "oswaldRegular",
+                letterSpacing: "1px",
+              }}
+            >
               Product Size
             </div>
-            <div style={{ fontSize: "16px", color: "#EEEDD3" ,fontFamily: "montssemibold"}}>
+
+            <div
+              style={{
+                fontSize: "30px",
+                color: "#EEEDD3",
+                fontFamily: "montssemibold",
+                lineHeight: "1.1",
+              }}
+            >
               {current.label}
             </div>
           </div>
 
+          {/* RIGHT ARROW */}
           <button
             onClick={goNext}
             disabled={index === keys.length - 1}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#EEEDD3",
+              fontSize: "28px",
+              cursor: "pointer",
+              opacity: index === keys.length - 1 ? 0.3 : 1,
+            }}
           >
-            ▶
+            ›
           </button>
         </div>
       )}
@@ -123,15 +163,21 @@ export default function DropdownMobile({
           }}
         >
           <div style={headerCell(colors.header1)}>
-            <span style={{ color: "#313131", fontSize: "10px" }}>Parameter</span>
+            <span style={{ color: "#313131", fontSize: "10px" }}>
+              Parameter
+            </span>
           </div>
 
           <div style={headerCell(colors.header2)}>
-            <span style={{ color: "#FFFFFF", fontSize: "10px" }}>Specification</span>
+            <span style={{ color: "#FFFFFF", fontSize: "10px" }}>
+              Specification
+            </span>
           </div>
 
           <div style={headerCell(colors.header3)}>
-            <span style={{ color: "#313131", fontSize: "10px" }}>Testing Method</span>
+            <span style={{ color: "#313131", fontSize: "10px" }}>
+              Testing Method
+            </span>
           </div>
         </div>
 
@@ -154,14 +200,13 @@ export default function DropdownMobile({
                 gridTemplateColumns: "44% 28% 28%",
               }}
             >
-              {/* PARAMETER (MAIN + SUB) */}
+              {/* PARAMETER */}
               <div
                 style={{
                   display: "grid",
                   gridTemplateColumns: "50% 50%",
                 }}
               >
-                {/* ✅ MAIN PARAMETER — BOLD */}
                 <div
                   style={{
                     ...cellBase,
@@ -174,7 +219,6 @@ export default function DropdownMobile({
                   {row[0]}
                 </div>
 
-                {/* SUB PARAMETER — NORMAL */}
                 <div
                   style={{
                     ...cellBase,
@@ -187,7 +231,6 @@ export default function DropdownMobile({
                 </div>
               </div>
 
-              {/* SPEC */}
               <div
                 style={{
                   ...cellBase,
@@ -199,7 +242,6 @@ export default function DropdownMobile({
                 {row[2]}
               </div>
 
-              {/* TESTING */}
               <div
                 style={{
                   ...cellBase,
