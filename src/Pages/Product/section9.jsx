@@ -1,21 +1,30 @@
 import React from "react";
 
+/* ===== IMAGE IMPORTS ===== */
+import sc9img1 from "../../assets/sc9img1.png";
+import sc9img2 from "../../assets/sc9img2.png";
+import sc9img3 from "../../assets/sc9img3.png";
+import sc9img4 from "../../assets/sc9img4.png";
+import sc9img5 from "../../assets/sc9img5.png";
+import sc9img6 from "../../assets/sc9img6.png";
+import sc9img7 from "../../assets/sc9img7.png";
+import sc9img8 from "../../assets/sc9img8.png";
+
 export default function Section9() {
   const items = [
-    { title: "CERAMICS / PORCELAIN", col: 1, row: 1, span: 2 },
-    { title: "GLASS MANUFACTURING", col: 2, row: 1, span: 1 },
-    { title: "RUBBERS & PLASTICS", col: 3, row: 1, span: 2 },
-    { title: "FOUNDRY", col: 4, row: 1, span: 1 },
+    { title: "CERAMICS / PORCELAIN", col: 1, row: 1, span: 2, img: sc9img1 },
+    { title: "GLASS MANUFACTURING", col: 2, row: 1, span: 1, img: sc9img2 },
+    { title: "RUBBERS & PLASTICS", col: 3, row: 1, span: 2, img: sc9img3 },
+    { title: "FOUNDRY", col: 4, row: 1, span: 1, img: sc9img4 },
 
-    { title: "WATER FILTRATION", col: 1, row: 3, span: 1 },
-    { title: "ENGINEERED STONE", col: 2, row: 2, span: 2 },
-    { title: "CONSTRUCTION CHEMICALS", col: 3, row: 3, span: 1 },
-    { title: "PAINTS & COATINGS", col: 4, row: 2, span: 2 },
+    { title: "WATER FILTRATION", col: 1, row: 3, span: 1, img: sc9img5 },
+    { title: "ENGINEERED STONE", col: 2, row: 2, span: 2, img: sc9img6 },
+    { title: "CONSTRUCTION CHEMICALS", col: 3, row: 3, span: 1, img: sc9img7 },
+    { title: "PAINTS & COATINGS", col: 4, row: 2, span: 2, img: sc9img8 },
   ];
 
   return (
-    <section className="relative w-full overflow-hidden">
-
+    <section className="section9-wrapper relative w-full overflow-hidden">
       {/* TOP DARK BACKGROUND */}
       <div className="bg-[#111] pt-[100px] pb-[110px]">
         <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-10 text-white items-center mb-20">
@@ -36,7 +45,7 @@ export default function Section9() {
         </div>
       </div>
 
-      {/* GRID (OVERLAPPING) */}
+      {/* GRID */}
       <div
         className="sec9-grid relative z-10 max-w-[1400px] mx-auto px-8 grid grid-cols-4 gap-6"
         style={{
@@ -53,10 +62,15 @@ export default function Section9() {
               gridRow: `${item.row} / span ${item.span}`,
             }}
           >
-            {/* IMAGE PLACEHOLDER */}
-            <div className="absolute inset-0 bg-white" />
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url(${item.img})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
 
-            {/* OVERLAY TEXT */}
             <div className="absolute inset-0 flex items-center justify-center text-center text-sm font-semibold tracking-wide text-white bg-black/35 px-4">
               {item.title}
             </div>
@@ -64,7 +78,7 @@ export default function Section9() {
         ))}
       </div>
 
-      {/* BOTTOM WHITE SECTION */}
+      {/* BOTTOM WHITE */}
       <div className="bg-white pt-[200px] pb-[80px] -mt-[120px]">
         <p className="max-w-[700px] mx-auto text-center text-[16px] leading-relaxed text-[#666] px-6 monts-med">
           With continuous monitoring, digital records, and repeatable testing
@@ -73,9 +87,19 @@ export default function Section9() {
         </p>
       </div>
 
-      {/* RESPONSIVE ONLY — NO LAYOUT CHANGE */}
+      {/* RESPONSIVE CONTROL */}
       <style>{`
+        /* Desktop: uniform dark */
+        .section9-wrapper {
+          background: #111;
+        }
+
+        /* Tablet & Mobile: keep split bg */
         @media (max-width: 1024px) {
+          .section9-wrapper {
+            background: transparent;
+          }
+
           .sec9-grid {
             grid-template-columns: repeat(2, 1fr) !important;
             grid-auto-rows: 160px !important;
@@ -94,11 +118,6 @@ export default function Section9() {
             margin-top: -100px !important;
           }
 
-          .sec9-card {
-            grid-column: auto !important;
-            grid-row: auto !important;
-          }
-
           .bankgothicbold {
             font-size: 22px !important;
           }
@@ -109,7 +128,6 @@ export default function Section9() {
           }
         }
       `}</style>
-
     </section>
   );
 }
