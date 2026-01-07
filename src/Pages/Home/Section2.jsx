@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-
+import introvideo from "../../assets/IntroVideo/factory.mp4";
 
 export default function Section1() {
   return (
     <section className="w-full bg-[#d8d4d4]">
 
-      {/* TEXT SECTION */}
-      <div className="w-full max-w-7xl mx-auto px-8 pt-24 grid grid-cols-1 md:grid-cols-2 gap-16">
+      {/* TEXT SECTION (MOVED UP SLIGHTLY) */}
+      <div className="w-full max-w-7xl mx-auto px-8 pt-16 grid grid-cols-1 md:grid-cols-2 gap-16">
         
         {/* LEFT COLUMN */}
         <div>
@@ -39,13 +39,15 @@ export default function Section1() {
         </div>
       </div>
 
-      {/* VIDEO – DIRECTLY BELOW TEXT (NORMAL FLOW) */}
-      <div className="w-full max-w-7xl mx-auto px-8 mt-12">
-        <video
-          src=" "
-          controls
-          className="w-full h-[320px] md:h-[400px] object-cover rounded-lg"
-        />
+      {/* VIDEO SECTION (CLEAN SPACING, NO PUSHING DOWN) */}
+      <div className="w-full max-w-7xl mx-auto px-8 mt-8 pb-16">
+        <div className="p-6">
+          <video
+            src={introvideo}
+            controls
+            className="w-full h-[320px] md:h-[400px] object-cover rounded-lg"
+          />
+        </div>
       </div>
 
     </section>
