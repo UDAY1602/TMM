@@ -6,7 +6,7 @@ import pressureImg from "../../assets/Pressure Washing.png";
 import crushingImg from "../../assets/Fully Automatic Crushing & Grinding.png";
 import opticalImg from "../../assets/High-Precision Optical Sorting.png";
 import sievingImg from "../../assets/Advanced Sieving & Classification.png";
-import labImg from "../../assets/In-house Quality Testing Lab.png";
+import labImg from "../../assets/In-house Quality Testing Lab.png"; 
 import packagingImg from "../../assets/Dust-free Packaging Systems.png";
 
 const infraItems = [
