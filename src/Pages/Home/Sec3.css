@@ -120,7 +120,7 @@
 /* ITEM IMAGES */
 
 /* 1. GRIT */
-.item1 img { width: 244px; height: 127px; }
+.item1 img { width: 224px; height: 107px; }
 .item1 {
   
   left:55%;
@@ -136,9 +136,9 @@
 }
 
 /* 3. Powder */
-.item3 img { width: 224px; height: 106px; }
+.item3 img { width: 244px; height: 126px; }
 .item3 {
-  top: calc(498px - 90px);
+  top: calc(478px - 80px);
   left: 50%;
   transform: translateX(calc(-50% + (849px - 720px - 120px)));
 }
@@ -188,7 +188,7 @@
 
 /* ITEM 3 */
 
-.item3 .mesh { top: 115px; }
+.item3 .mesh { top: 110px; }
 
 /* ITEM 4 */
 
@@ -461,7 +461,7 @@
 
   .item3 {
     left: 50%;
-    top: calc(498px - 90px);
+    top: calc(498px - 50px);
     transform: translateX(calc(-50% + (849px - 720px - 120px)));
   }
 
