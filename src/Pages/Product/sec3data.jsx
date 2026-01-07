@@ -1,3 +1,7 @@
+import img_01_04 from "../../assets/Prod Supreme Minerals/Supreme _ 0.1-0.4.png";
+import img_03_07 from "../../assets/Prod Supreme Minerals/Supreme _ 0.3-0.7.png";
+import img_06_12 from "../../assets/Prod Supreme Minerals/Supreme _ 0.6-1.2.png";
+import img_12_25 from "../../assets/Prod Supreme Minerals/Supreme _ 1.2-2.5.png";
 export const COLORS = {
   header1: "#83877b",
   header2: "#282926",
@@ -12,6 +16,7 @@ export const COLORS = {
 export const SIZE_DATA = {
   "0.1-0.4": {
     label: "0.1 – 0.4 mm",
+    image:img_01_04,
     imageText: "Supreme Quartz Grits\n0.1 – 0.4 mm",
     rows: [
       [
@@ -43,6 +48,7 @@ export const SIZE_DATA = {
 
   "0.3-0.7": {
     label: "0.3 – 0.7 mm",
+    image:img_03_07,
     imageText: "Supreme Quartz Grits\n0.3 – 0.7 mm",
     rows: [
       [
@@ -74,6 +80,7 @@ export const SIZE_DATA = {
 
   "0.6-1.2": {
     label: "0.6 – 1.2 mm",
+    image:img_06_12 ,
     imageText: "Supreme Quartz Grits\n0.6 – 1.2 mm",
     rows: [
       [
@@ -105,6 +112,7 @@ export const SIZE_DATA = {
 
   "1.2-2.5": {
     label: "1.2 – 2.5 mm",
+    image:img_12_25,
     imageText: "Supreme Quartz Grits\n1.2 – 2.5 mm",
     rows: [
       [

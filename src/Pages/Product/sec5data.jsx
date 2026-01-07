@@ -1,3 +1,5 @@
+import img_A_400 from "../../assets/Prod Quartz Filler/Premium (Grade A) - 400 Mesh.png";
+import img_M_400 from "../../assets/Prod Quartz Filler/M Grade 400 Mesh Filler.png";
 export const COLORS = {
   header1: "#83877b",
   header2: "#282926",
@@ -12,6 +14,7 @@ export const COLORS = {
 export const TABS = {
   premium: {
     label: "A - Premium",
+    image:img_A_400,
     imageText: "A-Premium Quartz Filler\n400 Mesh (38µm)",
     rows: [
       [
@@ -37,6 +40,7 @@ export const TABS = {
 
   supreme: {
     label: "M - Supreme",
+    image:img_M_400,
     imageText: "M-Supreme Quartz Filler\n400 Mesh (38µm)",
     rows: [
       [
