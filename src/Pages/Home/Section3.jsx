@@ -107,9 +107,9 @@ export default function Section3() {
 
         <div className="stickyBox">
           <h1 ref={textRef} className="textReal">
-            Premium Quartz Grits, Fillers &<br />
-            Powders for Engineered Stone<br />
-            and Industrial Applications
+            Engineered Precision Meets<br />
+            Industrial Strength with <br />
+            Our Comprehensive Quartz Range
           </h1>
 
           <div ref={itemsRef} className="itemsLayer">
