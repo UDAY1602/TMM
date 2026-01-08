@@ -40,6 +40,7 @@ export default function Section1() {
 
   return (
     <section
+      className="section1-hero"
       style={{
         backgroundColor: "#000000",
         padding: "80px 32px",
@@ -47,7 +48,7 @@ export default function Section1() {
         width: "100%",
         position: "relative",
         minHeight: "300px",
-        overflow: "visible",
+        overflow: "visible", // ✅ desktop behaviour preserved
       }}
     >
       {/* FLOATING MINERAL */}
@@ -65,7 +66,7 @@ export default function Section1() {
           whiteSpace: "pre-line",
         }}
       >
-        {/* ===== INVISIBLE SPACE HOLDER (PREVENTS BG SHIFT) ===== */}
+        {/* ===== INVISIBLE SPACE HOLDER ===== */}
         <div style={{ visibility: "hidden" }}>
           <h1
             className="bankgothiclightreg"
@@ -91,7 +92,7 @@ export default function Section1() {
           </p>
         </div>
 
-        {/* ===== TYPED TEXT (ABSOLUTE OVERLAY) ===== */}
+        {/* ===== TYPED TEXT ===== */}
         <div style={{ position: "absolute", top: 0, left: 0 }}>
           <h1
             className="bankgothiclightreg"
@@ -125,10 +126,18 @@ export default function Section1() {
         </div>
       </div>
 
-      {/* STYLES */}
+      {/* MOBILE FIX (CRITICAL) */}
       <style>
         {`
           @media (max-width: 768px) {
+
+            /* 🔑 THIS IS THE REAL FIX */
+            .section1-hero {
+              overflow: hidden !important;
+              margin-bottom: 0 !important;
+              padding-bottom: 40px !important;
+            }
+
             .product-text-wrapper {
               margin-left: 0 !important;
               padding-right: 0 !important;
