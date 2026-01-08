@@ -3,7 +3,7 @@ import introvideo from "../../assets/IntroVideo/factory.mp4";
 
 export default function Section1() {
   return (
-    <section className="w-full bg-[#d8d4d4]">
+    <section className="w-full bg-[#eeedd3]">
 
       {/* TEXT SECTION (MOVED UP SLIGHTLY) */}
       <div className="w-full max-w-7xl mx-auto px-8 pt-16 grid grid-cols-1 md:grid-cols-2 gap-16">
