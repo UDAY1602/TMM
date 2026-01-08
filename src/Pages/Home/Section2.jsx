@@ -1,11 +1,36 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import introvideo from "../../assets/IntroVideo/factory.mp4";
 
 export default function Section1() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      {
+        threshold: 0.5, // play when 50% visible
+      }
+    );
+
+    observer.observe(video);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="w-full bg-[#eeedd3]">
 
-      {/* TEXT SECTION (MOVED UP SLIGHTLY) */}
+      {/* TEXT SECTION */}
       <div className="w-full max-w-7xl mx-auto px-8 pt-16 grid grid-cols-1 md:grid-cols-2 gap-16">
         
         {/* LEFT COLUMN */}
@@ -39,11 +64,14 @@ export default function Section1() {
         </div>
       </div>
 
-      {/* VIDEO SECTION (CLEAN SPACING, NO PUSHING DOWN) */}
+      {/* VIDEO SECTION */}
       <div className="w-full max-w-7xl mx-auto px-8 mt-8 pb-16">
         <div className="p-6">
           <video
+            ref={videoRef}
             src={introvideo}
+            muted          // REQUIRED for autoplay
+            playsInline    // REQUIRED for iOS
             controls
             className="w-full h-[320px] md:h-[400px] object-cover rounded-lg"
           />
