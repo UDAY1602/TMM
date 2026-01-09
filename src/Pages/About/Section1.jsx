@@ -64,7 +64,7 @@ export default function Section1({ setShowMineral }) {
         style={{
           maxWidth: "720px",
           textAlign: "center",
-          display: "grid", // 🔑 grid overlay
+          display: "grid", 
         }}
       >
         {/* ===== PLACEHOLDER (LOCKS HEIGHT) ===== */}

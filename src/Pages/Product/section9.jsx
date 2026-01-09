@@ -101,30 +101,30 @@ export default function Section9() {
           }
 
           .sec9-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-            grid-auto-rows: 160px !important;
+            grid-template-columns: repeat(2, 1fr) ;
+            grid-auto-rows: 160px ;
           }
 
           .sec9-card {
-            grid-column: auto !important;
-            grid-row: auto !important;
+            grid-column: auto ;
+            grid-row: auto ;
           }
         }
 
         @media (max-width: 640px) {
           .sec9-grid {
-            grid-template-columns: 1fr !important;
-            grid-auto-rows: 220px !important;
-            margin-top: -100px !important;
+            grid-template-columns: 1fr ;
+            grid-auto-rows: 220px ;
+            margin-top: -100px ;
           }
 
           .bankgothicbold {
-            font-size: 22px !important;
+            font-size: 22px ;
           }
 
           .monts-med,
           .monts-reg {
-            font-size: 14px !important;
+            font-size: 14px;
           }
         }
       `}</style>

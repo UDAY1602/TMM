@@ -24,24 +24,18 @@ export default function Section5() {
             gap: "6px",
           }}
         >
-          {/* LEFT IMAGE */}
+          {/* Left image */}
           <div className="section5-img-wrap section5-left">
             <img src={abtsec5L} alt="Section 5 Left" />
-            <button
-              className="zoom-btn"
-              onClick={() => setZoomImg(abtsec5L)}
-            >
+            <button className="zoom-btn" onClick={() => setZoomImg(abtsec5L)}>
               ⤢
             </button>
           </div>
 
-          {/* RIGHT IMAGE */}
+          {/* Right image */}
           <div className="section5-img-wrap section5-right">
             <img src={abtsec5R} alt="Section 5 Right" />
-            <button
-              className="zoom-btn"
-              onClick={() => setZoomImg(abtsec5R)}
-            >
+            <button className="zoom-btn" onClick={() => setZoomImg(abtsec5R)}>
               ⤢
             </button>
           </div>
@@ -69,7 +63,6 @@ export default function Section5() {
               display: block;
             }
 
-            /* ZOOM ICON */
             .zoom-btn {
               position: absolute;
               bottom: 12px;
@@ -96,24 +89,15 @@ export default function Section5() {
         </style>
       </section>
 
-      {/* FULLSCREEN ZOOM */}
       {zoomImg && (
         <div className="zoom-overlay">
-          {/* ❌ CLOSE BUTTON */}
-          <button
-            className="zoom-close"
-            onClick={() => setZoomImg(null)}
-          >
+          <button className="zoom-close" onClick={() => setZoomImg(null)}>
             ✕
           </button>
 
           <img src={zoomImg} alt="Zoomed view" />
 
-          {/* Click background to close */}
-          <div
-            className="zoom-backdrop"
-            onClick={() => setZoomImg(null)}
-          />
+          <div className="zoom-backdrop" onClick={() => setZoomImg(null)} />
         </div>
       )}
 
@@ -141,7 +125,6 @@ export default function Section5() {
             z-index: 2;
           }
 
-          /* ❌ CLOSE BUTTON */
           .zoom-close {
             position: absolute;
             top: 16px;

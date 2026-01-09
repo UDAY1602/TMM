@@ -13,7 +13,7 @@ const headerCell = (bg) => ({
 export default function DropdownMobile({
   open,
   title,
-  data,            // SAME data as desktop
+  data,            
   colors,
   activeKey,
   setActiveKey,
@@ -78,7 +78,7 @@ export default function DropdownMobile({
         </div>
       )}
 
-      {/* ================= SIZE NAV (MATCHES DESIGN) ================= */}
+      {/* ================= SIZE NAV================= */}
       {showArrows && (
         <div
           style={{

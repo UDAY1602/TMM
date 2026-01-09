@@ -46,7 +46,7 @@ export default function Section10() {
 
       {/* INTERNAL CSS */}
       <style>{`
-        /* LABELS */
+        
         .qa-label {
           background: #efefd6;
           padding: 8px 14px;
@@ -57,7 +57,6 @@ export default function Section10() {
           white-space: nowrap;
         }
 
-        /* RIPPLE BASE */
         .qa-ripple {
           position: absolute;
           width: 200px;
@@ -75,7 +74,7 @@ export default function Section10() {
           );
         }
 
-        /* RIPPLE – DESKTOP SPEED */
+        
         .group:hover .qa-ripple {
           animation: rippleDesktop 3s ease-out infinite;
         }
@@ -89,7 +88,6 @@ export default function Section10() {
           100% { transform: scale(1.9); opacity: 0; }
         }
 
-        /* CORE CIRCLE */
         .qa-core {
           width: 260px;
           height: 260px;
@@ -109,7 +107,7 @@ export default function Section10() {
           padding-right: 28px;
         }
 
-        /* MOBILE */
+       
         @media (max-width: 768px) {
           .qa-core {
             width: 220px;
@@ -121,7 +119,6 @@ export default function Section10() {
             height: 160px;
           }
 
-          /* FASTER RIPPLE ON MOBILE */
           .group:hover .qa-ripple {
             animation: rippleMobile 2s ease-out infinite;
           }

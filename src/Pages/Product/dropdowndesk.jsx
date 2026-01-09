@@ -1,6 +1,4 @@
 import React from "react";
-
-/* ================= HEADER CELL ================= */
 const headerCell = (bg) => ({
   backgroundColor: bg,
   padding: "16px",
@@ -31,7 +29,6 @@ export default function DropdownDesk({
     >
       <div style={{ padding: "80px 32px" }}>
 
-        {/* TITLE */}
         <h3
           className="monts-bold"
           style={{
@@ -45,7 +42,7 @@ export default function DropdownDesk({
           {title}
         </h3>
 
-        {/* SIZE TABS */}
+       
         <div
           style={{
             maxWidth: "1150px",
@@ -74,7 +71,7 @@ export default function DropdownDesk({
           ))}
         </div>
 
-        {/* IMAGE + TABLE */}
+        
         <div
           style={{
             maxWidth: "1150px",
@@ -88,7 +85,6 @@ export default function DropdownDesk({
               gridTemplateColumns: "280px 1fr",
             }}
           >
-            {/* IMAGE COLUMN */}
             <div
               style={{
                 padding: "24px",
@@ -99,7 +95,6 @@ export default function DropdownDesk({
                 textAlign: "center",
               }}
             >
-              {/* IMAGE (only if exists) */}
               {current.image && (
                 <img
                   src={current.image}
@@ -108,7 +103,7 @@ export default function DropdownDesk({
                 />
               )}
 
-              {/* IMAGE TEXT */}
+              
               <div>
                 <div
                   style={{
@@ -135,7 +130,7 @@ export default function DropdownDesk({
               </div>
             </div>
 
-            {/* TABLE */}
+           
             <div style={{ padding: "24px 0" }}>
               <div
                 style={{
@@ -144,7 +139,7 @@ export default function DropdownDesk({
                   overflow: "hidden",
                 }}
               >
-                {/* HEADER */}
+               
                 <div
                   style={{
                     display: "grid",
@@ -171,7 +166,7 @@ export default function DropdownDesk({
                   </div>
                 </div>
 
-                {/* ROWS */}
+                
                 {current.rows.map((row, i) => {
                   const even = i % 2 === 0;
 
