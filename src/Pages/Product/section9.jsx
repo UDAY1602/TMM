@@ -89,12 +89,12 @@ export default function Section9() {
 
       
       <style>{`
-        /* Desktop: uniform dark */
+        
         .section9-wrapper {
           background: #111;
         }
 
-        /* Tablet & Mobile: keep split bg */
+       
         @media (max-width: 1024px) {
           .section9-wrapper {
             background: transparent;
