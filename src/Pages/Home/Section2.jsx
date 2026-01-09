@@ -18,7 +18,7 @@ export default function Section1() {
         }
       },
       {
-        threshold: 0.5, // play when 50% visible
+        threshold: 0.5, 
       }
     );
 
@@ -70,8 +70,8 @@ export default function Section1() {
           <video
             ref={videoRef}
             src={introvideo}
-            muted          // REQUIRED for autoplay
-            playsInline    // REQUIRED for iOS
+            muted          
+            playsInline   
             controls
             className="w-full h-[320px] md:h-[400px] object-cover rounded-lg"
           />

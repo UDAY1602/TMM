@@ -15,7 +15,7 @@ export default function Section5() {
   }, []);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // prevent reload
+    e.preventDefault(); 
     setShowPopup(true);
   };
 

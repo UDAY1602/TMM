@@ -5,12 +5,12 @@ export default function ScrollTop() {
   const { pathname } = useLocation();
   const [showButton, setShowButton] = useState(false);
 
-  // Scroll to top on route change
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // Show / hide button while scrolling
+  
   useEffect(() => {
     const handleScroll = () => {
       setShowButton(window.scrollY > 300);

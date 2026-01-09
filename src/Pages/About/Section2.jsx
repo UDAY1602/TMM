@@ -12,10 +12,8 @@ export default function Section2() {
         backgroundPosition: "center",
         padding: "120px 32px",
         color: "#f4f1e8",
-        position: "relative",
       }}
     >
-      {/* CONTENT WRAPPER */}
       <div
         style={{
           maxWidth: "1200px",
@@ -26,18 +24,18 @@ export default function Section2() {
           alignItems: "center",
         }}
       >
-        {/* INDIA MAP */}
+        {/* India map visual */}
         <img
           src={indiaMap}
           alt="India map"
           style={{
             width: "100%",
             maxWidth: "380px",
-            opacity: "0.8",
+            opacity: 0.8,
           }}
         />
 
-        {/* TEXT CONTENT */}
+        {/* Main text */}
         <div>
           <h2
             style={{
@@ -45,7 +43,6 @@ export default function Section2() {
               fontSize: "28px",
               lineHeight: "1.3",
               marginBottom: "20px",
-              color: "#f4f1e8",
             }}
           >
             Leading manufacturer of Quartz Grits, Quartz Powder and Industrial
@@ -61,8 +58,8 @@ export default function Section2() {
           >
             In the mineral-rich landscapes of Andhra Pradesh—one of India’s most
             renowned hubs for high-purity quartz—our story takes shape. From this
-            region, where geology and craftsmanship meet, Tanujasreekesh has
-            grown into a trusted name in engineered-grade quartz.
+            region, where geology and craftsmanship meet, Tanujasreekesh has grown
+            into a trusted name in engineered-grade quartz.
             <br />
             <br />
             Rooted in Andhra Pradesh, India yet oriented toward the world, we
@@ -72,7 +69,7 @@ export default function Section2() {
         </div>
       </div>
 
-      {/* MOBILE RESPONSIVENESS */}
+      {/* Mobile layout */}
       <style>
         {`
           @media (max-width: 768px) {

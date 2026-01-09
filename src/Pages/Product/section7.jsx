@@ -29,7 +29,7 @@ export default function Section7() {
                    </p>
                  </div>
        
-                 {/* RIGHT IMAGE */}
+                 
                  {/* RIGHT IMAGE */}
                  <div className="quartzImageWrap">
                    <div className="quartzImageBox">
