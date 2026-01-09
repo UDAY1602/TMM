@@ -285,9 +285,6 @@
     line-height: 1.25;
   }
 
-  /* 
-     ITEMS — YOUR EXACT ALIGNMENT
-  */
   .itemsLayer {
     position: relative !important;
     opacity: 1 !important;
