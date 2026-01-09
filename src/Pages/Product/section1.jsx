@@ -129,27 +129,27 @@ export default function Section1() {
         {`
           @media (max-width: 768px) {
 
-            /* 🔑 THIS IS THE REAL FIX */
+            
             .section1-hero {
-              overflow: hidden !important;
-              margin-bottom: 0 !important;
-              padding-bottom: 40px !important;
+              overflow: hidden;
+              margin-bottom: 0;
+              padding-bottom: 40px ;
             }
 
             .product-text-wrapper {
-              margin-left: 0 !important;
-              padding-right: 0 !important;
-              max-width: 100% !important;
+              margin-left: 0 ;
+              padding-right: 0;
+              max-width: 100%;
               text-align: center;
             }
 
             .product-text-wrapper h1 {
-              font-size: 30px !important;
-              letter-spacing: 1px !important;
+              font-size: 30px ;
+              letter-spacing: 1px ;
             }
 
             .product-text-wrapper p {
-              font-size: 16px !important;
+              font-size: 16px ;
             }
           }
         `}

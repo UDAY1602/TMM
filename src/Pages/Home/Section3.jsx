@@ -33,7 +33,7 @@ export default function Section3() {
 
     const mm = gsap.matchMedia();
 
-    /* ================= DESKTOP ================= */
+   
     mm.add("(min-width: 1025px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {

@@ -24,7 +24,7 @@ export default function Section5() {
             gap: "6px",
           }}
         >
-          {/* Left image */}
+          
           <div className="section5-img-wrap section5-left">
             <img src={abtsec5L} alt="Section 5 Left" />
             <button className="zoom-btn" onClick={() => setZoomImg(abtsec5L)}>
@@ -32,7 +32,7 @@ export default function Section5() {
             </button>
           </div>
 
-          {/* Right image */}
+          
           <div className="section5-img-wrap section5-right">
             <img src={abtsec5R} alt="Section 5 Right" />
             <button className="zoom-btn" onClick={() => setZoomImg(abtsec5R)}>

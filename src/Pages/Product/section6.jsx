@@ -12,7 +12,7 @@ export default function Section6() {
         overflowX: "hidden",
       }}
     >
-      {/* ================= SECTION 6 LAYOUT ================= */}
+     
       <div
         className="sec2-wrapper"
         style={{
@@ -35,10 +35,10 @@ export default function Section6() {
               marginLeft: "-32px",
             }}
           >
-            {/* LEFT CREAM BAR — DESKTOP */}
+           
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-            {/* IMAGE — DESKTOP */}
+           
             <div
               className="sec2-image"
               style={{
@@ -60,7 +60,7 @@ export default function Section6() {
               />
             </div>
 
-            {/* CONTENT — DESKTOP */}
+            
             <div
               className="sec2-content"
               style={{
@@ -110,7 +110,7 @@ export default function Section6() {
         </div>
       </div>
 
-      {/* ================= MOBILE — SECTION 6 ONLY ================= */}
+    
       <style>
   {`
     @media (max-width: 768px) {

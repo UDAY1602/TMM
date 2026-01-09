@@ -1,6 +1,6 @@
 import React from "react";
 
-/* ===== IMAGE IMPORTS ===== */
+
 import sc9img1 from "../../assets/sc9img1.png";
 import sc9img2 from "../../assets/sc9img2.png";
 import sc9img3 from "../../assets/sc9img3.png";
@@ -25,7 +25,7 @@ export default function Section9() {
 
   return (
     <section className="section9-wrapper relative w-full overflow-hidden">
-      {/* TOP DARK BACKGROUND */}
+     
       <div className="bg-[#111] pt-[100px] pb-[110px]">
         <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-10 text-white items-center mb-20">
           <div>
@@ -45,7 +45,7 @@ export default function Section9() {
         </div>
       </div>
 
-      {/* GRID */}
+     
       <div
         className="sec9-grid relative z-10 max-w-[1400px] mx-auto px-8 grid grid-cols-4 gap-6"
         style={{
@@ -78,7 +78,7 @@ export default function Section9() {
         ))}
       </div>
 
-      {/* BOTTOM WHITE */}
+     
       <div className="bg-white pt-[200px] pb-[80px] -mt-[120px]">
         <p className="max-w-[700px] mx-auto text-center text-[16px] leading-relaxed text-[#666] px-6 monts-med">
           With continuous monitoring, digital records, and repeatable testing
@@ -87,7 +87,7 @@ export default function Section9() {
         </p>
       </div>
 
-      {/* RESPONSIVE CONTROL */}
+      
       <style>{`
         /* Desktop: uniform dark */
         .section9-wrapper {

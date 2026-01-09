@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-/* ===== COUNTRY → CODE MAP ===== */
+
 const COUNTRY_CODE_MAP = {
   Afghanistan: "+93",
   Albania: "+355",
@@ -29,7 +29,7 @@ export default function ContactHero() {
 
   const MAP_WIDTH = 600;
 
-  /* ===== STICKY MAP LOGIC ===== */
+
   const calculatePosition = () => {
     if (!formEndRef.current || !rightColRef.current) return;
 
@@ -75,10 +75,9 @@ export default function ContactHero() {
     <section className="w-full bg-[#1e1e1e] relative">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
 
-        {/* ================= LEFT CONTENT ================= */}
         <div className="w-full">
 
-          {/* HERO */}
+      
           <div className="px-6 sm:px-10 md:px-20 pt-20 pb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl oswold-reg text-[#eeedd3] font-medium mb-12">
               Reach out to us
@@ -110,14 +109,14 @@ export default function ContactHero() {
               </p>
             </div>
 
-          {/* ===== SOCIAL MEDIA ===== */}
+        
           <div className="flex flex-wrap items-center gap-4 mb-10">
             <p className="text-lg text-gray-400 opacity-50 monts-semibold">
               Social Media
             </p>
 
             <div className="flex gap-3">
-              {/* Facebook */}
+              
               <a
                 href=""
                 aria-label="Facebook"
@@ -130,7 +129,7 @@ export default function ContactHero() {
                 />
               </a>
 
-              {/* Instagram */}
+             
               <a
                 href=""
                 aria-label="Instagram"
@@ -143,7 +142,7 @@ export default function ContactHero() {
                 />
               </a>
 
-              {/* LinkedIn */}
+            
               <a
                 href=""
                 aria-label="LinkedIn"
@@ -156,7 +155,7 @@ export default function ContactHero() {
                 />
               </a>
 
-              {/* Twitter / X */}
+              
               <a
                 href=""
                 aria-label="Twitter"
@@ -172,12 +171,12 @@ export default function ContactHero() {
           </div>
 
 
-            {/* MOBILE MAP */}
+            
             <div className="lg:hidden mt-8">
               <iframe
                 title="Location map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24847.491372712644!2d79.31675241019414!3d15.16114795531263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb4cbe0f9d73d01%3A0x746a479d2a53a245!2sTANUJASREEKSESH%20MINES%20AND%20MINERALS!5e0!3m2!1sen!2sin!4v1767846686774!5m2!1sen!2sin"
-                // className="w-full h-full rounded-md"
+               
                 className="w-full h-[260px] rounded-md"
                 style={{ border: 0 }}
                 loading="lazy"
@@ -185,7 +184,7 @@ export default function ContactHero() {
             </div>
           </div>
 
-          {/* FORM */}
+         
           <section className="px-6 sm:px-10 md:px-20 py-20">
             <div className="w-full max-w-[600px]">
               <h1 className="text-3xl sm:text-4xl md:text-[46px] font-medium oswold-reg text-[#e6e4d8] mb-8">
@@ -266,13 +265,12 @@ export default function ContactHero() {
                 </button>
               </form>
 
-              {/* STOP MARKER */}
+              
               <div ref={formEndRef} className="h-[1px]" />
             </div>
           </section>
         </div>
 
-        {/* ================= DESKTOP MAP ================= */}
         <div ref={rightColRef} className="hidden lg:block relative">
           <div className="relative min-h-full">
             <div
@@ -296,7 +294,7 @@ export default function ContactHero() {
         </div>
       </div>
 
-      {/* POPUP */}
+      
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6">
           <div className="bg-[#1e1e1e] p-8 rounded-md max-w-[420px] w-full text-center">
