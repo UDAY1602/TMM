@@ -368,6 +368,9 @@
   .item4 img {
     transform: translateX(-20px); /* move LEFT */
   }
+  .item5 img {
+    transform: translateX(-20px); /* move LEFT */
+  }
 
   .item p,
   .item .itemText {
@@ -436,7 +439,7 @@
 
   .item1 {
     left: 55%;
-    top: calc(273px - 90px);
+    top: calc(273px - 80px);
     transform: translateX(calc(-50% + (291px - 720px - 120px)));
   }
 
@@ -459,8 +462,8 @@
   }
 
   .item5 {
-    left: 48%;
-    top: calc(305px - 85px);
+    left: 46%;
+    top: calc(305px - 110px);
     transform: translateX(calc(-50% + (1366px - 720px - 120px)));
   }
 }
