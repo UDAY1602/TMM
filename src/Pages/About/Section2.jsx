@@ -73,12 +73,12 @@ export default function Section2() {
         {`
           @media (max-width: 768px) {
             section > div {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: 1fr ;
               text-align: center;
             }
 
             section img {
-              max-width: 220px !important;
+              max-width: 220px ;
               margin: 0 auto;
               opacity: 0.35;
             }
