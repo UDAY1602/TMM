@@ -12,7 +12,7 @@ export default function Section5() {
 
   return (
     <>
-      {/* ================= SECTION 5 LAYOUT ================= */}
+      
       <div className="quartzOuter">
         <div className="quartzInner">
 
@@ -39,7 +39,7 @@ export default function Section5() {
               engineered stone, coatings, and advanced industrial applications.
             </p>
 
-            {/* ===== PRODUCT DETAILS BUTTON ===== */}
+          
             <button
               className="monts-semibold"
               onClick={() => setOpen((prev) => !prev)}
@@ -59,7 +59,7 @@ export default function Section5() {
             </button>
           </div>
 
-          {/* RIGHT IMAGE */}
+       
           <div className="quartzImageWrap">
             <div className="quartzImageBox">
               <img src={Sec5Img} alt="Quartz Powder" />
@@ -69,7 +69,6 @@ export default function Section5() {
         </div>
       </div>
 
-      {/* ================= DESKTOP DROPDOWN ================= */}
       {open && (
         <div className="desktop-dropdown">
           <DropdownDesk
@@ -84,7 +83,6 @@ export default function Section5() {
         </div>
       )}
 
-      {/* ================= MOBILE DROPDOWN ================= */}
       {open && (
         <div className="mobile-dropdown">
           <DropdownMobile

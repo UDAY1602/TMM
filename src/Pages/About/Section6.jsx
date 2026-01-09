@@ -4,7 +4,7 @@ import abtsec6 from "../../assets/abtsec6.jpg";
 const Section6 = () => {
   return (
     <div className="w-full flex flex-col md:flex-row md:min-h-[320px] bg-[#1E1E1E]">
-      {/* Image panel */}
+      
       <div
         className="w-full md:w-1/3 h-[220px] md:h-auto bg-cover bg-center relative"
         style={{ backgroundImage: `url(${abtsec6})` }}
@@ -25,7 +25,6 @@ const Section6 = () => {
         </div>
       </div>
 
-      {/* Text panel */}
       <div className="w-full md:w-2/3 flex items-center px-6 md:px-12 py-6 md:py-0">
         <div className="max-w-xl w-full">
           <p className="monts-reg text-[#ffffff] text-xs md:text-sm leading-relaxed mb-6">

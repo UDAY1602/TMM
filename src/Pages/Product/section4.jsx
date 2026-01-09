@@ -19,7 +19,7 @@ export default function Section4() {
         overflowX: "hidden",
       }}
     >
-      {/* ================= DESKTOP LAYOUT================= */}
+     
       <div
         className="sec2-wrapper"
         style={{
@@ -150,7 +150,7 @@ export default function Section4() {
         </div>
       </div>
 
-      {/* ================= DESKTOP DROPDOWN ================= */}
+      
       <div className="desktop-dropdown">
         <DropdownDesk
           open={open}
@@ -163,7 +163,6 @@ export default function Section4() {
         />
       </div>
 
-      {/* ================= MOBILE DROPDOWN ================= */}
       <div className="mobile-dropdown">
         <DropdownMobile
           open={open}

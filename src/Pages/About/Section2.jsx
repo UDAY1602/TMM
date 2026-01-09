@@ -24,7 +24,6 @@ export default function Section2() {
           alignItems: "center",
         }}
       >
-        {/* India map visual */}
         <img
           src={indiaMap}
           alt="India map"
@@ -35,7 +34,7 @@ export default function Section2() {
           }}
         />
 
-        {/* Main text */}
+        
         <div>
           <h2
             style={{
@@ -69,7 +68,7 @@ export default function Section2() {
         </div>
       </div>
 
-      {/* Mobile layout */}
+      
       <style>
         {`
           @media (max-width: 768px) {

@@ -30,10 +30,10 @@ export default function Section1() {
   return (
     <section className="w-full bg-[#eeedd3]">
 
-      {/* TEXT SECTION */}
+      
       <div className="w-full max-w-7xl mx-auto px-8 pt-16 grid grid-cols-1 md:grid-cols-2 gap-16">
         
-        {/* LEFT COLUMN */}
+       
         <div>
           <h2 className="heading-font text-4xl md:text-4xl text-[#313131]">
             Technology-driven manufacturing
@@ -44,7 +44,7 @@ export default function Section1() {
           </h2>
         </div>
 
-        {/* RIGHT COLUMN */}
+     
         <div className="text-[#313131]">
           <p className="leading-relaxed">
             Tanujasreekesh is a specialized manufacturer of high-purity Quartz
@@ -64,7 +64,7 @@ export default function Section1() {
         </div>
       </div>
 
-      {/* VIDEO SECTION */}
+     
       <div className="w-full max-w-7xl mx-auto px-8 mt-8 pb-16">
         <div className="p-6">
           <video

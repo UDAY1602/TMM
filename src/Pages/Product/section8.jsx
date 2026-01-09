@@ -12,7 +12,7 @@ export default function Section8() {
         overflowX: "hidden",
       }}
     >
-      {/* ================= SECTION 8 LAYOUT ================= */}
+      
       <div
         className="sec2-wrapper"
         style={{
@@ -125,7 +125,7 @@ export default function Section8() {
         </div>
       </div>
 
-      {/* ================= MOBILE — SECTION 8 ONLY ================= */}
+      
       <style>
   {`
     @media (max-width: 768px) {
