@@ -1,6 +1,6 @@
-/* ================================
+/* 
    FONTS
-================================ */
+ */
 @font-face {
   font-family: "Oswald";
   src: url("../../assets/fonts/Oswald-Medium.otf") format("opentype");
@@ -18,9 +18,9 @@
 .oswaldlight { font-family: "Oswald-light", sans-serif; }
 .rebaltypedog { font-family: "RebelTypeDog", sans-serif; }
 
-/* ================================
+/*
    DESKTOP BASE (UNCHANGED)
-================================ */
+*/
 .section3 {
   height: 420vh;
   background: #1A1A1A;
@@ -205,8 +205,7 @@
 
 
 
-/* (Desktop absolute positions remain exactly as you had them) */
-/* ---- Your existing item positioning rules stay here ---- */
+
 
 /* BOTTOM CTA */
 .bottomInfo {
@@ -244,17 +243,10 @@
   color: #1a1a1a;
 }
 
-/* =========================================================
-   TRUE MOBILE RESPONSIVE (NO HARD CODING)
-========================================================= */
-/* =====================================================
-   MOBILE STATIC LAYOUT — NO SCROLL DEPENDENCY
-===================================================== */
+
 @media (max-width: 900px) {
 
-  /* ===============================
-     SECTION RESET
-  =============================== */
+ 
   .section3 {
     height: auto !important;
     padding: 1.75rem 1rem 2.5rem;
@@ -267,16 +259,16 @@
     height: auto !important;
   }
 
-  /* ===============================
+  /* 
      REMOVE MOON
-  =============================== */
+  */
   .fullMoon {
     display: none !important;
   }
 
-  /* ===============================
+  /* 
      HERO TEXT
-  =============================== */
+   */
   .textReal {
     position: relative !important;
     transform: none !important;
@@ -293,9 +285,9 @@
     line-height: 1.25;
   }
 
-  /* ===============================
+  /* 
      ITEMS — YOUR EXACT ALIGNMENT
-  =============================== */
+  */
   .itemsLayer {
     position: relative !important;
     opacity: 1 !important;
@@ -331,7 +323,7 @@
   
   .item5 .quartz { top: 10px; left: 95%; }
 
-  /* Ensure text stays absolute relative to item */
+ 
   .item p,
   .item .itemText {
     position: absolute;
@@ -339,9 +331,7 @@
     text-align: center;
   }
 
-  /* ===============================
-     BOTTOM CTA
-  =============================== */
+ 
   .bottomInfo {
     position: relative !important;
     opacity: 1 !important;
@@ -389,10 +379,7 @@
 }
 
 
-/* =========================================================
-   DESKTOP FORCE RESET (RESTORES DESKTOP VIEW)
-   DOES NOT AFFECT MOBILE
-========================================================= */
+
 @media (min-width: 901px) {
 
   .section3 {
@@ -445,7 +432,7 @@
 }
 @media (min-width: 901px) {
 
-  /* RESTORE DESKTOP ITEM POSITIONING EXACTLY */
+ 
 
   .item1 {
     left: 55%;
