@@ -8,15 +8,15 @@ import { TABS, COLORS } from "./sec5data";
 
 export default function Section5() {
   const [open, setOpen] = useState(false);
-  const [activeSize, setActiveSize] = useState("premium"); // default tab
+  const [activeSize, setActiveSize] = useState("premium"); 
 
   return (
     <>
-      {/* ================= SECTION 5 LAYOUT ================= */}
+      
       <div className="quartzOuter">
         <div className="quartzInner">
 
-          {/* LEFT TEXT */}
+          
           <div className="quartzTextBox">
             <p className="tagline">
               High-purity powder ideal for composite materials,
@@ -39,7 +39,7 @@ export default function Section5() {
               engineered stone, coatings, and advanced industrial applications.
             </p>
 
-            {/* ===== PRODUCT DETAILS BUTTON ===== */}
+          
             <button
               className="monts-semibold"
               onClick={() => setOpen((prev) => !prev)}
@@ -59,7 +59,7 @@ export default function Section5() {
             </button>
           </div>
 
-          {/* RIGHT IMAGE */}
+       
           <div className="quartzImageWrap">
             <div className="quartzImageBox">
               <img src={Sec5Img} alt="Quartz Powder" />
@@ -69,7 +69,6 @@ export default function Section5() {
         </div>
       </div>
 
-      {/* ================= DESKTOP DROPDOWN ================= */}
       {open && (
         <div className="desktop-dropdown">
           <DropdownDesk
@@ -84,7 +83,6 @@ export default function Section5() {
         </div>
       )}
 
-      {/* ================= MOBILE DROPDOWN ================= */}
       {open && (
         <div className="mobile-dropdown">
           <DropdownMobile
@@ -95,12 +93,10 @@ export default function Section5() {
             imageSrc={Sec5Img}
             activeKey={activeSize}
             setActiveKey={setActiveSize}
-            showArrows={true}   // ✅ arrows kept for 2 tabs
+            showArrows={true}   
           />
         </div>
       )}
-
-      {/* ================= VISIBILITY CONTROL ================= */}
       <style>
         {`
           .mobile-dropdown {

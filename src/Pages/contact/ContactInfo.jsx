@@ -13,7 +13,7 @@ const ContactInfo = () => {
   return (
     <div className="w-full flex flex-col md:flex-row bg-[#313131] md:min-h-[300px]">
 
-      {/* LEFT IMAGE PANEL */}
+      
       <div className="w-full md:w-3/5 h-[200px] md:h-auto relative overflow-hidden">
         <img
           src={contactpgleft}
@@ -23,7 +23,7 @@ const ContactInfo = () => {
         <div className="absolute inset-0 bg-black/45"></div>
       </div>
 
-      {/* RIGHT IMAGE PANEL */}
+     
       <div
         className="w-full md:w-2/5 h-[200px] md:h-auto bg-cover bg-center relative"
         style={{ backgroundImage: `url(${section7right})` }}

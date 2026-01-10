@@ -12,13 +12,11 @@ export default function Section1() {
   const [typedText, setTypedText] = useState("");
   const [typing, setTyping] = useState(false);
 
-  /* POP MINERAL */
   useEffect(() => {
     const t = setTimeout(() => setShowMineral(true), 50);
     return () => clearTimeout(t);
   }, []);
 
-  /* SIMPLE TYPING */
   useEffect(() => {
     let i = 0;
     setTyping(true);
@@ -48,13 +46,13 @@ export default function Section1() {
         width: "100%",
         position: "relative",
         minHeight: "300px",
-        overflow: "visible", // ✅ desktop behaviour preserved
+        overflow: "visible", 
       }}
     >
-      {/* FLOATING MINERAL */}
+      
       <FloatingMineral visible={showMineral} />
 
-      {/* CONTENT */}
+      
       <div
         className="product-text-wrapper"
         style={{
@@ -66,7 +64,7 @@ export default function Section1() {
           whiteSpace: "pre-line",
         }}
       >
-        {/* ===== INVISIBLE SPACE HOLDER ===== */}
+        
         <div style={{ visibility: "hidden" }}>
           <h1
             className="bankgothiclightreg"
@@ -92,7 +90,7 @@ export default function Section1() {
           </p>
         </div>
 
-        {/* ===== TYPED TEXT ===== */}
+        
         <div style={{ position: "absolute", top: 0, left: 0 }}>
           <h1
             className="bankgothiclightreg"
@@ -126,32 +124,32 @@ export default function Section1() {
         </div>
       </div>
 
-      {/* MOBILE FIX (CRITICAL) */}
+      
       <style>
         {`
           @media (max-width: 768px) {
 
-            /* 🔑 THIS IS THE REAL FIX */
+            
             .section1-hero {
-              overflow: hidden !important;
-              margin-bottom: 0 !important;
-              padding-bottom: 40px !important;
+              overflow: hidden;
+              margin-bottom: 0;
+              padding-bottom: 40px ;
             }
 
             .product-text-wrapper {
-              margin-left: 0 !important;
-              padding-right: 0 !important;
-              max-width: 100% !important;
+              margin-left: 0 ;
+              padding-right: 0;
+              max-width: 100%;
               text-align: center;
             }
 
             .product-text-wrapper h1 {
-              font-size: 30px !important;
-              letter-spacing: 1px !important;
+              font-size: 30px ;
+              letter-spacing: 1px ;
             }
 
             .product-text-wrapper p {
-              font-size: 16px !important;
+              font-size: 16px ;
             }
           }
         `}

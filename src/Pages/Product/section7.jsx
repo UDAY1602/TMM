@@ -8,7 +8,7 @@ export default function Section7() {
              <div className="quartzOuter">
                <div className="quartzInner">
        
-                 {/* LEFT TEXT */}
+                
                  <div className="quartzTextBox">
                    <p className="tagline">
                      Hard dense quartzite material formed under 
@@ -29,8 +29,8 @@ export default function Section7() {
                    </p>
                  </div>
        
-                 {/* RIGHT IMAGE */}
-                 {/* RIGHT IMAGE */}
+                 
+                 
                  <div className="quartzImageWrap">
                    <div className="quartzImageBox">
                      <img src={Sec3} alt="Quartz Grits" />
