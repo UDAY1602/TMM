@@ -23,7 +23,7 @@ const ContactInfo = () => {
         <div className="absolute inset-0 bg-black/45"></div>
       </div>
 
-     
+      
       <div
         className="w-full md:w-2/5 h-[200px] md:h-auto bg-cover bg-center relative"
         style={{ backgroundImage: `url(${section7right})` }}

@@ -16,7 +16,7 @@ export default function About() {
 
   return (
     <div key={location.pathname}>
-  
+      
       <div style={{ position: "relative" }}>
         <Section1 setShowMineral={setShowMineral} />
         <FloatingMineral visible={showMineral} />

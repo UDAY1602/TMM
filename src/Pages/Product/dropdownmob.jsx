@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const headerCell = (bg) => ({
   backgroundColor: bg,
   padding: "10px",
@@ -7,6 +8,7 @@ const headerCell = (bg) => ({
   fontSize: "11px",
   boxSizing: "border-box",
 });
+
 
 export default function DropdownMobile({
   open,
@@ -39,7 +41,7 @@ export default function DropdownMobile({
         padding: open ? "16px 12px" : "0 12px",
       }}
     >
-     
+      
       <h3
         className="monts-bold"
         style={{
@@ -52,7 +54,7 @@ export default function DropdownMobile({
         {title}
       </h3>
 
-    
+      
       {current.image && (
         <div
           style={{
@@ -75,7 +77,9 @@ export default function DropdownMobile({
           />
         </div>
       )}
- {showArrows && (
+
+      
+      {showArrows && (
         <div
           style={{
             display: "grid",
@@ -100,7 +104,7 @@ export default function DropdownMobile({
             ‹
           </button>
 
-        
+          
           <div style={{ textAlign: "center" }}>
             <div
               style={{
@@ -125,7 +129,7 @@ export default function DropdownMobile({
             </div>
           </div>
 
-     
+          
           <button
             onClick={goNext}
             disabled={index === keys.length - 1}
@@ -143,7 +147,7 @@ export default function DropdownMobile({
         </div>
       )}
 
- 
+      
       <div
         style={{
           backgroundColor: "#313131",

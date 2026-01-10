@@ -112,6 +112,7 @@ export default function Section12() {
         </form>
       </div>
 
+     
       {showPopup && (
         <div
           style={{
@@ -179,21 +180,21 @@ export default function Section12() {
         </div>
       )}
 
-      
+     
       <style>
         {`
           @media (max-width: 768px) {
             section {
-              padding: 80px 20px ;
+              padding: 80px 20px !important;
             }
 
             section > div {
-              grid-template-columns: 1fr ;
-              gap: 40px ;
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
             }
 
             h2 {
-              font-size: 22px ;
+              font-size: 22px !important;
             }
           }
         `}

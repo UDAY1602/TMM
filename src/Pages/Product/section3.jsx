@@ -12,11 +12,11 @@ export default function Section3() {
 
   return (
     <section className="section3-quartz">
-     
+      
       <div className="quartzOuter">
         <div className="quartzInner">
 
-        
+      
           <div className="quartzTextBox">
             <p className="tagline">
               High-purity powder ideal for composite materials,
@@ -93,7 +93,7 @@ export default function Section3() {
         />
       </div>
 
-     
+      
       <style>
         {`
         .mobile-dropdown { display: none; }
@@ -101,44 +101,43 @@ export default function Section3() {
 
         @media (max-width: 768px) {
 
-          
+         
           .desktop-dropdown { display: none; }
           .mobile-dropdown { display: block; }
 
          
           .section3-quartz {
-            padding-left: 0 ;
-            padding-right: 0 ;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
           }
 
          
           .section3-quartz .quartzInner {
-            display: flex ;
-            flex-direction: column ;
-            background: #EDE4CF ;
-            padding: 0;
+            display: flex !important;
+            flex-direction: column !important;
+            background: #EDE4CF !important;
+            padding: 0 !important;
           }
 
-          
+        
           .section3-quartz .quartzTextBox {
-            padding: 30px 20px 20px ;
+            padding: 30px 20px 20px !important;
           }
 
-         
           .section3-quartz .quartzImageWrap {
-            display: flex ;
-            justify-content: center ;
-            padding: 0 20px 30px ;
-            background: transparent;
+            display: flex !important;
+            justify-content: center !important;
+            padding: 0 20px 30px !important;
+            background: transparent !important;
           }
 
           .section3-quartz .quartzImageBox img {
-            background: #ffffff ;
-            padding: 24px ;
+            background: #ffffff !important;
+            padding: 24px !important;
             border-radius: 4px;
-            max-width: 320px ;
-            width: 100% ;
-            height: auto ;
+            max-width: 320px !important;
+            width: 100% !important;
+            height: auto !important;
           }
         }
         `}

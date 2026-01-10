@@ -26,6 +26,7 @@ function Navbar() {
           <span></span>
         </div>
 
+        {/* Links + CTA */}
         <div className={`navbar-actions ${menuOpen ? "active" : ""}`}>
           <ul className="navbar-links montserratthin">
             <li><NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink></li>

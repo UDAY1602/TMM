@@ -110,7 +110,7 @@
 html, body {
   overscroll-behavior: none;
 }
-
+/* utility classes */
 .monts-semibold{
   font-family:"montssemibold";
 }

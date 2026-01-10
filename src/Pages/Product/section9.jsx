@@ -1,6 +1,4 @@
 import React from "react";
-
-
 import sc9img1 from "../../assets/sc9img1.png";
 import sc9img2 from "../../assets/sc9img2.png";
 import sc9img3 from "../../assets/sc9img3.png";
@@ -25,7 +23,7 @@ export default function Section9() {
 
   return (
     <section className="section9-wrapper relative w-full overflow-hidden">
-     
+    
       <div className="bg-[#111] pt-[100px] pb-[110px]">
         <div className="max-w-[1400px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-10 text-white items-center mb-20">
           <div>
@@ -78,7 +76,7 @@ export default function Section9() {
         ))}
       </div>
 
-     
+      
       <div className="bg-white pt-[200px] pb-[80px] -mt-[120px]">
         <p className="max-w-[700px] mx-auto text-center text-[16px] leading-relaxed text-[#666] px-6 monts-med">
           With continuous monitoring, digital records, and repeatable testing
@@ -89,7 +87,7 @@ export default function Section9() {
 
       
       <style>{`
-        
+       
         .section9-wrapper {
           background: #111;
         }
@@ -101,30 +99,30 @@ export default function Section9() {
           }
 
           .sec9-grid {
-            grid-template-columns: repeat(2, 1fr) ;
-            grid-auto-rows: 160px ;
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-auto-rows: 160px !important;
           }
 
           .sec9-card {
-            grid-column: auto ;
-            grid-row: auto ;
+            grid-column: auto !important;
+            grid-row: auto !important;
           }
         }
 
         @media (max-width: 640px) {
           .sec9-grid {
-            grid-template-columns: 1fr ;
-            grid-auto-rows: 220px ;
-            margin-top: -100px ;
+            grid-template-columns: 1fr !important;
+            grid-auto-rows: 220px !important;
+            margin-top: -100px !important;
           }
 
           .bankgothicbold {
-            font-size: 22px ;
+            font-size: 22px !important;
           }
 
           .monts-med,
           .monts-reg {
-            font-size: 14px;
+            font-size: 14px !important;
           }
         }
       `}</style>

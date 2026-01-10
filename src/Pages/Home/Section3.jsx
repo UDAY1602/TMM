@@ -29,13 +29,12 @@ export default function Section3() {
       return;
     }
 
-    
+  
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.config({ ignoreMobileResize: true });
 
     const mm = gsap.matchMedia();
 
-    
     mm.add("(min-width: 1025px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
