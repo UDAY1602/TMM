@@ -28,12 +28,14 @@ export default function Section3() {
     if (window.matchMedia("(max-width: 768px)").matches) {
       return;
     }
+
+    
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.config({ ignoreMobileResize: true });
 
     const mm = gsap.matchMedia();
 
-   
+    
     mm.add("(min-width: 1025px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -58,6 +60,8 @@ export default function Section3() {
         .to(itemsRef.current, { opacity: 1 })
         .to(bottomRef.current, { opacity: 1 });
     });
+
+    
     mm.add("(max-width: 1024px) and (min-width: 769px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -92,6 +96,8 @@ export default function Section3() {
   return (
     <section ref={sectionRef} className="section3">
       <div ref={pinRef} className="pinScene">
+
+        
         <img
           ref={moonRef}
           src={moon}
