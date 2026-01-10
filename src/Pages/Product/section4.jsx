@@ -218,7 +218,7 @@ export default function Section4() {
             padding: 30px 20px 20px ;
           }
 
-          /* image white card */
+          
           .section4-quartz .sec2-image {
             order: 2 ;
             background: transparent ;

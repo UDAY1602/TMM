@@ -31,7 +31,7 @@ export default function FloatingMineral({ visible }) {
 
       <style>
         {`
-          /* 🔑 MOBILE: HIDE MINERAL COMPLETELY */
+          
           @media (max-width: 768px) {
             .floating-mineral-prod {
               display: none !important;

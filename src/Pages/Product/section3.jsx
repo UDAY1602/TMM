@@ -56,6 +56,7 @@ export default function Section3() {
             </button>
           </div>
 
+         
           <div className="quartzImageWrap">
             <div className="quartzImageBox">
               <img src={Sec3} alt="Quartz Grits Supreme" />
@@ -77,6 +78,8 @@ export default function Section3() {
           imageSrc={dropdownmin}
         />
       </div>
+
+   
       <div className="mobile-dropdown">
         <DropdownMobile
           open={open}
@@ -98,7 +101,7 @@ export default function Section3() {
 
         @media (max-width: 768px) {
 
-        
+          
           .desktop-dropdown { display: none; }
           .mobile-dropdown { display: block; }
 
@@ -108,7 +111,7 @@ export default function Section3() {
             padding-right: 0 ;
           }
 
-          /* FULL CREAM CONTAINER */
+         
           .section3-quartz .quartzInner {
             display: flex ;
             flex-direction: column ;
@@ -121,7 +124,7 @@ export default function Section3() {
             padding: 30px 20px 20px ;
           }
 
-          
+         
           .section3-quartz .quartzImageWrap {
             display: flex ;
             justify-content: center ;
