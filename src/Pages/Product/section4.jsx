@@ -42,9 +42,10 @@ export default function Section4() {
               marginLeft: "-32px",
             }}
           >
+           
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-           
+            
             <div
               className="sec2-image"
               style={{
@@ -66,6 +67,7 @@ export default function Section4() {
               />
             </div>
 
+            
             <div
               className="sec2-content"
               style={{
@@ -128,7 +130,7 @@ export default function Section4() {
                   visual uniformity.
                 </p>
 
-                
+               
                 <button
                   className="monts-semibold"
                   onClick={() => setOpen(!open)}
@@ -150,7 +152,7 @@ export default function Section4() {
         </div>
       </div>
 
-      
+    
       <div className="desktop-dropdown">
         <DropdownDesk
           open={open}
@@ -163,6 +165,7 @@ export default function Section4() {
         />
       </div>
 
+      
       <div className="mobile-dropdown">
         <DropdownMobile
           open={open}
@@ -176,6 +179,7 @@ export default function Section4() {
         />
       </div>
 
+      
       <style>
         {`
         .mobile-dropdown { display: none; }
@@ -183,56 +187,57 @@ export default function Section4() {
 
         @media (max-width: 768px) {
 
-         
+          
           .desktop-dropdown { display: none; }
           .mobile-dropdown { display: block; }
 
+         
           .section4-quartz {
-            padding-left: 0 ;
-            padding-right: 0;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
           }
 
           .section4-quartz .sec2-wrapper {
-            padding-left: 0 ;
-            padding-right: 0 ;
-            max-width: 100% ;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            max-width: 100% !important;
           }
 
          
           .section4-quartz .sec2-grid {
-            display: flex ;
-            flex-direction: column ;
-            width: 100% ;
-            margin-left: 0 ;
-            background: #EDE4CF ;
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            margin-left: 0 !important;
+            background: #EDE4CF !important;
           }
 
-         
+          
           .section4-quartz .sec2-content {
             order: 1 !important;
-            background: transparent ;
+            background: transparent !important;
           }
 
           .section4-quartz .sec2-text {
             max-width: 100% !important;
-            padding: 30px 20px 20px ;
+            padding: 30px 20px 20px !important;
           }
 
           
           .section4-quartz .sec2-image {
-            order: 2 ;
-            background: transparent ;
-            padding: 0 20px 30px ;
-            justify-content: center ;
+            order: 2 !important;
+            background: transparent !important;
+            padding: 0 20px 30px !important;
+            justify-content: center !important;
           }
 
           .section4-quartz .sec2-image img {
-            background: #ffffff ;
-            padding: 24px ;
+            background: #ffffff !important;
+            padding: 24px !important;
             border-radius: 4px;
-            height: 260px ;
-            max-width: 320px ;
-            width: 100% ;
+            height: 260px !important;
+            max-width: 320px !important;
+            width: 100% !important;
           }
         }
         `}

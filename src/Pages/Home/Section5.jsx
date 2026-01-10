@@ -47,6 +47,7 @@ export default function Section5() {
           paddingTop: isMobile ? "20px" : "60px",
         }}
       >
+      
         <div style={{ textAlign: isMobile ? "center" : "left" }}>
           <h1
             style={{
@@ -71,7 +72,7 @@ export default function Section5() {
           </p>
         </div>
 
-     
+      
         <form
           onSubmit={handleSubmit}
           style={{

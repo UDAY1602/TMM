@@ -35,10 +35,24 @@ export default function Section1() {
 
   return (
     <section
-      className="w-full min-h-[100svh] flex items-center bg-cover bg-no-repeat bg-[58%_50%] sm:bg-center"
+      className="
+        w-full
+        min-h-[100svh]
+        flex items-center
+        bg-cover bg-no-repeat
+        bg-[58%_50%]
+        sm:bg-center
+      "
       style={{ backgroundImage: `url(${section1bg})` }}
     >
-      <div className="pl-6 sm:pl-16 lg:pl-40 max-w-[90%] sm:max-w-none whitespace-pre-line grid">
+      <div
+        className="
+          pl-6 sm:pl-16 lg:pl-40
+          max-w-[90%] sm:max-w-none
+          whitespace-pre-line
+          grid
+        "
+      >
         
         <div style={{ visibility: "hidden", gridArea: "1 / 1" }}>
           <h1 className="heading-font text-3xl sm:text-4xl lg:text-5xl pb-2">
@@ -53,6 +67,7 @@ export default function Section1() {
           </p>
         </div>
 
+        
         <div style={{ gridArea: "1 / 1" }}>
           <h1 className="heading-font text-[#eeedd3] text-3xl sm:text-4xl lg:text-5xl pb-2">
             {h1}

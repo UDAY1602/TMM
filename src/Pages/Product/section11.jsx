@@ -1,7 +1,5 @@
 import React from "react";
 import "../Product/sec11.css";
-
-
 import pressureImg from "../../assets/Pressure Washing.png";
 import crushingImg from "../../assets/Fully Automatic Crushing & Grinding.png";
 import opticalImg from "../../assets/High-Precision Optical Sorting.png";
@@ -39,7 +37,7 @@ const infraItems = [
 export default function Section11() {
   return (
     <section className="manufacturing">
-     
+      
       <div className="manufacturing-header">
         <h2>
           MANUFACTURING <br /> INFRASTRUCTURE
@@ -52,7 +50,7 @@ export default function Section11() {
         </p>
       </div>
 
-     
+      
       <div className="infra-grid">
         {infraItems.map((item, index) => (
           <div key={index} className="infra-card">
@@ -66,7 +64,6 @@ export default function Section11() {
         ))}
       </div>
 
-     
       <div className="bottom-grid">
         <div className="bottom-card rd">
           <h3>R&amp;D &amp; Innovation</h3>

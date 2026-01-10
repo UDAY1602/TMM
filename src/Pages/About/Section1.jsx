@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 
 export default function Section1({ setShowMineral }) {
-  
+ 
   const heading = "PURE & PURPOSEFUL";
   const text =
     "At Tanujasreekesh Mines & Minerals, we transform nature’s most enduring resource—quartz—into a foundation for tomorrow’s innovations. From raw stone to refined brilliance, our journey is built on integrity, precision and purpose.";
 
- 
+  
   const [typedHeading, setTypedHeading] = useState("");
   const [typedText, setTypedText] = useState("");
   const [typing, setTyping] = useState(false);
 
+ 
   useEffect(() => {
     if (!setShowMineral) return;
 

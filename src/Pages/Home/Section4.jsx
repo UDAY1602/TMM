@@ -23,7 +23,7 @@ export default function Section4() {
         </div>
       </div>
 
-     
+   
       <div className="
         max-w-7xl mx-auto
         px-6 sm:px-10 lg:px-20
@@ -73,7 +73,6 @@ export default function Section4() {
         </div>
       </div>
 
-      
       <div
         className="py-12 sm:py-16 text-[#eeedd3]"
         style={{
