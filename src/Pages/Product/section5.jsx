@@ -59,7 +59,7 @@ export default function Section5() {
             </button>
           </div>
 
-          
+       
           <div className="quartzImageWrap">
             <div className="quartzImageBox">
               <img src={Sec5Img} alt="Quartz Powder" />
@@ -69,7 +69,6 @@ export default function Section5() {
         </div>
       </div>
 
-      
       {open && (
         <div className="desktop-dropdown">
           <DropdownDesk
@@ -84,7 +83,6 @@ export default function Section5() {
         </div>
       )}
 
-      
       {open && (
         <div className="mobile-dropdown">
           <DropdownMobile
@@ -99,8 +97,6 @@ export default function Section5() {
           />
         </div>
       )}
-
-      
       <style>
         {`
           .mobile-dropdown {

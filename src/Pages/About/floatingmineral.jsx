@@ -29,19 +29,18 @@ export default function FloatingMineral({ visible }) {
       </div>
       <style>
         {`
-         
+        
           .floating-mineral {
             bottom: -130px;
           }
 
-         
           @media (max-width: 768px) {
             .floating-mineral {
-              bottom: -160px;   
+              bottom: -160px;  
             }
 
             .floating-mineral img {
-              height: 270px;    
+              height: 270px;   
             }
           }
         `}

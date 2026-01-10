@@ -79,6 +79,7 @@
   font-size: 20px;
 }
 
+
 .bottom-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -122,7 +123,6 @@
   max-width: 520px;
 }
 
-
 .bottom-card.rd {
   background-image: url("/TMM/src/assets/sec12rd.png");
 }
@@ -130,6 +130,7 @@
 .bottom-card.hse {
   background-image: url("/TMM/src/assets/sec12hs.png");
 }
+
 
 @media (max-width: 768px) {
   .infra-grid {
@@ -155,19 +156,3 @@
   }
   
 }
-
-/* @media (max-width: 640px) {
-  .infra-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .bottom-grid {
-    grid-template-columns: 1fr;
-  }
-
-  
-
-  .manufacturing-header h2 {
-    font-size: 30px;
-  }
-} */

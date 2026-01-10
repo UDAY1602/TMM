@@ -4,11 +4,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
-/* =========================
-   BASE NAVBAR (DESKTOP)
-========================= */
-
 .navbar {
   width: 100%;
   padding: 18px 0;
@@ -122,9 +117,9 @@
   color: #313131;
 }
 
-/* =========================
-   HAMBURGER
-========================= */
+
+
+
 
 .hamburger {
   display: none;
@@ -150,9 +145,9 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* =========================
-   TABLET ONLY (769px–1024px)
-========================= */
+
+  
+
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .navbar-container {
@@ -186,9 +181,9 @@
   }
 }
 
-/* =========================
-   MOBILE (≤900px)
-========================= */
+
+ 
+
 
 @media (max-width: 900px) {
   .hamburger {
@@ -227,9 +222,8 @@
   }
 }
 
-/* =========================
-   PHONES (≤768px)
-========================= */
+
+
 
 @media (max-width: 768px) {
   .navbar-logo {
@@ -252,9 +246,9 @@
   }
 }
 
-/* =========================
-   SMALL PHONES (≤480px)
-========================= */
+
+  
+
 
 @media (max-width: 480px) {
   .logo-wrapper img {

@@ -138,14 +138,13 @@
 
 @media (max-width: 768px) {
 
-  
   .quartzOuter {
     height: auto;
     padding-top: 30px;
     padding-bottom: 30px;
   }
 
- 
+  
   .quartzInner {
     width: 100%;
     flex-direction: column;
@@ -154,7 +153,7 @@
     gap: 30px;
   }
 
- 
+  
   .quartzTextBox {
     width: 100%;
   }
@@ -176,7 +175,7 @@
     font-size: 13px;
   }
 
- 
+
   .quartzImageWrap {
     width: 100%;
     justify-content: center;

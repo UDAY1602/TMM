@@ -1,6 +1,4 @@
 import React from "react";
-
-
 const headerCell = (bg) => ({
   backgroundColor: bg,
   padding: "16px",
@@ -31,7 +29,6 @@ export default function DropdownDesk({
     >
       <div style={{ padding: "80px 32px" }}>
 
-     
         <h3
           className="monts-bold"
           style={{
@@ -45,7 +42,7 @@ export default function DropdownDesk({
           {title}
         </h3>
 
-      
+       
         <div
           style={{
             maxWidth: "1150px",
@@ -74,6 +71,7 @@ export default function DropdownDesk({
           ))}
         </div>
 
+        
         <div
           style={{
             maxWidth: "1150px",
@@ -87,7 +85,6 @@ export default function DropdownDesk({
               gridTemplateColumns: "280px 1fr",
             }}
           >
-            
             <div
               style={{
                 padding: "24px",
@@ -98,7 +95,6 @@ export default function DropdownDesk({
                 textAlign: "center",
               }}
             >
-             
               {current.image && (
                 <img
                   src={current.image}
@@ -107,7 +103,7 @@ export default function DropdownDesk({
                 />
               )}
 
-            
+              
               <div>
                 <div
                   style={{
@@ -134,7 +130,7 @@ export default function DropdownDesk({
               </div>
             </div>
 
-            
+           
             <div style={{ padding: "24px 0" }}>
               <div
                 style={{
@@ -143,7 +139,7 @@ export default function DropdownDesk({
                   overflow: "hidden",
                 }}
               >
-              
+               
                 <div
                   style={{
                     display: "grid",
@@ -170,7 +166,7 @@ export default function DropdownDesk({
                   </div>
                 </div>
 
-             
+                
                 {current.rows.map((row, i) => {
                   const even = i % 2 === 0;
 

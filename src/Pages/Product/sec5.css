@@ -31,7 +31,6 @@
   
 }
 
-
 .quartzInner {
   width: 1920px;
   
@@ -136,7 +135,6 @@
   }
 }
 
-  
 @media (max-width: 768px) {
 
  
@@ -146,7 +144,7 @@
     padding-bottom: 30px;
   }
 
-  
+ 
   .quartzInner {
     width: 100%;
     flex-direction: column;
@@ -155,7 +153,7 @@
     gap: 30px;
   }
 
-  
+
   .quartzTextBox {
     width: 100%;
   }
@@ -182,7 +180,7 @@
     justify-content: center;
   }
 
-  
+ 
   .quartzImageBox img {
     width: 260px;
     padding: 0;

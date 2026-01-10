@@ -8,23 +8,23 @@ export default function Section10() {
        
         <div className="relative w-full hidden md:flex items-center justify-center">
 
-          
+         
           <div className="absolute left-[10%] flex flex-col gap-8 monts-reg">
             <div className="qa-label">Purity (SiO₂ %)</div>
             <div className="qa-label">Particle Size Distribution</div>
           </div>
 
-        
+         
           <div className="absolute right-[10%] flex flex-col gap-8 monts-reg">
             <div className="qa-label">Moisture Content</div>
             <div className="qa-label">Iron content (Fe₂O₃)</div>
           </div>
 
-        
+       
           <CenterCircle />
         </div>
 
-       
+        
         <div className="md:hidden w-full flex flex-col items-center gap-10">
 
           
@@ -33,7 +33,7 @@ export default function Section10() {
             <div className="qa-label">Moisture Content</div>
           </div>
 
-          
+         
           <CenterCircle />
 
           
@@ -57,7 +57,6 @@ export default function Section10() {
           white-space: nowrap;
         }
 
-        
         .qa-ripple {
           position: absolute;
           width: 200px;
@@ -75,7 +74,7 @@ export default function Section10() {
           );
         }
 
-      
+        
         .group:hover .qa-ripple {
           animation: rippleDesktop 3s ease-out infinite;
         }
@@ -89,7 +88,6 @@ export default function Section10() {
           100% { transform: scale(1.9); opacity: 0; }
         }
 
-      \
         .qa-core {
           width: 260px;
           height: 260px;
@@ -121,7 +119,6 @@ export default function Section10() {
             height: 160px;
           }
 
-          
           .group:hover .qa-ripple {
             animation: rippleMobile 2s ease-out infinite;
           }

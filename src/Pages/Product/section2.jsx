@@ -20,7 +20,6 @@ export default function Section2() {
         overflowX: "hidden",
       }}
     >
-      
       <div
         className="sec2-wrapper"
         style={{
@@ -31,7 +30,7 @@ export default function Section2() {
           paddingRight: "32px",
         }}
       >
-     
+       
         <div
           className="sec2-title"
           style={{
@@ -53,7 +52,7 @@ export default function Section2() {
           </h2>
         </div>
 
-       
+  
         <div style={{ width: "100%" }}>
           <div
             className="sec2-grid"
@@ -66,10 +65,10 @@ export default function Section2() {
               marginLeft: "-32px",
             }}
           >
-            
+         
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-         
+           
             <div
               className="sec2-image"
               style={{
@@ -91,7 +90,7 @@ export default function Section2() {
               />
             </div>
 
-           
+            
             <div
               className="sec2-content"
               style={{
@@ -175,7 +174,6 @@ export default function Section2() {
         </div>
       </div>
 
-     
       <div className="desktop-dropdown">
         <DropdownDesk
           open={open}
@@ -188,7 +186,7 @@ export default function Section2() {
         />
       </div>
 
-      
+     
       <div className="mobile-dropdown">
         <DropdownMobile
           open={open}
@@ -202,6 +200,7 @@ export default function Section2() {
         />
       </div>
 
+      
       <style>
   {`
     .mobile-dropdown { display: none; }
@@ -213,56 +212,56 @@ export default function Section2() {
       .mobile-dropdown { display: block; }
 
       .section2-quartz {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        overflow: hidden !important; 
+        padding-left: 0 ;
+        padding-right: 0 ;
+        overflow: hidden ;
       }
 
       .section2-quartz .sec2-wrapper {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        max-width: 100% !important;
+        padding-left: 0 ;
+        padding-right: 0 ;
+        max-width: 100% ;
       }
 
       .section2-quartz .sec2-title {
         background: #EDE4CF;
-        padding: 24px 20px 16px !important;
-        margin-bottom: 0 !important;
-        justify-content: center !important;
+        padding: 24px 20px 16px ;
+        margin-bottom: 0 ;
+        justify-content: center ;
       }
 
       .section2-quartz .sec2-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        margin-left: 0 !important;
-        background: #EDE4CF !important;
+        display: flex ;
+        flex-direction: column;
+        width: 100% ;
+        margin-left: 0 ;
+        background: #EDE4CF ;
       }
 
       .section2-quartz .sec2-content {
-        order: 1 !important;
-        background: transparent !important;
+        order: 1 ;
+        background: transparent ;
       }
 
       .section2-quartz .sec2-text {
-        max-width: 100% !important;
-        padding: 30px 20px 20px !important;
+        max-width: 100% ;
+        padding: 30px 20px 20px ;
       }
 
       .section2-quartz .sec2-image {
         order: 2 !important;
-        background: transparent !important;
-        padding: 0 20px 30px !important;
-        justify-content: center !important;
+        background: transparent ;
+        padding: 0 20px 30px ;
+        justify-content: center ;
       }
 
       .section2-quartz .sec2-image img {
-        background: #ffffff !important;
-        padding: 24px !important;
+        background: #ffffff ;
+        padding: 24px ;
         border-radius: 4px;
-        height: 260px !important;
-        max-width: 320px !important;
-        width: 100% !important;
+        height: 260px ;
+        max-width: 320px ;
+        width: 100% ;
       }
     }
   `}

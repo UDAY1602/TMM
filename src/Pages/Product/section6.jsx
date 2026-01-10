@@ -12,7 +12,7 @@ export default function Section6() {
         overflowX: "hidden",
       }}
     >
-    
+     
       <div
         className="sec2-wrapper"
         style={{
@@ -35,7 +35,7 @@ export default function Section6() {
               marginLeft: "-32px",
             }}
           >
-            
+           
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
            
@@ -60,7 +60,7 @@ export default function Section6() {
               />
             </div>
 
-          
+            
             <div
               className="sec2-content"
               style={{
@@ -110,64 +110,60 @@ export default function Section6() {
         </div>
       </div>
 
-      
+    
       <style>
-        {`
-        @media (max-width: 768px) {
+  {`
+    @media (max-width: 768px) {
+      .section6-quartz {
+        padding-left: 0;
+        padding-right: 0;
+      }
 
-         
-          .section6-quartz {
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-          }
+      .section6-quartz .sec2-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        max-width: 100%;
+      }
 
-          .section6-quartz .sec2-wrapper {
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-            max-width: 100% !important;
-          }
+      .section6-quartz .sec2-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        background: #EDE4CF;
+      }
 
-         
-          .section6-quartz .sec2-grid {
-            display: flex !important;
-            flex-direction: column !important;
-            width: 100% !important;
-            margin-left: 0 !important;
-            background: #EDE4CF !important;
-          }
+      .section6-quartz .sec2-content {
+        order: 1;
+        background: transparent;
+        width: 100%;
+      }
 
-         
-          .section6-quartz .sec2-content {
-            order: 1 !important;
-            background: transparent !important;
-            width: 100% !important;
-          }
+      .section6-quartz .sec2-text {
+        max-width: 100%;
+        padding: 30px 20px 20px;
+        text-align: left;
+      }
 
-          .section6-quartz .sec2-text {
-            max-width: 100% !important;
-            padding: 30px 20px 20px !important;
-            text-align: left !important;
-          }
+      .section6-quartz .sec2-image {
+        order: 2;
+        background: transparent;
+        padding: 0 20px 30px;
+        justify-content: center;
+      }
 
-          
-          .section6-quartz .sec2-image {
-            order: 2 !important;
-            background: transparent !important;
-            padding: 0 20px 30px !important;
-            justify-content: center !important;
-          }
+      .section6-quartz .sec2-image img {
+        background: #ffffff;
+        padding: 22px;
+        border-radius: 4px;
+        height: 260px;
+        max-width: 320px;
+        width: 100%;
+      }
+    }
+  `}
+</style>
 
-          .section6-quartz .sec2-image img {
-            background: #ffffff !important;
-            padding: 22px !important;
-            border-radius: 4px;
-            height: 260px !important;
-            max-width: 320px !important;
-            width: 100% !important;
-          }
-        }
-        `}
-      </style>
     </section>
   );
 }

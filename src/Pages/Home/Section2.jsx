@@ -18,7 +18,7 @@ export default function Section1() {
         }
       },
       {
-        threshold: 0.5,
+        threshold: 0.5, 
       }
     );
 
@@ -30,10 +30,10 @@ export default function Section1() {
   return (
     <section className="w-full bg-[#eeedd3]">
 
-     
+      
       <div className="w-full max-w-7xl mx-auto px-8 pt-16 grid grid-cols-1 md:grid-cols-2 gap-16">
         
-        
+       
         <div>
           <h2 className="heading-font text-4xl md:text-4xl text-[#313131]">
             Technology-driven manufacturing
@@ -44,7 +44,7 @@ export default function Section1() {
           </h2>
         </div>
 
-      
+     
         <div className="text-[#313131]">
           <p className="leading-relaxed">
             Tanujasreekesh is a specialized manufacturer of high-purity Quartz
@@ -64,13 +64,13 @@ export default function Section1() {
         </div>
       </div>
 
-      
+     
       <div className="w-full max-w-7xl mx-auto px-8 mt-8 pb-16">
         <div className="p-6">
           <video
             ref={videoRef}
             src={introvideo}
-            muted         
+            muted          
             playsInline   
             controls
             className="w-full h-[320px] md:h-[400px] object-cover rounded-lg"

@@ -29,7 +29,7 @@ export default function ContactHero() {
 
   const MAP_WIDTH = 600;
 
- 
+
   const calculatePosition = () => {
     if (!formEndRef.current || !rightColRef.current) return;
 
@@ -109,14 +109,14 @@ export default function ContactHero() {
               </p>
             </div>
 
-          
+        
           <div className="flex flex-wrap items-center gap-4 mb-10">
             <p className="text-lg text-gray-400 opacity-50 monts-semibold">
               Social Media
             </p>
 
             <div className="flex gap-3">
-             
+              
               <a
                 href=""
                 aria-label="Facebook"
@@ -129,7 +129,7 @@ export default function ContactHero() {
                 />
               </a>
 
-            
+             
               <a
                 href=""
                 aria-label="Instagram"
@@ -142,7 +142,7 @@ export default function ContactHero() {
                 />
               </a>
 
-              
+            
               <a
                 href=""
                 aria-label="LinkedIn"
@@ -155,7 +155,7 @@ export default function ContactHero() {
                 />
               </a>
 
-             
+              
               <a
                 href=""
                 aria-label="Twitter"
@@ -171,7 +171,7 @@ export default function ContactHero() {
           </div>
 
 
-         
+            
             <div className="lg:hidden mt-8">
               <iframe
                 title="Location map"
@@ -265,13 +265,12 @@ export default function ContactHero() {
                 </button>
               </form>
 
-             
+              
               <div ref={formEndRef} className="h-[1px]" />
             </div>
           </section>
         </div>
 
-        
         <div ref={rightColRef} className="hidden lg:block relative">
           <div className="relative min-h-full">
             <div
@@ -295,7 +294,7 @@ export default function ContactHero() {
         </div>
       </div>
 
-     
+      
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6">
           <div className="bg-[#1e1e1e] p-8 rounded-md max-w-[420px] w-full text-center">
