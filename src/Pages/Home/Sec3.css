@@ -1,6 +1,4 @@
-/* ================================
-   FONTS
-================================ */
+
 @font-face {
   font-family: "Oswald";
   src: url("../../assets/fonts/Oswald-Medium.otf") format("opentype");
@@ -18,9 +16,7 @@
 .oswaldlight { font-family: "Oswald-light", sans-serif; }
 .rebaltypedog { font-family: "RebelTypeDog", sans-serif; }
 
-/* ================================
-   DESKTOP BASE (UNCHANGED)
-================================ */
+
 .section3 {
   height: 420vh;
   background: #1A1A1A;
@@ -33,7 +29,7 @@
   height: 250vh;
 }
 
-/* FULL MOON */
+
 .fullMoon {
   position: absolute;
   top: -770px;
@@ -69,7 +65,7 @@
   mask-composite: intersect;
 }
 
-/* TEXT + ITEMS */
+
 .stickyBox {
   position: relative;
   height: 200vh;
@@ -77,7 +73,7 @@
   text-align: center;
 }
 
-/* HERO TEXT */
+
 .textReal {
   font-family: "Oswald", sans-serif;
   position: absolute;
@@ -101,7 +97,7 @@
   transform: translateX(-50%) translateY(0);
 }
 
-/* ITEMS DESKTOP */
+
 .itemsLayer {
   position: absolute;
   inset: 0;
@@ -117,9 +113,9 @@
   color: #fff;
 }
 
-/* ITEM IMAGES */
 
-/* 1. GRIT */
+
+
 .item1 img { width: 224px; height: 107px; }
 .item1 {
   
@@ -127,7 +123,7 @@
   transform: translateX(calc(-50% + (291px - 720px - 120px)));
 }
 
-/* 2. Semi-Translucent Quartz */
+
 .item2 img { width: 200px; height: 120px; }
 .item2 {
   top: calc(471px - 110px);
@@ -135,7 +131,7 @@
   transform: translateX(calc(-50% + (567px - 720px - 120px)));
 }
 
-/* 3. Powder */
+
 .item3 img { width: 244px; height: 126px; }
 .item3 {
   top: calc(478px - 80px);
@@ -143,7 +139,7 @@
   transform: translateX(calc(-50% + (849px - 720px - 120px)));
 }
 
-/* 4. Snow White Quartz */
+
 .item4 img { width: 234px; height:125px; }
 .item4 {
   top: calc(432px - 100px);
@@ -151,7 +147,7 @@
   transform: translateX(calc(-0% + (1142px - 720px - 120px)));
 }
 
-/* 5. Fillers */
+
 .item5 img { width: 214px; height:120px; }
 .item5 {
   top: calc(305px - 85px);
@@ -176,25 +172,25 @@
   text-align: center;
   line-height: 1.1;
 }
-/* Small text – first line */
 
-/* ITEM 1 */
+
+
 
 .item1 .grit { top: 120px;left:50% }
 
-/* ITEM 2 */
+
 
 .item2 .semi { top: 115px;left: 50% }
 
-/* ITEM 3 */
+
 
 .item3 .mesh { top: 110px; }
 
-/* ITEM 4 */
+
 
 .item4 .snow { top: 110px; left: 55%; width:1000px;}
 
-/* ITEM 5 */
+
 
 .item5 .quartz { top: 120px;left: 55% }
 /* .p1, .p3, .p5 { font-family: "oswald-light"; font-size: 20px; }
@@ -205,10 +201,7 @@
 
 
 
-/* (Desktop absolute positions remain exactly as you had them) */
-/* ---- Your existing item positioning rules stay here ---- */
 
-/* BOTTOM CTA */
 .bottomInfo {
   position: absolute;
   width: 100%;
@@ -244,17 +237,10 @@
   color: #1a1a1a;
 }
 
-/* =========================================================
-   TRUE MOBILE RESPONSIVE (NO HARD CODING)
-========================================================= */
-/* =====================================================
-   MOBILE STATIC LAYOUT — NO SCROLL DEPENDENCY
-===================================================== */
+
 @media (max-width: 900px) {
 
-  /* ===============================
-     SECTION RESET
-  =============================== */
+  
   .section3 {
     height: auto !important;
     padding: 1.75rem 1rem 2.5rem;
@@ -267,16 +253,12 @@
     height: auto !important;
   }
 
-  /* ===============================
-     REMOVE MOON
-  =============================== */
+  
   .fullMoon {
     display: none !important;
   }
 
-  /* ===============================
-     HERO TEXT
-  =============================== */
+  
   .textReal {
     position: relative !important;
     transform: none !important;
@@ -293,9 +275,7 @@
     line-height: 1.25;
   }
 
-  /* ===============================
-     ITEMS — YOUR EXACT ALIGNMENT
-  =============================== */
+ 
   .itemsLayer {
     position: relative !important;
     opacity: 1 !important;
@@ -310,28 +290,28 @@
     
     
   }
-  /* ITEM 1 */
+  
   
   .item1 .grit { top: 20px; left: 95%; }
 
-  /* ITEM 2 */
+  
   
   .item2 .semi { top: 40px; left: 95%; }
 
-  /* ITEM 3 */
+  
   
   .item3 .mesh { top: 25px; left: 97%; }
 
-  /* ITEM 4 */
+  
   
   .item4 .snow { top: 45px; left: 94%; }
   
 
-  /* ITEM 5 */
+  
   
   .item5 .quartz { top: 10px; left: 95%; }
 
-  /* Ensure text stays absolute relative to item */
+  
   .item p,
   .item .itemText {
     position: absolute;
@@ -339,9 +319,7 @@
     text-align: center;
   }
 
-  /* ===============================
-     BOTTOM CTA
-  =============================== */
+  
   .bottomInfo {
     position: relative !important;
     opacity: 1 !important;
@@ -376,7 +354,10 @@
     height: auto;
   }
   .item4 img {
-    transform: translateX(-20px); /* move LEFT */
+    transform: translateX(-20px); 
+  }
+  .item5 img {
+    transform: translateX(-20px); 
   }
 
   .item p,
@@ -389,10 +370,7 @@
 }
 
 
-/* =========================================================
-   DESKTOP FORCE RESET (RESTORES DESKTOP VIEW)
-   DOES NOT AFFECT MOBILE
-========================================================= */
+
 @media (min-width: 901px) {
 
   .section3 {
@@ -445,7 +423,7 @@
 }
 @media (min-width: 901px) {
 
-  /* RESTORE DESKTOP ITEM POSITIONING EXACTLY */
+  
 
   .item1 {
     left: 55%;
@@ -473,7 +451,7 @@
 
   .item5 {
     left: 48%;
-    top: calc(305px - 85px);
+    top: calc(305px - 125px);
     transform: translateX(calc(-50% + (1366px - 720px - 120px)));
   }
 }
