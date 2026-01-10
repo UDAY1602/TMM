@@ -29,19 +29,19 @@ export default function FloatingMineral({ visible }) {
       </div>
       <style>
         {`
-          /* Desktop: 50% / 50% */
+         
           .floating-mineral {
             bottom: -130px;
           }
 
-          /* Mobile: adjust position */
+         
           @media (max-width: 768px) {
             .floating-mineral {
-              bottom: -160px;   /* 🔑 pulls mineral UP on mobile */
+              bottom: -160px;   
             }
 
             .floating-mineral img {
-              height: 270px;    /* better scale for mobile */
+              height: 270px;    
             }
           }
         `}

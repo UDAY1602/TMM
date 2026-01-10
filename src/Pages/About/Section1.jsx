@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
 export default function Section1({ setShowMineral }) {
-  /* ===== CONTENT ===== */
+ 
   const heading = "PURE & PURPOSEFUL";
   const text =
     "At Tanujasreekesh Mines & Minerals, we transform nature’s most enduring resource—quartz—into a foundation for tomorrow’s innovations. From raw stone to refined brilliance, our journey is built on integrity, precision and purpose.";
 
-  /* ===== STATE ===== */
+  
   const [typedHeading, setTypedHeading] = useState("");
   const [typedText, setTypedText] = useState("");
   const [typing, setTyping] = useState(false);
 
-  /* ===== SCROLL → MINERAL ===== */
+ 
   useEffect(() => {
     if (!setShowMineral) return;
 
@@ -27,7 +27,7 @@ export default function Section1({ setShowMineral }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [setShowMineral]);
 
-  /* ===== SIMPLE TYPING EFFECT ===== */
+ 
   useEffect(() => {
     let i = 0;
     setTyping(true);
@@ -64,10 +64,10 @@ export default function Section1({ setShowMineral }) {
         style={{
           maxWidth: "720px",
           textAlign: "center",
-          display: "grid", // 🔑 grid overlay
+          display: "grid", 
         }}
       >
-        {/* ===== PLACEHOLDER (LOCKS HEIGHT) ===== */}
+        
         <div style={{ visibility: "hidden", gridArea: "1 / 1" }}>
           <h2
             style={{
@@ -91,7 +91,7 @@ export default function Section1({ setShowMineral }) {
           </p>
         </div>
 
-        {/* ===== TYPED TEXT (SAME GRID CELL) ===== */}
+        
         <div style={{ gridArea: "1 / 1" }}>
           <h2
             style={{

@@ -7,12 +7,12 @@ export default function Section8() {
       className="section8-quartz"
       style={{
         backgroundColor: "#ffffff",
-        padding: "60px 0",   // desktop spacing preserved
+        padding: "60px 0",   
         width: "100%",
         overflowX: "hidden",
       }}
     >
-      {/* ================= SECTION 8 LAYOUT ================= */}
+    
       <div
         className="sec2-wrapper"
         style={{
@@ -35,10 +35,10 @@ export default function Section8() {
               marginLeft: "-32px",
             }}
           >
-            {/* LEFT CREAM BAR — DESKTOP */}
+            
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-            {/* IMAGE — DESKTOP */}
+           
             <div
               className="sec2-image"
               style={{
@@ -60,7 +60,7 @@ export default function Section8() {
               />
             </div>
 
-            {/* CONTENT — DESKTOP */}
+           
             <div
               className="sec2-content"
               style={{
@@ -125,25 +125,23 @@ export default function Section8() {
         </div>
       </div>
 
-      {/* ================= MOBILE — SECTION 8 ONLY ================= */}
+   
       <style>
         {`
         @media (max-width: 768px) {
 
-          /* 🔑 REMOVE OUTER SIDE GAPS */
           .section8-quartz {
             padding-left: 0 !important;
             padding-right: 0 !important;
           }
 
-          /* REMOVE WRAPPER SIDE GAPS */
           .section8-quartz .sec2-wrapper {
             padding-left: 0 !important;
             padding-right: 0 !important;
             max-width: 100% !important;
           }
 
-          /* FULL-WIDTH CREAM CONTAINER */
+          
           .section8-quartz .sec2-grid {
             display: flex !important;
             flex-direction: column !important;
@@ -152,7 +150,7 @@ export default function Section8() {
             background: #EDE4CF !important;
           }
 
-          /* TEXT FIRST */
+          
           .section8-quartz .sec2-content {
             order: 1 !important;
             background: transparent !important;
@@ -165,7 +163,7 @@ export default function Section8() {
             text-align: left !important;
           }
 
-          /* IMAGE WHITE CARD BELOW TEXT */
+         
           .section8-quartz .sec2-image {
             order: 2 !important;
             background: transparent !important;

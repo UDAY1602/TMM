@@ -1,6 +1,6 @@
 import React from "react";
 
-/* ================= HEADER CELL ================= */
+
 const headerCell = (bg) => ({
   backgroundColor: bg,
   padding: "10px",
@@ -9,11 +9,11 @@ const headerCell = (bg) => ({
   boxSizing: "border-box",
 });
 
-/* ================= REUSABLE MOBILE DROPDOWN ================= */
+
 export default function DropdownMobile({
   open,
   title,
-  data,            // SAME data as desktop
+  data,            
   colors,
   activeKey,
   setActiveKey,
@@ -41,7 +41,7 @@ export default function DropdownMobile({
         padding: open ? "16px 12px" : "0 12px",
       }}
     >
-      {/* ================= TITLE ================= */}
+      
       <h3
         className="monts-bold"
         style={{
@@ -54,7 +54,7 @@ export default function DropdownMobile({
         {title}
       </h3>
 
-      {/* ================= IMAGE (OPTIONAL) ================= */}
+      
       {current.image && (
         <div
           style={{
@@ -78,7 +78,7 @@ export default function DropdownMobile({
         </div>
       )}
 
-      {/* ================= SIZE NAV (MATCHES DESIGN) ================= */}
+      
       {showArrows && (
         <div
           style={{
@@ -88,7 +88,7 @@ export default function DropdownMobile({
             marginBottom: "18px",
           }}
         >
-          {/* LEFT ARROW */}
+          
           <button
             onClick={goPrev}
             disabled={index === 0}
@@ -104,7 +104,7 @@ export default function DropdownMobile({
             ‹
           </button>
 
-          {/* CENTER TEXT */}
+          
           <div style={{ textAlign: "center" }}>
             <div
               style={{
@@ -129,7 +129,7 @@ export default function DropdownMobile({
             </div>
           </div>
 
-          {/* RIGHT ARROW */}
+          
           <button
             onClick={goNext}
             disabled={index === keys.length - 1}
@@ -147,7 +147,7 @@ export default function DropdownMobile({
         </div>
       )}
 
-      {/* ================= TABLE ================= */}
+      
       <div
         style={{
           backgroundColor: "#313131",
@@ -155,7 +155,7 @@ export default function DropdownMobile({
           overflow: "hidden",
         }}
       >
-        {/* HEADER */}
+        
         <div
           style={{
             display: "grid",
@@ -181,7 +181,7 @@ export default function DropdownMobile({
           </div>
         </div>
 
-        {/* ROWS */}
+        
         {current.rows.map((row, i) => {
           const even = i % 2 === 0;
 
@@ -200,7 +200,7 @@ export default function DropdownMobile({
                 gridTemplateColumns: "44% 28% 28%",
               }}
             >
-              {/* PARAMETER */}
+             
               <div
                 style={{
                   display: "grid",

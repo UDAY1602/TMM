@@ -4,7 +4,7 @@ export default function Section12() {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // stop reload
+    e.preventDefault(); 
     setShowPopup(true);
   };
 
@@ -28,7 +28,7 @@ export default function Section12() {
           alignItems: "center",
         }}
       >
-        {/* LEFT CONTENT */}
+        
         <div
           style={{
             transform: "translateY(-20px)",
@@ -51,7 +51,7 @@ export default function Section12() {
           </h2>
         </div>
 
-        {/* RIGHT FORM */}
+        
         <form
           onSubmit={handleSubmit}
           style={{
@@ -112,7 +112,7 @@ export default function Section12() {
         </form>
       </div>
 
-      {/* ===== POPUP MODAL ===== */}
+     
       {showPopup && (
         <div
           style={{
@@ -151,7 +151,7 @@ export default function Section12() {
             <p
               style={{
                 fontSize: "14px",
-                // fontFamily:"oswald-reg",
+                
                 lineHeight: "1.6",
                 color: "#cfcfcf",
                 marginBottom: "24px",
@@ -180,7 +180,7 @@ export default function Section12() {
         </div>
       )}
 
-      {/* MOBILE RESPONSIVE */}
+     
       <style>
         {`
           @media (max-width: 768px) {

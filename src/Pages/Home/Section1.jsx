@@ -53,7 +53,7 @@ export default function Section1() {
           grid
         "
       >
-        {/* PLACEHOLDER (locks height) */}
+        
         <div style={{ visibility: "hidden", gridArea: "1 / 1" }}>
           <h1 className="heading-font text-3xl sm:text-4xl lg:text-5xl pb-2">
             {heading1}
@@ -67,7 +67,7 @@ export default function Section1() {
           </p>
         </div>
 
-        {/* TYPED TEXT (same grid cell) */}
+        
         <div style={{ gridArea: "1 / 1" }}>
           <h1 className="heading-font text-[#eeedd3] text-3xl sm:text-4xl lg:text-5xl pb-2">
             {h1}

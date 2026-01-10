@@ -5,7 +5,7 @@ const Section6 = () => {
   return (
     <div className="w-full flex flex-col md:flex-row md:min-h-[320px] bg-[#1E1E1E]">
 
-      {/* LEFT IMAGE PANEL */}
+      
       <div
         className="
           w-full md:w-1/3
@@ -25,7 +25,7 @@ const Section6 = () => {
           "
         />
 
-        {/* TEXT OVER IMAGE */}
+        
         <div className="absolute inset-0 flex items-center justify-center px-4 text-center md:text-left">
           <div>
             <p className="bankgothiclightreg text-[#eeedd3] text-sm md:text-xl tracking-widest mb-2 uppercase">
@@ -40,17 +40,16 @@ const Section6 = () => {
         </div>
       </div>
 
-      {/* RIGHT CONTENT PANEL */}
       <div className="w-full md:w-2/3 flex items-center px-6 md:px-12 py-6 md:py-0">
         <div className="max-w-xl w-full">
 
-          {/* PARAGRAPH */}
+          
           <p className="monts-reg text-[#ffffff] text-xs md:text-sm leading-relaxed mb-6">
             We follow stringent HSE practices, ensuring safe operations,
             environmentally responsible mining and clean manufacturing processes.
           </p>
 
-          {/* FEATURES GRID */}
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 md:gap-x-36 text-[#eeedd3]">
 
             <div className="space-y-3">

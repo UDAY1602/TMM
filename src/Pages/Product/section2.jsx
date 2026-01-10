@@ -20,7 +20,7 @@ export default function Section2() {
         overflowX: "hidden",
       }}
     >
-      {/* ================= DESKTOP LAYOUT ================= */}
+      
       <div
         className="sec2-wrapper"
         style={{
@@ -31,7 +31,7 @@ export default function Section2() {
           paddingRight: "32px",
         }}
       >
-        {/* TITLE */}
+     
         <div
           className="sec2-title"
           style={{
@@ -53,7 +53,7 @@ export default function Section2() {
           </h2>
         </div>
 
-        {/* GRID */}
+       
         <div style={{ width: "100%" }}>
           <div
             className="sec2-grid"
@@ -66,10 +66,10 @@ export default function Section2() {
               marginLeft: "-32px",
             }}
           >
-            {/* LEFT CREAM BAR */}
+            
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-            {/* IMAGE */}
+         
             <div
               className="sec2-image"
               style={{
@@ -91,7 +91,7 @@ export default function Section2() {
               />
             </div>
 
-            {/* CONTENT */}
+           
             <div
               className="sec2-content"
               style={{
@@ -153,7 +153,7 @@ export default function Section2() {
                   and architectural uses.
                 </p>
 
-                {/* TOGGLE */}
+                
                 <button
                   className="monts-semibold"
                   onClick={() => setOpen(!open)}
@@ -175,7 +175,7 @@ export default function Section2() {
         </div>
       </div>
 
-      {/* ================= DESKTOP DROPDOWN ================= */}
+     
       <div className="desktop-dropdown">
         <DropdownDesk
           open={open}
@@ -188,7 +188,7 @@ export default function Section2() {
         />
       </div>
 
-      {/* ================= MOBILE DROPDOWN ================= */}
+      
       <div className="mobile-dropdown">
         <DropdownMobile
           open={open}
@@ -202,7 +202,6 @@ export default function Section2() {
         />
       </div>
 
-      {/* ================= MOBILE CSS ================= */}
       <style>
   {`
     .mobile-dropdown { display: none; }
@@ -216,7 +215,7 @@ export default function Section2() {
       .section2-quartz {
         padding-left: 0 !important;
         padding-right: 0 !important;
-        overflow: hidden !important; /* ✅ FIX */
+        overflow: hidden !important; 
       }
 
       .section2-quartz .sec2-wrapper {

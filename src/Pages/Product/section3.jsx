@@ -12,11 +12,11 @@ export default function Section3() {
 
   return (
     <section className="section3-quartz">
-      {/* ================= MAIN SECTION (DESKTOP UNCHANGED) ================= */}
+      
       <div className="quartzOuter">
         <div className="quartzInner">
 
-          {/* LEFT TEXT */}
+      
           <div className="quartzTextBox">
             <p className="tagline">
               High-purity powder ideal for composite materials,
@@ -37,7 +37,7 @@ export default function Section3() {
               strength, surface finish, and visual consistency.
             </p>
 
-            {/* PRODUCT DETAILS BUTTON */}
+            
             <button
               className="monts-semibold"
               onClick={() => setOpen(!open)}
@@ -56,7 +56,7 @@ export default function Section3() {
             </button>
           </div>
 
-          {/* RIGHT IMAGE */}
+         
           <div className="quartzImageWrap">
             <div className="quartzImageBox">
               <img src={Sec3} alt="Quartz Grits Supreme" />
@@ -66,7 +66,7 @@ export default function Section3() {
         </div>
       </div>
 
-      {/* ================= DESKTOP DROPDOWN ================= */}
+      
       <div className="desktop-dropdown">
         <DropdownDesk
           open={open}
@@ -79,7 +79,7 @@ export default function Section3() {
         />
       </div>
 
-      {/* ================= MOBILE DROPDOWN ================= */}
+   
       <div className="mobile-dropdown">
         <DropdownMobile
           open={open}
@@ -93,7 +93,7 @@ export default function Section3() {
         />
       </div>
 
-      {/* ================= MOBILE — SAME AS SECTION 2 ================= */}
+      
       <style>
         {`
         .mobile-dropdown { display: none; }
@@ -101,17 +101,17 @@ export default function Section3() {
 
         @media (max-width: 768px) {
 
-          /* toggle dropdowns */
+         
           .desktop-dropdown { display: none; }
           .mobile-dropdown { display: block; }
 
-          /* remove outer gaps */
+         
           .section3-quartz {
             padding-left: 0 !important;
             padding-right: 0 !important;
           }
 
-          /* FULL CREAM CONTAINER */
+         
           .section3-quartz .quartzInner {
             display: flex !important;
             flex-direction: column !important;
@@ -119,12 +119,11 @@ export default function Section3() {
             padding: 0 !important;
           }
 
-          /* TEXT FIRST */
+        
           .section3-quartz .quartzTextBox {
             padding: 30px 20px 20px !important;
           }
 
-          /* IMAGE WHITE CARD BELOW */
           .section3-quartz .quartzImageWrap {
             display: flex !important;
             justify-content: center !important;

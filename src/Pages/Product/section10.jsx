@@ -5,38 +5,38 @@ export default function Section10() {
     <section className="w-full bg-white py-28 flex justify-center overflow-hidden">
       <div className="relative w-full max-w-6xl flex flex-col items-center">
 
-        {/* DESKTOP VIEW */}
+       
         <div className="relative w-full hidden md:flex items-center justify-center">
 
-          {/* LEFT LABELS */}
+          
           <div className="absolute left-[10%] flex flex-col gap-8 monts-reg">
             <div className="qa-label">Purity (SiO₂ %)</div>
             <div className="qa-label">Particle Size Distribution</div>
           </div>
 
-          {/* RIGHT LABELS */}
+        
           <div className="absolute right-[10%] flex flex-col gap-8 monts-reg">
             <div className="qa-label">Moisture Content</div>
             <div className="qa-label">Iron content (Fe₂O₃)</div>
           </div>
 
-          {/* CENTER */}
+        
           <CenterCircle />
         </div>
 
-        {/* MOBILE VIEW */}
+       
         <div className="md:hidden w-full flex flex-col items-center gap-10">
 
-          {/* TOP LABELS */}
+          
           <div className="flex gap-4 justify-center monts-reg flex-wrap">
             <div className="qa-label">Purity (SiO₂ %)</div>
             <div className="qa-label">Moisture Content</div>
           </div>
 
-          {/* CENTER */}
+          
           <CenterCircle />
 
-          {/* BOTTOM LABELS */}
+          
           <div className="flex gap-4 justify-center monts-reg flex-wrap">
             <div className="qa-label">Particle Size Distribution</div>
             <div className="qa-label">Iron content (Fe₂O₃)</div>
@@ -44,9 +44,9 @@ export default function Section10() {
         </div>
       </div>
 
-      {/* INTERNAL CSS */}
+     
       <style>{`
-        /* LABELS */
+        
         .qa-label {
           background: #efefd6;
           padding: 8px 14px;
@@ -57,7 +57,7 @@ export default function Section10() {
           white-space: nowrap;
         }
 
-        /* RIPPLE BASE */
+        
         .qa-ripple {
           position: absolute;
           width: 200px;
@@ -75,7 +75,7 @@ export default function Section10() {
           );
         }
 
-        /* RIPPLE – DESKTOP SPEED */
+      
         .group:hover .qa-ripple {
           animation: rippleDesktop 3s ease-out infinite;
         }
@@ -89,7 +89,7 @@ export default function Section10() {
           100% { transform: scale(1.9); opacity: 0; }
         }
 
-        /* CORE CIRCLE */
+      \
         .qa-core {
           width: 260px;
           height: 260px;
@@ -109,7 +109,7 @@ export default function Section10() {
           padding-right: 28px;
         }
 
-        /* MOBILE */
+       
         @media (max-width: 768px) {
           .qa-core {
             width: 220px;
@@ -121,7 +121,7 @@ export default function Section10() {
             height: 160px;
           }
 
-          /* FASTER RIPPLE ON MOBILE */
+          
           .group:hover .qa-ripple {
             animation: rippleMobile 2s ease-out infinite;
           }
@@ -140,7 +140,7 @@ export default function Section10() {
   );
 }
 
-/* CENTER CIRCLE */
+
 function CenterCircle() {
   return (
     <div className="relative group flex items-center justify-center">

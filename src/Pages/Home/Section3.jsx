@@ -24,18 +24,17 @@ export default function Section3() {
 };
 
   useEffect(() => {
-    // ✅ HARD EXIT ON MOBILE — DESKTOP REMAINS UNTOUCHED
+    
     if (window.matchMedia("(max-width: 768px)").matches) {
       return;
     }
 
-    // 🔒 DESKTOP / TABLET LOGIC — SAME AS YOUR ORIGINAL
+  
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.config({ ignoreMobileResize: true });
 
     const mm = gsap.matchMedia();
 
-    /* ================= DESKTOP ================= */
     mm.add("(min-width: 1025px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -61,7 +60,7 @@ export default function Section3() {
         .to(bottomRef.current, { opacity: 1 });
     });
 
-    /* ================= TABLET ================= */
+    
     mm.add("(max-width: 1024px) and (min-width: 769px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -97,7 +96,7 @@ export default function Section3() {
     <section ref={sectionRef} className="section3">
       <div ref={pinRef} className="pinScene">
 
-        {/* ALWAYS RENDER — DO NOT TOUCH DESKTOP */}
+        
         <img
           ref={moonRef}
           src={moon}

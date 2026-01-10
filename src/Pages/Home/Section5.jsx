@@ -15,7 +15,7 @@ export default function Section5() {
   }, []);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // prevent reload
+    e.preventDefault(); 
     setShowPopup(true);
   };
 
@@ -47,7 +47,7 @@ export default function Section5() {
           paddingTop: isMobile ? "20px" : "60px",
         }}
       >
-        {/* LEFT CONTENT */}
+      
         <div style={{ textAlign: isMobile ? "center" : "left" }}>
           <h1
             style={{
@@ -72,7 +72,7 @@ export default function Section5() {
           </p>
         </div>
 
-        {/* FORM */}
+      
         <form
           onSubmit={handleSubmit}
           style={{
@@ -105,7 +105,7 @@ export default function Section5() {
         </form>
       </div>
 
-      {/* ===== POPUP ===== */}
+      
       {showPopup && (
         <div
           style={{

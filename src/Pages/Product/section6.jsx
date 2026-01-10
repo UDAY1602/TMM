@@ -7,12 +7,12 @@ export default function Section6() {
       className="section6-quartz"
       style={{
         backgroundColor: "#ffffff",
-        padding: "60px 0",   // desktop spacing preserved
+        padding: "60px 0",   
         width: "100%",
         overflowX: "hidden",
       }}
     >
-      {/* ================= SECTION 6 LAYOUT ================= */}
+    
       <div
         className="sec2-wrapper"
         style={{
@@ -35,10 +35,10 @@ export default function Section6() {
               marginLeft: "-32px",
             }}
           >
-            {/* LEFT CREAM BAR — DESKTOP */}
+            
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-            {/* IMAGE — DESKTOP */}
+           
             <div
               className="sec2-image"
               style={{
@@ -60,7 +60,7 @@ export default function Section6() {
               />
             </div>
 
-            {/* CONTENT — DESKTOP */}
+          
             <div
               className="sec2-content"
               style={{
@@ -110,25 +110,24 @@ export default function Section6() {
         </div>
       </div>
 
-      {/* ================= MOBILE — SECTION 6 ONLY ================= */}
+      
       <style>
         {`
         @media (max-width: 768px) {
 
-          /* 🔑 REMOVE SECTION SIDE GAPS */
+         
           .section6-quartz {
             padding-left: 0 !important;
             padding-right: 0 !important;
           }
 
-          /* REMOVE WRAPPER SIDE GAPS */
           .section6-quartz .sec2-wrapper {
             padding-left: 0 !important;
             padding-right: 0 !important;
             max-width: 100% !important;
           }
 
-          /* FULL-WIDTH CREAM CONTAINER */
+         
           .section6-quartz .sec2-grid {
             display: flex !important;
             flex-direction: column !important;
@@ -137,7 +136,7 @@ export default function Section6() {
             background: #EDE4CF !important;
           }
 
-          /* TEXT FIRST */
+         
           .section6-quartz .sec2-content {
             order: 1 !important;
             background: transparent !important;
@@ -150,7 +149,7 @@ export default function Section6() {
             text-align: left !important;
           }
 
-          /* IMAGE WHITE CARD BELOW TEXT */
+          
           .section6-quartz .sec2-image {
             order: 2 !important;
             background: transparent !important;

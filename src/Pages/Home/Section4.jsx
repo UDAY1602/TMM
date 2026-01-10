@@ -5,7 +5,7 @@ export default function Section4() {
   return (
     <section className="bg-[#1a1a1a] text-[#ffffff] w-full overflow-x-hidden">
 
-      {/* TOP IMAGE STRIP */}
+      
       <div className="pt-12 sm:pt-16">
         <div
           className="
@@ -23,7 +23,7 @@ export default function Section4() {
         </div>
       </div>
 
-      {/* MIDDLE CONTENT */}
+   
       <div className="
         max-w-7xl mx-auto
         px-6 sm:px-10 lg:px-20
@@ -33,7 +33,7 @@ export default function Section4() {
         items-center
       ">
 
-        {/* LEFT DESCRIPTION */}
+        
         <p className="
           montserratthin leading-relaxed
           text-sm sm:text-base lg:text-xl
@@ -44,7 +44,7 @@ export default function Section4() {
           international markets for the right reasons.
         </p>
 
-        {/* RIGHT FEATURES */}
+        
         <div className="
           grid grid-cols-1 sm:grid-cols-3
           gap-y-8 sm:gap-x-10 lg:gap-x-16
@@ -73,7 +73,6 @@ export default function Section4() {
         </div>
       </div>
 
-      {/* BOTTOM STATS BAR */}
       <div
         className="py-12 sm:py-16 text-[#eeedd3]"
         style={{

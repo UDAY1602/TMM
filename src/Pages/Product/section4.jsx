@@ -19,7 +19,7 @@ export default function Section4() {
         overflowX: "hidden",
       }}
     >
-      {/* ================= DESKTOP LAYOUT (UNCHANGED) ================= */}
+     
       <div
         className="sec2-wrapper"
         style={{
@@ -42,10 +42,10 @@ export default function Section4() {
               marginLeft: "-32px",
             }}
           >
-            {/* LEFT CREAM BAR */}
+           
             <div style={{ backgroundColor: "#EDE4CF" }} />
 
-            {/* IMAGE */}
+            
             <div
               className="sec2-image"
               style={{
@@ -67,7 +67,7 @@ export default function Section4() {
               />
             </div>
 
-            {/* CONTENT */}
+            
             <div
               className="sec2-content"
               style={{
@@ -130,7 +130,7 @@ export default function Section4() {
                   visual uniformity.
                 </p>
 
-                {/* PRODUCT DETAILS BUTTON */}
+               
                 <button
                   className="monts-semibold"
                   onClick={() => setOpen(!open)}
@@ -152,7 +152,7 @@ export default function Section4() {
         </div>
       </div>
 
-      {/* ================= DESKTOP DROPDOWN ================= */}
+    
       <div className="desktop-dropdown">
         <DropdownDesk
           open={open}
@@ -165,7 +165,7 @@ export default function Section4() {
         />
       </div>
 
-      {/* ================= MOBILE DROPDOWN ================= */}
+      
       <div className="mobile-dropdown">
         <DropdownMobile
           open={open}
@@ -179,7 +179,7 @@ export default function Section4() {
         />
       </div>
 
-      {/* ================= MOBILE — SAME AS SECTION 2 ================= */}
+      
       <style>
         {`
         .mobile-dropdown { display: none; }
@@ -187,11 +187,11 @@ export default function Section4() {
 
         @media (max-width: 768px) {
 
-          /* switch dropdowns */
+          
           .desktop-dropdown { display: none; }
           .mobile-dropdown { display: block; }
 
-          /* remove outer gaps */
+         
           .section4-quartz {
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -203,7 +203,7 @@ export default function Section4() {
             max-width: 100% !important;
           }
 
-          /* single cream container */
+         
           .section4-quartz .sec2-grid {
             display: flex !important;
             flex-direction: column !important;
@@ -212,7 +212,7 @@ export default function Section4() {
             background: #EDE4CF !important;
           }
 
-          /* text first */
+          
           .section4-quartz .sec2-content {
             order: 1 !important;
             background: transparent !important;
@@ -223,7 +223,7 @@ export default function Section4() {
             padding: 30px 20px 20px !important;
           }
 
-          /* image white card */
+          
           .section4-quartz .sec2-image {
             order: 2 !important;
             background: transparent !important;

@@ -24,7 +24,7 @@ export default function Section5() {
             gap: "6px",
           }}
         >
-          {/* LEFT IMAGE */}
+         
           <div className="section5-img-wrap section5-left">
             <img src={abtsec5L} alt="Section 5 Left" />
             <button
@@ -35,7 +35,7 @@ export default function Section5() {
             </button>
           </div>
 
-          {/* RIGHT IMAGE */}
+         
           <div className="section5-img-wrap section5-right">
             <img src={abtsec5R} alt="Section 5 Right" />
             <button
@@ -69,7 +69,7 @@ export default function Section5() {
               display: block;
             }
 
-            /* ZOOM ICON */
+           
             .zoom-btn {
               position: absolute;
               bottom: 12px;
@@ -96,10 +96,10 @@ export default function Section5() {
         </style>
       </section>
 
-      {/* FULLSCREEN ZOOM */}
+     
       {zoomImg && (
         <div className="zoom-overlay">
-          {/* ❌ CLOSE BUTTON */}
+         
           <button
             className="zoom-close"
             onClick={() => setZoomImg(null)}
@@ -109,7 +109,7 @@ export default function Section5() {
 
           <img src={zoomImg} alt="Zoomed view" />
 
-          {/* Click background to close */}
+          
           <div
             className="zoom-backdrop"
             onClick={() => setZoomImg(null)}
@@ -141,7 +141,7 @@ export default function Section5() {
             z-index: 2;
           }
 
-          /* ❌ CLOSE BUTTON */
+          
           .zoom-close {
             position: absolute;
             top: 16px;
