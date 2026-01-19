@@ -4,8 +4,11 @@ import pressureImg from "../../assets/Pressure Washing.png";
 import crushingImg from "../../assets/Fully Automatic Crushing & Grinding.png";
 import opticalImg from "../../assets/High-Precision Optical Sorting.png";
 import sievingImg from "../../assets/Advanced Sieving & Classification.png";
-import labImg from "../../assets/In-house Quality Testing Lab.png"; 
+import labImg from "../../assets/In-house Quality Testing Lab.png";
 import packagingImg from "../../assets/Dust-free Packaging Systems.png";
+import rdBg from "../../assets/sec12rd.png";
+import hseBg from "../../assets/sec12hs.png";
+
 
 const infraItems = [
   {
@@ -37,7 +40,7 @@ const infraItems = [
 export default function Section11() {
   return (
     <section className="manufacturing">
-      
+
       <div className="manufacturing-header">
         <h2>
           MANUFACTURING <br /> INFRASTRUCTURE
@@ -50,7 +53,7 @@ export default function Section11() {
         </p>
       </div>
 
-      
+
       <div className="infra-grid">
         {infraItems.map((item, index) => (
           <div key={index} className="infra-card">
@@ -65,7 +68,11 @@ export default function Section11() {
       </div>
 
       <div className="bottom-grid">
-        <div className="bottom-card rd">
+        <div
+          className="bottom-card"
+          style={{ backgroundImage: `url(${rdBg})` }}
+        >
+
           <h3>R&amp;D &amp; Innovation</h3>
           <p>
             We invest in continuous improvement to enhance mineral purity,
@@ -74,7 +81,11 @@ export default function Section11() {
           </p>
         </div>
 
-        <div className="bottom-card hse">
+        <div
+          className="bottom-card"
+          style={{ backgroundImage: `url(${hseBg})` }}
+        >
+
           <h3>Health, Safety &amp; Environmental Practices</h3>
           <p>
             We operate with a strong HSE framework that ensures safe operations,
