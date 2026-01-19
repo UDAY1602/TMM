@@ -123,13 +123,8 @@
 }
 
 
-.bottom-card.rd {
-  background-image: url("/TMM/src/assets/sec12rd.png");
-}
 
-.bottom-card.hse {
-  background-image: url("/TMM/src/assets/sec12hs.png");
-}
+
 
 @media (max-width: 768px) {
   .infra-grid {
