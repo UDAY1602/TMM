@@ -29,10 +29,10 @@ function Navbar() {
         {/* Links + CTA */}
         <div className={`navbar-actions ${menuOpen ? "active" : ""}`}>
           <ul className="navbar-links montserratthin">
-            <li><NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink></li>
-            <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink></li>
-            <li><NavLink to="/products" onClick={() => setMenuOpen(false)}>Products</NavLink></li>
-            <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink></li>
+            <li><NavLink to="/" onClick={() => setMenuOpen(false)} style={{ fontWeight: "700" }}>Home</NavLink></li>
+            <li><NavLink to="/about" onClick={() => setMenuOpen(false)}style={{ fontWeight: "700" }}>About</NavLink></li>
+            <li><NavLink to="/products" onClick={() => setMenuOpen(false)}style={{ fontWeight: "700" }}>Products</NavLink></li>
+            <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}style={{ fontWeight: "700" }}>Contact</NavLink></li>
           </ul>
 
           <div className="navbar-cta">
