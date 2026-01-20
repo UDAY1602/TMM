@@ -82,7 +82,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(40px);
   color: #EEEDD3;
-  font-size: 46px;
+  font-size: 40px;
   line-height: 1.2;
   opacity: 0;
   transition: opacity 1s ease, transform 1s ease;
@@ -116,7 +116,7 @@
 
 
 
-.item1 img { width: 224px; height: 107px; }
+.item1 img { width: 195px; height: 95px; }
 .item1 {
   
   left:55%;
@@ -124,7 +124,7 @@
 }
 
 
-.item2 img { width: 200px; height: 120px; }
+.item2 img { width: 190px; height:125px }
 .item2 {
   top: calc(471px - 110px);
   left: 50%;
@@ -132,7 +132,7 @@
 }
 
 
-.item3 img { width: 244px; height: 126px; }
+.item3 img { width: 220px; height: 120px; }
 .item3 {
   top: calc(478px - 80px);
   left: 50%;
@@ -140,7 +140,7 @@
 }
 
 
-.item4 img { width: 234px; height:125px; }
+.item4 img { width: 214px; height:115px; }
 .item4 {
   top: calc(432px - 100px);
   left:4%;
@@ -148,14 +148,14 @@
 }
 
 
-.item5 img { width: 214px; height:120px; }
+.item5 img { width: 214px; height:200px; }
 .item5 {
-  top: calc(305px - 85px);
+  top: calc(305px - 95px);
   left: 48%;
   transform: translateX(calc(-50% + (1366px - 720px - 120px)));
 }
 .itemText {
-  font-size: 18px;
+  font-size: 16px;
 }
 .item p[class^="p"] {
   position: absolute;
@@ -176,7 +176,7 @@
 
 
 
-.item1 .grit { top: 120px;left:50% }
+.item1 .grit { top: 100px;left:50% }
 
 
 
@@ -192,12 +192,12 @@
 
 
 
-.item5 .quartz { top: 120px;left: 55% }
+.item5 .quartz { top: 140px;left: 55% }
 /* .p1, .p3, .p5 { font-family: "oswald-light"; font-size: 20px; }
 .p2, .p4 { font-family: "RebelTypeDog"; font-size: 20px; } */ 
 /* to be deleted */
 
-.grit, .mesh, .quartz ,.semi, .snow { font-family: "oswald"; font-size: 35px; }
+.grit, .mesh, .quartz ,.semi, .snow { font-family: "oswald"; font-size: 30px; }
 
 
 
@@ -285,31 +285,31 @@
     position: relative;
     transform: none !important;
     overflow: visible;
-    left: -20%;
-    top:0px;
+    left: 0%;
+    top:4px;
     
     
   }
   
   
-  .item1 .grit { top: 20px; left: 95%; }
+  .item1 .grit { top: 90px; left: 53%; }
 
   
   
-  .item2 .semi { top: 40px; left: 95%; }
+  .item2 .semi { top: 90px; left: 53%; }
 
   
   
-  .item3 .mesh { top: 25px; left: 97%; }
+  .item3 .mesh { top: 100px; left: 53%; }
 
   
   
-  .item4 .snow { top: 45px; left: 94%; }
+  .item4 .snow { top: 110px; left: 53%; }
   
 
   
   
-  .item5 .quartz { top: 10px; left: 95%; }
+  .item5 .quartz { top:140px; left: 53%; }
 
   
   .item p,
@@ -340,7 +340,7 @@
     position: relative;
     width: 100%;
     max-width: 100%;
-    margin: 0 auto 3rem;
+    margin: 0 auto 4rem;
     overflow: visible;
     text-align: center;
   }
@@ -348,16 +348,21 @@
   .item img {
     display: block;
     margin: 0 auto;
-    max-width: min(220px, 70vw);
+    max-width: min(230px, 80vw);
     
     
     height: auto;
   }
   .item4 img {
-    transform: translateX(-20px); 
+    transform: translateX(-0px); 
+    
+  }
+  .item3 img {
+    transform: translateX(15px); 
+    
   }
   .item5 img {
-    transform: translateX(-20px); 
+    transform: translateX(-0px); 
   }
 
   .item p,
@@ -407,7 +412,7 @@
   .item {
     position: absolute;
     left: auto;
-    top: auto;
+    
     transform: unset;
   }
 
@@ -426,14 +431,14 @@
   
 
   .item1 {
-    left: 55%;
-    top: calc(273px - 90px);
+    left: 60%;
+    top: calc(273px - 10px);
     transform: translateX(calc(-50% + (291px - 720px - 120px)));
   }
 
   .item2 {
-    left: 50%;
-    top: calc(471px - 110px);
+    left: 53%;
+    top: calc(471px - 90px);
     transform: translateX(calc(-50% + (567px - 720px - 120px)));
   }
 
@@ -444,14 +449,14 @@
   }
 
   .item4 {
-    left: 49%;
-    top: calc(432px - 80px);
+    left: 45%;
+    top: calc(432px - 50px);
     transform: translateX(calc(-50% + (1142px - 720px - 120px)));
   }
 
   .item5 {
-    left: 48%;
-    top: calc(305px - 125px);
+    left: 43%;
+    top: calc(305px - 80px);
     transform: translateX(calc(-50% + (1366px - 720px - 120px)));
   }
 }

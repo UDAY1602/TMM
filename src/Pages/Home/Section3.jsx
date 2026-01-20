@@ -19,29 +19,29 @@ export default function Section3() {
   const bottomRef = useRef(null);
   const navigate = useNavigate();
   const goToAbout = () => {
-  navigate("/about");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
+    navigate("/about");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
-    
+
     if (window.matchMedia("(max-width: 768px)").matches) {
       return;
     }
 
-  
+
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.config({ ignoreMobileResize: true });
 
     const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1025px)", () => {
+    mm.add("(min-width: 1024px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
           end: "+=300%",
-          scrub: 1,
+          scrub: 0.8,
           pin: pinRef.current,
           anticipatePin: 1,
           invalidateOnRefresh: true,
@@ -55,18 +55,29 @@ export default function Section3() {
 
       tl
         .to(moonRef.current, { opacity: 0.35 })
-        .to(textRef.current, { opacity: 1, y: 0 })
+        .to(textRef.current, 
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",   // 🔥 EARLY ENTRY
+              toggleActions: "play none none none"
+            }
+          })
         .to(itemsRef.current, { opacity: 1 })
         .to(bottomRef.current, { opacity: 1 });
     });
 
-    
+
     mm.add("(max-width: 1024px) and (min-width: 769px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top top",
-          end: "+=220%",
+          start: "top top ",
+          end: "+=300%",
           scrub: 1,
           pin: pinRef.current,
           anticipatePin: 1,
@@ -96,7 +107,7 @@ export default function Section3() {
     <section ref={sectionRef} className="section3">
       <div ref={pinRef} className="pinScene">
 
-        
+
         <img
           ref={moonRef}
           src={moon}
@@ -114,7 +125,7 @@ export default function Section3() {
           <div ref={itemsRef} className="itemsLayer">
             <div className="item item1">
               <img src={powder} alt="" />
-              
+
               <p className="itemText grit">Quartz Grits</p>
             </div>
 
@@ -144,8 +155,8 @@ export default function Section3() {
               Optimized for whiteness, purity, consistency, and industry-specific performance.
             </p>
             <button className="exploreBtn" onClick={goToAbout}>
-  Explore
-</button>
+              Explore
+            </button>
 
           </div>
         </div>
