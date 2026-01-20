@@ -43,7 +43,7 @@ export default function Section4() {
             }}
           >
            
-            <div style={{ backgroundColor: "#EDE4CF" }} />
+            <div style={{ backgroundColor: "#edecd3" }} />
 
             
             <div
@@ -71,7 +71,7 @@ export default function Section4() {
             <div
               className="sec2-content"
               style={{
-                backgroundColor: "#EDE4CF",
+                backgroundColor: "#edecd3",
                 display: "flex",
                 alignItems: "center",
               }}

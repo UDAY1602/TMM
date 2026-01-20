@@ -67,7 +67,7 @@ export default function Section2() {
             }}
           >
             
-            <div style={{ backgroundColor: "#EDE4CF" }} />
+            <div style={{ backgroundColor: "#edecd3" }} />
 
          
             <div
@@ -95,7 +95,7 @@ export default function Section2() {
             <div
               className="sec2-content"
               style={{
-                backgroundColor: "#EDE4CF",
+                backgroundColor: "#edecd3",
                 display: "flex",
                 alignItems: "center",
               }}
@@ -225,7 +225,7 @@ export default function Section2() {
       }
 
       .section2-quartz .sec2-title {
-        background: #EDE4CF;
+        background: #edecd3;
         padding: 24px 20px 16px !important;
         margin-bottom: 0 !important;
         justify-content: center !important;
@@ -236,7 +236,7 @@ export default function Section2() {
         flex-direction: column !important;
         width: 100% !important;
         margin-left: 0 !important;
-        background: #EDE4CF !important;
+        background: #edecd3 !important;
       }
 
       .section2-quartz .sec2-content {
