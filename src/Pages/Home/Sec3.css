@@ -85,7 +85,7 @@
   font-size: 40px;
   line-height: 1.2;
   opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 0s ease, transform 0s ease;
   text-shadow:
     0 2px 55px rgba(0,0,0,0.85),
     0 10px 55px rgba(0,0,0,0.65),

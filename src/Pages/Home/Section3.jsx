@@ -22,6 +22,10 @@ export default function Section3() {
     navigate("/about");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  gsap.set(textRef.current, { opacity: 0, y: 40 });
+  gsap.set(itemsRef.current, { opacity: 0 });
+  gsap.set(bottomRef.current, { opacity: 0 });
+
 
   useEffect(() => {
 
@@ -55,7 +59,7 @@ export default function Section3() {
 
       tl
         .to(moonRef.current, { opacity: 0.35 })
-        .to(textRef.current, 
+        .to(textRef.current, { opacity: 1, duration: 0.4, y: 0 }, { opacity: 0, y: 40 },
           {
             opacity: 1,
             y: 0,
