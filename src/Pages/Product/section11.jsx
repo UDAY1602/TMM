@@ -14,10 +14,12 @@ const infraItems = [
   {
     title: "Pressure Washing",
     image: pressureImg,
+    position:"30%",
   },
   {
     title: "Fully automatic crushing & grinding systems",
     image: crushingImg,
+    position:"50%",
   },
   {
     title: "High-precision optical sorting technology",
@@ -30,10 +32,13 @@ const infraItems = [
   {
     title: "In-house quality testing lab",
     image: labImg,
+    position:"90%",
+   
   },
   {
     title: "Dust-free packaging systems",
     image: packagingImg,
+    position:"43%",
   },
 ];
 
@@ -61,6 +66,7 @@ export default function Section11() {
               src={item.image}
               alt={item.title}
               className="infra-image"
+              style={{ objectPosition: item.position || "center" }}
             />
             <span>{item.title}</span>
           </div>
