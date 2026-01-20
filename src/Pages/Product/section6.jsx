@@ -37,7 +37,7 @@ export default function Section6() {
               marginLeft: "-32px",
             }}
           >
-            <div style={{ backgroundColor: "#EDE4CF" }} />
+            <div style={{ backgroundColor: "#edecd3" }} />
 
             <div
               className="sec2-image"
@@ -63,7 +63,7 @@ export default function Section6() {
             <div
               className="sec2-content"
               style={{
-                backgroundColor: "#EDE4CF",
+                backgroundColor: "#edecd3",
                 display: "flex",
                 alignItems: "center",
               }}
