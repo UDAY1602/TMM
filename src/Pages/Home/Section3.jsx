@@ -18,8 +18,8 @@ export default function Section3() {
   const itemsRef = useRef(null);
   const bottomRef = useRef(null);
   const navigate = useNavigate();
-  const goToAbout = () => {
-    navigate("/about");
+  const goToProduct = () => {
+    navigate("/products");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   gsap.set(textRef.current, { opacity: 0, y: 40 });
@@ -158,7 +158,7 @@ export default function Section3() {
             <p className="bottomText">
               Optimized for whiteness, purity, consistency, and industry-specific performance.
             </p>
-            <button className="exploreBtn" onClick={goToAbout}>
+            <button className="exploreBtn" onClick={goToProduct}>
               Explore
             </button>
 

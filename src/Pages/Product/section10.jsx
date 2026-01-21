@@ -2,7 +2,8 @@ import React from "react";
 
 export default function Section10() {
   return (
-    <section className="w-full bg-white py-28 flex justify-center overflow-hidden">
+
+    <section id="quality-assurance" className="w-full bg-white py-28 flex justify-center overflow-hidden">
       <div className="relative w-full max-w-6xl flex flex-col items-center">
 
        
