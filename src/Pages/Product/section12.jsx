@@ -2,10 +2,51 @@ import React, { useState } from "react";
 
 export default function Section12() {
   const [showPopup, setShowPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-    setShowPopup(true);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+    source_form: "section12",
+  });
+
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/enquiry.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!data.success) throw new Error();
+
+      setShowPopup(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+        source_form: "section12",
+      });
+    } catch (err) {
+      alert("Submission failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -28,12 +69,7 @@ export default function Section12() {
           alignItems: "center",
         }}
       >
-        
-        <div
-          style={{
-            transform: "translateY(-20px)",
-          }}
-        >
+        <div style={{ transform: "translateY(-20px)" }}>
           <h2
             className="monts-reg"
             style={{
@@ -51,7 +87,6 @@ export default function Section12() {
           </h2>
         </div>
 
-        
         <form
           onSubmit={handleSubmit}
           style={{
@@ -60,7 +95,15 @@ export default function Section12() {
             gap: "18px",
           }}
         >
-          <input type="text" placeholder="Name *" style={inputStyle} required />
+          <input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            type="text"
+            placeholder="Name *"
+            style={inputStyle}
+            required
+          />
 
           <div
             style={{
@@ -70,12 +113,18 @@ export default function Section12() {
             }}
           >
             <input
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               type="email"
               placeholder="Email *"
               style={inputStyle}
               required
             />
             <input
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
               type="tel"
               placeholder="Contact Number *"
               style={inputStyle}
@@ -83,9 +132,19 @@ export default function Section12() {
             />
           </div>
 
-          <input type="text" placeholder="Subject" style={inputStyle} />
+          <input
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            type="text"
+            placeholder="Subject"
+            style={inputStyle}
+          />
 
           <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             placeholder="Message"
             rows="4"
             style={{
@@ -96,23 +155,23 @@ export default function Section12() {
 
           <button
             type="submit"
+            disabled={loading}
             style={{
               marginTop: "10px",
               padding: "14px",
               backgroundColor: "#3a3a3a",
               color: "#ffffff",
               border: "none",
-              cursor: "pointer",
+              cursor: loading ? "not-allowed" : "pointer",
               fontSize: "14px",
               letterSpacing: "1px",
             }}
           >
-            Submit
+            {loading ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>
 
-     
       {showPopup && (
         <div
           style={{
@@ -140,7 +199,7 @@ export default function Section12() {
             <h2
               style={{
                 fontSize: "22px",
-                fontFamily:"oswaldRegular",
+                fontFamily: "oswaldRegular",
                 marginBottom: "12px",
                 color: "#EEEDD3",
               }}
@@ -151,7 +210,6 @@ export default function Section12() {
             <p
               style={{
                 fontSize: "14px",
-                
                 lineHeight: "1.6",
                 color: "#cfcfcf",
                 marginBottom: "24px",
@@ -180,7 +238,6 @@ export default function Section12() {
         </div>
       )}
 
-     
       <style>
         {`
           @media (max-width: 768px) {

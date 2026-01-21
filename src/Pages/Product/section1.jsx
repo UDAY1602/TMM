@@ -9,16 +9,14 @@ export default function Section1() {
     "Precision-processed mineral solutions supporting ceramics, glass, construction chemicals, polymers, coatings, foundry, and engineered stone industries.";
 
   const [typedHeading, setTypedHeading] = useState("");
-  const [typedText, setTypedText] = useState("");
   const [typing, setTyping] = useState(false);
 
-  
   useEffect(() => {
     const t = setTimeout(() => setShowMineral(true), 50);
     return () => clearTimeout(t);
   }, []);
 
-  
+  // Typing animation -- heading
   useEffect(() => {
     let i = 0;
     setTyping(true);
@@ -26,14 +24,12 @@ export default function Section1() {
     const interval = setInterval(() => {
       if (i < heading.length) {
         setTypedHeading(heading.slice(0, i + 1));
-      } else if (i < heading.length + text.length) {
-        setTypedText(text.slice(0, i - heading.length + 1));
+        i++;
       } else {
         clearInterval(interval);
         setTyping(false);
       }
-      i++;
-    }, 20);
+    }, 55);
 
     return () => clearInterval(interval);
   }, []);
@@ -51,10 +47,8 @@ export default function Section1() {
         overflow: "visible",
       }}
     >
-      
       <FloatingMineral visible={showMineral} />
 
-     
       <div
         className="product-text-wrapper"
         style={{
@@ -66,7 +60,7 @@ export default function Section1() {
           whiteSpace: "pre-line",
         }}
       >
-        
+        {/* Hidden block for layout stability */}
         <div style={{ visibility: "hidden" }}>
           <h1
             className="bankgothiclightreg"
@@ -92,7 +86,7 @@ export default function Section1() {
           </p>
         </div>
 
-        
+        {/* Visible animated content */}
         <div style={{ position: "absolute", top: 0, left: 0 }}>
           <h1
             className="bankgothiclightreg"
@@ -117,21 +111,14 @@ export default function Section1() {
               maxWidth: "620px",
             }}
           >
-            {typedText}
-            {typing &&
-              typedHeading.length === heading.length &&
-              typedText.length < text.length &&
-              "|"}
+            {text}
           </p>
         </div>
       </div>
 
-      
       <style>
         {`
           @media (max-width: 768px) {
-
-            
             .section1-hero {
               overflow: hidden !important;
               margin-bottom: 0 !important;

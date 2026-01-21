@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 
 export default function Section1({ setShowMineral }) {
- 
   const heading = "PURE & PURPOSEFUL";
   const text =
     "At Tanujasreekesh Mines & Minerals, we transform nature’s most enduring resource—quartz—into a foundation for tomorrow’s innovations. From raw stone to refined brilliance, our journey is built on integrity, precision and purpose.";
 
-  
   const [typedHeading, setTypedHeading] = useState("");
-  const [typedText, setTypedText] = useState("");
   const [typing, setTyping] = useState(false);
 
- 
+  
+  // Scroll logic 
   useEffect(() => {
     if (!setShowMineral) return;
 
@@ -27,7 +25,7 @@ export default function Section1({ setShowMineral }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [setShowMineral]);
 
- 
+  // Typing animation -- heading
   useEffect(() => {
     let i = 0;
     setTyping(true);
@@ -35,14 +33,12 @@ export default function Section1({ setShowMineral }) {
     const interval = setInterval(() => {
       if (i < heading.length) {
         setTypedHeading(heading.slice(0, i + 1));
-      } else if (i < heading.length + text.length) {
-        setTypedText(text.slice(0, i - heading.length + 1));
+        i++;
       } else {
         clearInterval(interval);
         setTyping(false);
       }
-      i++;
-    }, 20);
+    }, 55);
 
     return () => clearInterval(interval);
   }, []);
@@ -64,10 +60,10 @@ export default function Section1({ setShowMineral }) {
         style={{
           maxWidth: "720px",
           textAlign: "center",
-          display: "grid", 
+          display: "grid",
         }}
       >
-        
+        {/* Invisible layout stabilizer */}
         <div style={{ visibility: "hidden", gridArea: "1 / 1" }}>
           <h2
             style={{
@@ -91,7 +87,7 @@ export default function Section1({ setShowMineral }) {
           </p>
         </div>
 
-        
+        {/* Visible content */}
         <div style={{ gridArea: "1 / 1" }}>
           <h2
             style={{
@@ -103,9 +99,10 @@ export default function Section1({ setShowMineral }) {
             }}
           >
             {typedHeading}
-            {typing && typedHeading.length < heading.length && "|"}
+            {typing && "|"}
           </h2>
 
+          {/* Paragraph style */}
           <p
             style={{
               fontSize: "16px",
@@ -113,11 +110,7 @@ export default function Section1({ setShowMineral }) {
               color: "#d6d2c8",
             }}
           >
-            {typedText}
-            {typing &&
-              typedHeading.length === heading.length &&
-              typedText.length < text.length &&
-              "|"}
+            {text}
           </p>
         </div>
       </div>

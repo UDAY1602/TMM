@@ -9,7 +9,6 @@ export default function Section1() {
 
   const [h1, setH1] = useState("");
   const [h2, setH2] = useState("");
-  const [para, setPara] = useState("");
   const [typing, setTyping] = useState(false);
 
   useEffect(() => {
@@ -21,14 +20,12 @@ export default function Section1() {
         setH1(heading1.slice(0, i + 1));
       } else if (i < heading1.length + heading2.length) {
         setH2(heading2.slice(0, i - heading1.length + 1));
-      } else if (i < heading1.length + heading2.length + text.length) {
-        setPara(text.slice(0, i - heading1.length - heading2.length + 1));
       } else {
         clearInterval(interval);
         setTyping(false);
       }
       i++;
-    }, 20);
+    }, 55);
 
     return () => clearInterval(interval);
   }, []);
@@ -53,7 +50,7 @@ export default function Section1() {
           grid
         "
       >
-        
+        {/* Invisible block for layout stability */}
         <div style={{ visibility: "hidden", gridArea: "1 / 1" }}>
           <h1 className="heading-font text-3xl sm:text-4xl lg:text-5xl pb-2">
             {heading1}
@@ -67,7 +64,7 @@ export default function Section1() {
           </p>
         </div>
 
-        
+        {/* Animated content */}
         <div style={{ gridArea: "1 / 1" }}>
           <h1 className="heading-font text-[#eeedd3] text-3xl sm:text-4xl lg:text-5xl pb-2">
             {h1}
@@ -84,13 +81,9 @@ export default function Section1() {
 
           <br />
 
+          {/* Paragraph  */}
           <p className="para-font text-white text-sm sm:text-base lg:text-lg leading-relaxed">
-            {para}
-            {typing &&
-              h1.length === heading1.length &&
-              h2.length === heading2.length &&
-              para.length < text.length &&
-              "|"}
+            {text}
           </p>
         </div>
       </div>
