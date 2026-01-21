@@ -76,7 +76,7 @@ export default function Section3() {
     });
 
 
-    mm.add("(max-width: 1024px) and (min-width: 769px)", () => {
+    mm.add("(max-width: 1023px) and (min-width: 1023px)", () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,

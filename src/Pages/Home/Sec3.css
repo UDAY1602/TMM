@@ -238,7 +238,7 @@
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
 
   
   .section3 {
@@ -329,7 +329,7 @@
     
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
 
   html,
   body {
@@ -376,7 +376,7 @@
 
 
 
-@media (min-width: 901px) {
+@media (min-width: 1024px) {
 
   .section3 {
     height: 420vh;
@@ -426,7 +426,7 @@
     opacity: 0;
   }
 }
-@media (min-width: 901px) {
+@media (min-width: 1024px) {
 
   
 
