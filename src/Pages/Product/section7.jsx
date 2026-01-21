@@ -1,5 +1,5 @@
 import React from "react";
-import Sec3 from "../../assets/pr lumps.png";
+import Sec3 from "../../assets/prodsec7min.png";
 import "../Product/sec7.css";
 
 export default function Section7() {
