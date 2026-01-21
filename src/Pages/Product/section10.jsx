@@ -2,98 +2,124 @@ import React from "react";
 
 export default function Section10() {
   return (
-
-    <section id="quality-assurance" className="w-full bg-white py-28 flex justify-center overflow-hidden">
+    <section
+      id="quality-assurance"
+      className="w-full bg-white py-32 flex justify-center overflow-hidden"
+    >
       <div className="relative w-full max-w-6xl flex flex-col items-center">
 
-       
+        {/* DESKTOP */}
         <div className="relative w-full hidden md:flex items-center justify-center">
 
-          
-          <div className="absolute left-[10%] flex flex-col gap-8 monts-reg">
-            <div className="qa-label">Purity (SiO₂ %)</div>
-            <div className="qa-label">Particle Size Distribution</div>
+          {/* LEFT LABELS */}
+          <div className="absolute left-[50%] top-1/2 -translate-y-1/2 -translate-x-[460px] flex flex-col gap-8 monts-reg items-end">
+            <div className="qa-label qa-small">Purity (SiO₂ %)</div>
+            <div className="qa-label qa-wide">Particle Size Distribution</div>
           </div>
 
-        
-          <div className="absolute right-[10%] flex flex-col gap-8 monts-reg">
-            <div className="qa-label">Moisture Content</div>
-            <div className="qa-label">Iron content (Fe₂O₃)</div>
+          {/* RIGHT LABELS */}
+          <div className="absolute right-[50%] top-1/2 -translate-y-1/2 translate-x-[460px] flex flex-col gap-8 monts-reg items-start">
+            <div className="qa-label qa-small">Moisture Content</div>
+            <div className="qa-label qa-wide">Iron content (Fe₂O₃)</div>
           </div>
 
-        
           <CenterCircle />
         </div>
 
-       
-        <div className="md:hidden w-full flex flex-col items-center gap-10">
-
-          
+        {/* MOBILE */}
+        <div className="md:hidden w-full flex flex-col items-center gap-12">
           <div className="flex gap-4 justify-center monts-reg flex-wrap">
-            <div className="qa-label">Purity (SiO₂ %)</div>
-            <div className="qa-label">Moisture Content</div>
+            <div className="qa-label qa-small">Purity (SiO₂ %)</div>
+            <div className="qa-label qa-small">Moisture Content</div>
           </div>
 
-          
           <CenterCircle />
 
-          
           <div className="flex gap-4 justify-center monts-reg flex-wrap">
-            <div className="qa-label">Particle Size Distribution</div>
-            <div className="qa-label">Iron content (Fe₂O₃)</div>
+            <div className="qa-label qa-wide">Particle Size Distribution</div>
+            <div className="qa-label qa-wide">Iron content (Fe₂O₃)</div>
           </div>
         </div>
       </div>
 
-     
       <style>{`
-        
+        /* LABELS */
         .qa-label {
           background: #efefd6;
-          padding: 8px 14px;
-          width: fit-content;
-          border-radius: 8px;
-          font-size: 14px;
+          border-radius: 10px;
           color: #4a4a4a;
           white-space: nowrap;
+          text-align: center;
         }
 
-        
+        .qa-small {
+          padding: 10px 16px;
+          font-size: 14px;
+          min-width: 160px;
+        }
+
+        .qa-wide {
+          padding: 12px 28px;
+          font-size: 15px;
+          min-width: 260px;
+        }
+
+        /* RIPPLE BASE */
         .qa-ripple {
           position: absolute;
-          width: 200px;
-          height: 200px;
           border-radius: 9999px;
           opacity: 0;
-          transform: scale(1);
+          animation: rippleDesktop 3.6s ease-out infinite;
           background: radial-gradient(
             circle,
-            rgba(145,160,85,0.55) 0%,
-            rgba(165,180,105,0.42) 35%,
-            rgba(185,200,125,0.26) 60%,
-            rgba(205,220,145,0.12) 80%,
+            rgba(145,160,85,0.85) 0%,
+            rgba(165,180,105,0.65) 32%,
+            rgba(185,200,125,0.45) 55%,
+            rgba(205,220,145,0.25) 75%,
             rgba(205,220,145,0) 100%
           );
         }
 
-      
-        .group:hover .qa-ripple {
-          animation: rippleDesktop 3s ease-out infinite;
+        /* THREE RIPPLE LAYERS (same sizes, staggered fade feel) */
+        .qa-ripple-1 {
+          width: 240px;
+          height: 240px;
+          animation-delay: 0s;
         }
 
-        .qa-ripple-2 { animation-delay: 1s; }
-        .qa-ripple-3 { animation-delay: 2s; }
+        .qa-ripple-2 {
+          width: 280px;
+          height: 280px;
+          animation-delay: 1.2s;
+          opacity: 0.05;
+        }
 
+        .qa-ripple-3 {
+          width: 320px;
+          height: 320px;
+          animation-delay: 2.4s;
+          opacity: 0.05;
+        }
+
+        /* LIMIT EXPANSION — ENDS AT BOXES */
         @keyframes rippleDesktop {
-          0% { transform: scale(1); opacity: 1; }
-          70% { opacity: 0.35; }
-          100% { transform: scale(1.9); opacity: 0; }
+          0% {
+            transform: scale(1);
+            opacity: 0.9;
+          }
+          50% {
+            opacity: 0.55;
+          }
+          100% {
+            transform: scale(1.55);
+            opacity: 0;
+          }
         }
 
-      \
+        /* CENTER CIRCLE */
         .qa-core {
-          width: 260px;
-          height: 260px;
+          width: 320px;
+          height: 320px;
           border-radius: 9999px;
           background: #e9ecd0;
           display: flex;
@@ -106,55 +132,69 @@ export default function Section10() {
         }
 
         .qa-core p {
-          padding-left: 28px;
-          padding-right: 28px;
+          padding: 0 36px;
         }
 
-       
+        /* MOBILE */
         @media (max-width: 768px) {
           .qa-core {
-            width: 220px;
-            height: 220px;
+            width: 260px;
+            height: 260px;
+          }
+
+          .qa-ripple-1 {
+            width: 180px;
+            height: 180px;
+          }
+
+          .qa-ripple-2 {
+            width: 210px;
+            height: 210px;
+          }
+
+          .qa-ripple-3 {
+            width: 240px;
+            height: 240px;
           }
 
           .qa-ripple {
-            width: 160px;
-            height: 160px;
+            animation: rippleMobile 2.8s ease-out infinite;
           }
-
-          
-          .group:hover .qa-ripple {
-            animation: rippleMobile 2s ease-out infinite;
-          }
-
-          .qa-ripple-2 { animation-delay: 0.6s; }
-          .qa-ripple-3 { animation-delay: 1.2s; }
         }
 
         @keyframes rippleMobile {
-          0% { transform: scale(1); opacity: 1; }
-          65% { opacity: 0.4; }
-          100% { transform: scale(1.8); opacity: 0; }
+          0% {
+            transform: scale(1);
+            opacity: 0.85;
+          }
+          50% {
+            opacity: 0.55;
+          }
+          100% {
+            transform: scale(1.45);
+            opacity: 0;
+          }
         }
       `}</style>
     </section>
   );
 }
 
-
 function CenterCircle() {
   return (
-    <div className="relative group flex items-center justify-center">
+    <div className="relative flex items-center justify-center">
       <span className="qa-ripple qa-ripple-1"></span>
       <span className="qa-ripple qa-ripple-2"></span>
       <span className="qa-ripple qa-ripple-3"></span>
 
       <div className="qa-core">
-        <h3 className="text-lg tracking-widest bankgothicmed">QUALITY</h3>
-        <h2 className="text-xl tracking-wide mb-3 bankgothicmed">
+        <h3 className="text-xl tracking-widest bankgothicmed">
+          QUALITY
+        </h3>
+        <h2 className="text-2xl tracking-wide mb-4 bankgothicmed">
           ASSURANCE
         </h2>
-        <p className="text-[12px] leading-relaxed text-gray-600 monts-reg">
+        <p className="text-[14px] leading-relaxed text-gray-600 monts-reg">
           We follow strict quality control from raw-material sourcing to delivery.
           Every batch is monitored for:
         </p>
