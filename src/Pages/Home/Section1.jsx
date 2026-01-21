@@ -32,16 +32,19 @@ export default function Section1() {
 
   return (
     <section
-      className="
-        w-full
-        min-h-[100svh]
-        flex items-center
-        bg-cover bg-no-repeat
-        bg-[58%_50%]
-        sm:bg-center
-      "
-      style={{ backgroundImage: `url(${section1bg})` }}
-    >
+  className="
+    w-full
+    min-h-[100svh]
+    flex items-center
+    bg-no-repeat
+    bg-[55%]          
+    sm:bg-cover       
+    bg-[58%_50%]
+    sm:bg-center
+  "
+  style={{ backgroundImage: `url(${section1bg})` }}
+>
+
       <div
         className="
           pl-6 sm:pl-16 lg:pl-40
@@ -65,7 +68,7 @@ export default function Section1() {
         </div>
 
         {/* Animated content */}
-        <div style={{ gridArea: "1 / 1" }}>
+        <div style={{ gridArea: "1 / 1" }}  className="-translate-y-35 sm:translate-y-0">
           <h1 className="heading-font text-[#eeedd3] text-3xl sm:text-4xl lg:text-5xl pb-2">
             {h1}
             {typing && h1.length < heading1.length && "|"}
@@ -79,7 +82,7 @@ export default function Section1() {
               "|"}
           </h1>
 
-          <br />
+          <br />    
 
           {/* Paragraph  */}
           <p className="para-font text-white text-sm sm:text-base lg:text-lg leading-relaxed">
