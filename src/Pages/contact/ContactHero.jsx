@@ -154,7 +154,7 @@ export default function ContactHero() {
 
 
           {/* FORM */}
-          <section className="px-6 sm:px-10 md:px-20 py-20">
+          <section  id="contact-form"className="px-6 sm:px-10 md:px-20 py-20">
             <div className="w-full max-w-[600px]">
               <h1 className="text-3xl sm:text-4xl md:text-[46px] font-medium oswold-reg text-[#e6e4d8] mb-8">
                 Enquire here:

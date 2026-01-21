@@ -10,8 +10,21 @@ import Section9 from "./section9";
 import Section10 from "./section10";
 import Section11 from "./section11";
 import Section12 from "./section12";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Product() {
+   const location = useLocation();
+    useEffect(() => {
+         if (location.hash) {
+           const el = document.querySelector(location.hash);
+           if (el) {
+             setTimeout(() => {
+               el.scrollIntoView({ behavior: "smooth" });
+             }, 100);
+           }
+         }
+       }, [location]);
   return (
     <>
       <Section1 />

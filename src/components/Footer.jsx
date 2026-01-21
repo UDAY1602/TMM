@@ -8,8 +8,11 @@ export default function Footer() {
 
 const goTo = (path) => {
   navigate(path);
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (!path.includes("#")) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 };
+
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -101,15 +104,15 @@ const goTo = (path) => {
     Our Story
   </li>
 
-  <li style={linkStyle} onClick={() => goTo("/about")}>
+  <li style={linkStyle} onClick={() => goTo("/products#quality-assurance")}>
     Quality Assurance
   </li>
 
-  <li style={linkStyle} onClick={() => goTo("/products")}>
+  <li style={linkStyle} onClick={() => goTo("/about#manifacturing-facility")}>
     Manufacturing Facility
   </li>
 
-  <li style={linkStyle} onClick={() => goTo("contact")}>
+  <li style={linkStyle} onClick={() => goTo("/contact#contact-form")}>
     Enquire Now
   </li>
 </ul>

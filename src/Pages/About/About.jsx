@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-
+import { useEffect } from "react";
 import Section1 from "./Section1";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
@@ -13,7 +13,16 @@ import FloatingMineral from "./floatingmineral";
 export default function About() {
   const location = useLocation();
   const [showMineral, setShowMineral] = useState(false);
-
+   useEffect(() => {
+      if (location.hash) {
+        const el = document.querySelector(location.hash);
+        if (el) {
+          setTimeout(() => {
+            el.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        }
+      }
+    }, [location]);
   return (
     <div key={location.pathname}>
       
