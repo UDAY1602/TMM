@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import prodsec2mineral from "../../assets/s6s8mineral.png";
+import prodsec2mineral from "../../assets/prodsec6min.png";
 import quartzDetailsImg from "../../assets/Quartz Lumps/Quartz Lump - Products.png"; 
 
 export default function Section6() {

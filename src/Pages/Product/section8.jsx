@@ -1,5 +1,5 @@
 import React from "react";
-import prodsec2mineral from "../../assets/s6s8mineral.png";
+import prodsec2mineral from "../../assets/prodsec8min.png";
 
 export default function Section8() {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sec5Img from "../../assets/pr filler.png";
+import Sec5Img from "../../assets/prodsec5min.png";
 import "../Product/sec5.css";
 
 import DropdownDesk from "./dropdowndesk";
