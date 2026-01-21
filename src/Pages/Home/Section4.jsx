@@ -5,7 +5,7 @@ export default function Section4() {
   return (
     <section className="bg-[#1a1a1a] text-[#ffffff] w-full overflow-x-hidden">
 
-      
+
       <div className="pt-12 sm:pt-16">
         <div
           className="
@@ -23,7 +23,7 @@ export default function Section4() {
         </div>
       </div>
 
-   
+
       <div className="
         max-w-7xl mx-auto
         px-6 sm:px-10 lg:px-20
@@ -33,7 +33,7 @@ export default function Section4() {
         items-center
       ">
 
-        
+
         <p className="
           montserratthin leading-relaxed
           text-sm sm:text-base lg:text-xl
@@ -44,7 +44,7 @@ export default function Section4() {
           international markets for the right reasons.
         </p>
 
-        
+
         <div className="
           grid grid-cols-1 sm:grid-cols-3
           gap-y-8 sm:gap-x-10 lg:gap-x-16
@@ -74,51 +74,87 @@ export default function Section4() {
       </div>
 
       <div
-        className="py-12 sm:py-16 text-[#eeedd3]"
-        style={{
-          background: "linear-gradient(to right,#151615 , #0A0C0B,#1E1E1E, #1E1E1E)",
-        }}
-      >
-        <div className="
-          max-w-7xl mx-auto
-          px-6 sm:px-12
-          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-          gap-10 sm:gap-12
-          text-center lg:text-left
-        ">
+  className="py-12 sm:py-16 text-[#eeedd3]"
+  style={{
+    background: "linear-gradient(to right,#151615 , #0A0C0B,#1E1E1E, #1E1E1E)",
+  }}
+>
+  <div
+    className="
+      max-w-7xl mx-auto
+      px-6 sm:px-12
+      grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+      gap-10 sm:gap-12
+    "
+  >
+    {/* 1st — LEFT (mobile control) */}
+    <div
+      className="
+        text-left
+        mx-auto max-w-xs
+        -translate-x-20
+        sm:translate-x-0 sm:max-w-none sm:mx-0
+        sm:text-center lg:text-left
+      "
+    >
+      <h3 className="oswaldbold text-3xl">08+ years</h3>
+      <p className="para-font text-base sm:text-lg lg:text-xl">
+        of manufacturing <br /> excellence
+      </p>
+    </div>
 
-          <div>
-            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">08+ years</h3>
-            <p className="para-font text-sm sm:text-base lg:text-xl">
-              of manufacturing  <br /> excellence
-            </p>
-          </div>
+    {/* 2nd — RIGHT (mobile control) */}
+    <div
+      className="
+        text-right
+        mx-auto max-w-xs
+        translate-x-20
+        sm:translate-x-0 sm:max-w-none sm:mx-0
+        sm:text-center lg:text-left
+      "
+    >
+      <h3 className="oswaldbold text-3xl">50,000+ tons</h3>
+      <p className="para-font text-base sm:text-lg lg:text-xl">
+        Quartz processed <br /> annually
+      </p>
+    </div>
 
-          <div>
-            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">50,000+ tons</h3>
-            <p className="para-font text-sm sm:text-base lg:text-xl">
-              Quartz processed <br /> annually
-            </p>
-          </div>
+    {/* 3rd — LEFT (mobile control) */}
+    <div
+      className="
+        text-left
+        mx-auto max-w-xs
+        -translate-x-20
+        sm:translate-x-0 sm:max-w-none sm:mx-0
+        sm:text-center lg:text-left
+      "
+    >
+      <h3 className="oswaldbold text-3xl">3.24 Acres</h3>
+      <p className="para-font text-base sm:text-lg lg:text-xl">
+        of manufacturing <br /> infrastructure
+      </p>
+    </div>
 
-          <div>
-            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">3.24 Acres</h3>
-            <p className="para-font text-sm sm:text-base lg:text-xl">
-              of manufacturing <br />infrastructure
-            </p>
-          </div>
+    {/* 4th — RIGHT (mobile control) */}
+    <div
+      className="
+        text-right
+        mx-auto max-w-xs
+        translate-x-28
+        sm:translate-x-0 sm:max-w-none sm:mx-0
+        sm:text-center lg:text-left
+      "
+    >
+      <h3 className="oswaldbold text-3xl">24x7</h3>
+      <p className="para-font text-base sm:text-lg lg:text-xl">
+        Operational <br /> Capability
+      </p>
+    </div>
+  </div>
+</div>
 
-          <div>
-            <h3 className="oswaldbold text-xl sm:text-2xl lg:text-3xl">
-              24x7 
-            </h3>
-            <p className="para-font text-sm sm:text-base lg:text-xl">
-                Operational <br />Capability
-            </p>
-          </div>
 
-        </div>
-      </div>
+
 
     </section>
   );
