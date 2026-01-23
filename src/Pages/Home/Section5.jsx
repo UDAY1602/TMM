@@ -13,7 +13,7 @@ export default function Section5() {
     phone: "",
     subject: "",
     message: "",
-    source_form: "section5",
+    source_form: "Website Contact Form",
   });
 
   useEffect(() => {
@@ -32,19 +32,27 @@ export default function Section5() {
 
   // 🔹  submit logic 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+  e.preventDefault();
+  setLoading(true);
 
+  try {
+    const res = await fetch("/tmm/api/enquiry.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const text = await res.text();              
+    console.log("RAW RESPONSE:", text);
+
+    let data;
     try {
-      const res = await fetch("/api/enquiry.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      data = JSON.parse(text);
+    } catch {
+      throw new Error("Invalid JSON from server");
+    }
 
-      const data = await res.json();
-      if (!data.success) throw new Error();
-
+    if (data.success === true) {
       setShowPopup(true);
       setFormData({
         name: "",
@@ -52,14 +60,19 @@ export default function Section5() {
         phone: "",
         subject: "",
         message: "",
-        source_form: "section5",
+        source_form: "Website Contact Form",
       });
-    } catch {
-      alert("Submission failed. Please try again.");
-    } finally {
-      setLoading(false);
+    } else {
+      throw new Error("Backend returned failure");
     }
-  };
+
+  } catch (err) {
+    alert("Submission failed.\n" + err.message);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div
