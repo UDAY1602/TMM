@@ -10,7 +10,7 @@ export default function Section12() {
     phone: "",
     subject: "",
     message: "",
-    source_form: "section12",
+    source_form: "Website Contact Form",
   });
 
 
@@ -19,20 +19,28 @@ export default function Section12() {
   };
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+
+  try {
+    const res = await fetch("/tmm/api/enquiry.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+
+    const text = await res.text();
+    let data;
 
     try {
-      const res = await fetch("/api/enquiry.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      data = JSON.parse(text);
+    } catch {
+      throw new Error("Invalid server response");
+    }
 
-      const data = await res.json();
-      if (!data.success) throw new Error();
-
+    if (data.success === true) {
       setShowPopup(true);
       setFormData({
         name: "",
@@ -40,14 +48,19 @@ export default function Section12() {
         phone: "",
         subject: "",
         message: "",
-        source_form: "section12",
+        source_form: "Website Contact Form",
       });
-    } catch (err) {
-      alert("Submission failed. Please try again.");
-    } finally {
-      setLoading(false);
+    } else {
+      throw new Error("Backend failure");
     }
-  };
+
+  } catch (err) {
+    alert("Submission failed. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <section
