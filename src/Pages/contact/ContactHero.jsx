@@ -34,7 +34,7 @@ export default function ContactHero() {
     countryCode: "",
     category: "",
     message: "",
-    source_form: "contact_hero",
+    source_form: "Website Enquiry Form",
   });
 
   const MAP_WIDTH = 600;
@@ -88,7 +88,7 @@ export default function ContactHero() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/enquiry.php", {
+      const res = await fetch("/tmm/api/enquiry.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -106,7 +106,7 @@ export default function ContactHero() {
         countryCode: "",
         category: "",
         message: "",
-        source_form: "contact_hero",
+        source_form: "Website Enquiry Form",
       });
     } catch {
       alert("Submission failed. Please try again.");
@@ -119,8 +119,9 @@ export default function ContactHero() {
     <section className="w-full bg-[#1e1e1e] relative">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
 
-        {/* LEFT COLUMN */}
         <div className="w-full">
+
+      
           <div className="px-6 sm:px-10 md:px-20 pt-20 pb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl oswold-reg text-[#eeedd3] font-medium mb-12">
               Reach out to us
@@ -130,7 +131,9 @@ export default function ContactHero() {
               <p className="text-lg font-semibold text-gray-400 opacity-50 mb-2">
                 Contact Information
               </p>
-              <p className="text-lg text-white mb-1">+91-961 235 5555</p>
+              <p className="text-lg text-white mb-1">
+                +91-961 235 5555
+              </p>
               <a
                 href="mailto:info@tanujasreekesh.com"
                 className="text-lg text-white hover:underline"
@@ -149,12 +152,86 @@ export default function ContactHero() {
                 Andhra Pradesh, India - 523112
               </p>
             </div>
+
+        
+          <div className="flex flex-wrap items-center gap-4 mb-10">
+            <p className="text-lg text-gray-400 opacity-50 monts-semibold">
+              Social Media
+            </p>
+
+            <div className="flex gap-3">
+              {/* Facebook */}
+              <a
+                href=""
+                aria-label="Facebook"
+                className="w-6 h-6 hover:opacity-80 transition flex items-center justify-center"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3536/3536394.png"
+                  alt="Facebook"
+                  className="w-4 h-4 object-contain"
+                />
+              </a>
+
+              {/* Instagram */}
+              <a
+                href=""
+                aria-label="Instagram"
+                className="w-6 h-6 hover:opacity-80 transition flex items-center justify-center"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                  alt="Instagram"
+                  className="w-4 h-4 object-contain"
+                />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href=""
+                aria-label="LinkedIn"
+                className="w-6 h-6 hover:opacity-80 transition flex items-center justify-center"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"
+                  alt="LinkedIn"
+                  className="w-4 h-4 object-contain"
+                />
+              </a>
+
+              {/* Twitter  */}
+              <a
+                href=""
+                aria-label="Twitter"
+                className="w-6 h-6 hover:opacity-80 transition flex items-center justify-center"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png"
+                  alt="Twitter"
+                  className="w-4 h-4 object-contain"
+                />
+              </a>
+            </div>
+
           </div>
 
 
+            
+            <div className="lg:hidden mt-8">
+              <iframe
+                title="Location map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24847.491372712644!2d79.31675241019414!3d15.16114795531263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb4cbe0f9d73d01%3A0x746a479d2a53a245!2sTANUJASREEKSESH%20MINES%20AND%20MINERALS!5e0!3m2!1sen!2sin!4v1767846686774!5m2!1sen!2sin"
+               
+                className="w-full h-[260px] rounded-md"
+                style={{ border: 0 }}
+                loading="lazy"
+              />
+            </div>
+          </div>
+
 
           {/* FORM */}
-          <section  id="contact-form"className="px-6 sm:px-10 md:px-20 py-20">
+          <section className="px-6 sm:px-10 md:px-20 py-20">
             <div className="w-full max-w-[600px]">
               <h1 className="text-3xl sm:text-4xl md:text-[46px] font-medium oswold-reg text-[#e6e4d8] mb-8">
                 Enquire here:
