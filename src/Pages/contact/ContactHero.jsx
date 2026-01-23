@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-
 const COUNTRY_CODE_MAP = {
   Afghanistan: "+93",
   Albania: "+355",
@@ -24,11 +23,21 @@ export default function ContactHero() {
 
   const [isFixed, setIsFixed] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [country, setCountry] = useState("");
-  const [countryCode, setCountryCode] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    country: "",
+    countryCode: "",
+    category: "",
+    message: "",
+    source_form: "Website Enquiry Form",
+  });
 
   const MAP_WIDTH = 600;
-
 
   const calculatePosition = () => {
     if (!formEndRef.current || !rightColRef.current) return;
@@ -60,15 +69,50 @@ export default function ContactHero() {
     };
   }, []);
 
-  const handleCountryChange = (e) => {
-    const selected = e.target.value;
-    setCountry(selected);
-    setCountryCode(COUNTRY_CODE_MAP[selected] || "");
+ 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleCountryChange = (e) => {
+    const selected = e.target.value;
+    setFormData({
+      ...formData,
+      country: selected,
+      countryCode: COUNTRY_CODE_MAP[selected] || "",
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowPopup(true);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/tmm/api/enquiry.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!data.success) throw new Error();
+
+      setShowPopup(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        country: "",
+        countryCode: "",
+        category: "",
+        message: "",
+        source_form: "Website Enquiry Form",
+      });
+    } catch {
+      alert("Submission failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -116,58 +160,59 @@ export default function ContactHero() {
             </p>
 
             <div className="flex gap-3">
-              
+              {/* Facebook */}
               <a
                 href=""
                 aria-label="Facebook"
-                className="w-6 h-6 bg-[#eeedd3] hover:bg-white transition flex items-center justify-center"
+                className="w-6 h-6 hover:opacity-80 transition flex items-center justify-center"
               >
                 <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDUlEQVR4AWP4////gOLB44D6nTcsGIo33QHi/zTGd0B2YTiAPpYjHIHNAf/piQk6wGPW8f/rLz8HYRCbXg5AWI4GQGJ0cwDY12gAJDbcHUA4CkZAIqQUK7Ts/m/SfxBMs5RupswBaACr+P47b/5zlG/5DyzZ/r/+8hNF7vuvP//nn3r0X6JhJ+0ccPrR+/+H7735jw9cf/n5v0D1Nuo5gBxQve06zR0AjoL7b7/+//zjN4bc+ScfaOeA33///k9Yfg4mDw7u/Xdeo6uhnQP6D93FMNxlxjF0ZbRzgMXEQ9iyI90cALIMJoccDXRzAK6CZog6YNQBow6gIx54Bwx4x2RAu2bAysoEZu9o7xgAQrvkxt3WZi0AAAAASUVORK5CYII="
+                  src="https://cdn-icons-png.flaticon.com/512/3536/3536394.png"
                   alt="Facebook"
                   className="w-4 h-4 object-contain"
                 />
               </a>
 
-             
+              {/* Instagram */}
               <a
                 href=""
                 aria-label="Instagram"
-                className="w-6 h-6 bg-[#eeedd3] hover:bg-white transition flex items-center justify-center"
+                className="w-6 h-6 hover:opacity-80 transition flex items-center justify-center"
               >
                 <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAAAAABXZoBIAAAA/0lEQVR4AbXPIazCMACE4d+L2qoZFEGSIGcRc/gJJB5XMzGJmK9EN0HMi+qaibkKVF1txdQe4g0YzPK5yyWXHL9TaPNQ89LojH87N1rbJcXkMF4Fk31UMrf34hm14KUeoQxGArALHTMuQD2cAWQfJXOpgTbksGr9ng8qluShJTPhyCdx63POg7rEim95ZyR68I1ggQpnCEGwyPicw6hZtPEGmnhkycqOio1zm6XuFtyw5XDXfGvuau0dXHzJp8pfBPuhIXO9ZK5ILUCdSvLYMpc6ASBtl3EaC97I4KaFaOCaBE9Zn5jUsVqR2vcTJZO1DdbGoZryVp94Ka/mQfE7f2T3df0WBhLDAAAAAElFTkSuQmCC"
+                  src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
                   alt="Instagram"
                   className="w-4 h-4 object-contain"
                 />
               </a>
 
-            
+              {/* LinkedIn */}
               <a
                 href=""
                 aria-label="LinkedIn"
-                className="w-6 h-6 bg-[#eeedd3] hover:bg-white transition flex items-center justify-center"
+                className="w-6 h-6 hover:opacity-80 transition flex items-center justify-center"
               >
                 <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABOFBMVEVHcExxF/13F/1zFf2AFv2MCu+iBOmyAuLEAd7SANraBMzwHpedI+XeANfmANHmAr+PF/6fD/vxAL7qArV7GP21FvnRVurnZ+P2Z9roQeDzGtXzB8v7AqvWiPn+7fn////7ftv/A7z0BKH3v/H+3fT+ruj+AJr/9/r/RcD/bMDKFff/Bo3iG+r8GrX/AIH+H5r/yeP+BHj/t9n/V5r+Am7+H37+BGT/ssX/Imz/RXv/ucz+e4z+JFT/XI3/MGL+LUf/u7f/yc7/Alr+OUf+MSz+QzT+R0T+iHD+SRj+VzH+WQX+AkL+c2L/0sT+aCX+cBL/7+j+aQL+eRv/oUX/fwL+iBD/wXz+jgD/3rr/1rn+dgz+nAP9FpT+lw7+qgH+tQD+vQD/w1f9kwf/xAD9PFn9ogj/ywD9uAfgLZLBAAAAaHRSTlMAW9H+////////xEsC///N////zFz/////////////////uP////7///////////7////////////////////////////////////////////////////////F/7VQ///+/87/vsj/uqL0GQwAAAHcSURBVHgBRMlFehwxEEDhV1VS04yZ7U04m+AmcBjfLLscJ4xLHyA0YGqSlJ7P9MT6BRC52EEQuDjlFITx2eWvXJsDQWYIKgJj4VQW5gBJAg75K5vTgZDTFUEu/kUEzqGaiC6DMBbhpqQyoyKTNYD1Hp+Ui6J0ZH1HhXNA0RfzyRIZl5WprroK3BZwwvx0aUGdB87HCIN5VBUVP9i468ZLxWLv+pg6vJmDaSiSW2eyIRNg84/HxfVJmTD3DxFWGmWjrosRpxMNGr3iIqYbG7IGK5lKvZE3jVuTynsDzHRoD3xpxaTQvIKumGBWgCouM9bPKEisJg0VTV4X0aBqQEuXQ2kGlmVmZCtgCoxBJfeAz0b8NQbWI7wOAKCZMgbn9E6tItG1HFTKRQ4jgSYpiiPu6BFJW1fW9J7oDFWWgpf0MH09YnB6yIEYnIJhLhqkpw3aC4OuUJ4QlDzX55/Um5m4Ue6dmXr59LwkBM0xy/ieVNV7zSSTZMU3fs8UNBomr+v3jQx5X1XmB7tdgnNu1JqDl+0nbnp+HpLp+WM5bB0mIMJFc/ouSgjd+U99O1qYONOhFEMonPcZCZ6eGp9eRcSwhWkSRCIxKnfeIMBh1WRcFOhTaENo/096OTA7AACDzKODDThakgAAAABJRU5ErkJggg=="
+                  src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"
                   alt="LinkedIn"
                   className="w-4 h-4 object-contain"
                 />
               </a>
 
-              
+              {/* Twitter  */}
               <a
                 href=""
                 aria-label="Twitter"
-                className="w-6 h-6 bg-[#eeedd3] hover:bg-white transition flex items-center justify-center"
+                className="w-6 h-6 hover:opacity-80 transition flex items-center justify-center"
               >
                 <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAgVBMVEUAAAAQcP8IZf8IZ/8JZv8HZf8IZv8IZv8IaP8JZ/8HZv8IZv8FZf8YcP9FjP+TvP/g7P/////R4/9Vlf8QYP+Es/9kn/8IZv8nef8JZf8AYP/v9f/Q4v/B2P9GjP8HZv+yz//Q4/83g/8HZv/g6/+Dsv8HZf/n7//////////e6//ZLyHjAAAAK3RSTlMAEGCfz+//XyCQj98w/////////xD//6D/kBD/////7////8///5Cgz+/vONkvXQAAAPJJREFUeAF9kkUCwzAMBGVSGMrM3P//rxBaB+e6s0YREFJpw2y0cgS1cT3DQLmNWPjcwK/XA24RWIuEdg4j7OtHUX0NYedxko5+jCeZMc0En8FsVDDHSd1WDoFdIlogX46awopozWA+ythsd7s9ZxymJBkcs3wcMZC0YHDKhDNbKLowuGYC21zINIWUbQ7EwwJT7YogqgTTKaTY4tIp7HDIRadwwzVlKVyv11HG9cekFBxam8FbTInuQ4LCd3cL2Uzd+4UV/VkHfUIgMLRdQuBi7JsCxh5rQEAfrO9NYSWojruwBOOhDoR8PF+j0fuipNX+AmbCIviMIiwCAAAAAElFTkSuQmCC"
+                  src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png"
                   alt="Twitter"
                   className="w-4 h-4 object-contain"
                 />
               </a>
             </div>
+
           </div>
 
 
@@ -184,7 +229,8 @@ export default function ContactHero() {
             </div>
           </div>
 
-         
+
+          {/* FORM */}
           <section className="px-6 sm:px-10 md:px-20 py-20">
             <div className="w-full max-w-[600px]">
               <h1 className="text-3xl sm:text-4xl md:text-[46px] font-medium oswold-reg text-[#e6e4d8] mb-8">
@@ -194,6 +240,9 @@ export default function ContactHero() {
               <form className="flex flex-col gap-[14px]" onSubmit={handleSubmit}>
                 <input
                   required
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Name *"
                   className="w-full rounded-md text-[14px]"
                   style={{ padding: "14px 16px", background: "#bfbfbf", border: "none" }}
@@ -202,12 +251,18 @@ export default function ContactHero() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-[14px]">
                   <input
                     required
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Email *"
                     className="w-full rounded-md text-[14px]"
                     style={{ padding: "14px 16px", background: "#bfbfbf", border: "none" }}
                   />
                   <input
                     required
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     placeholder="Contact Number *"
                     className="w-full rounded-md text-[14px]"
                     style={{ padding: "14px 16px", background: "#bfbfbf", border: "none" }}
@@ -217,7 +272,7 @@ export default function ContactHero() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-[14px]">
                   <select
                     required
-                    value={country}
+                    value={formData.country}
                     onChange={handleCountryChange}
                     className="w-full rounded-md text-[14px]"
                     style={{ padding: "14px 16px", background: "#bfbfbf", border: "none" }}
@@ -230,8 +285,9 @@ export default function ContactHero() {
 
                   <input
                     required
-                    value={countryCode}
-                    onChange={(e) => setCountryCode(e.target.value)}
+                    name="countryCode"
+                    value={formData.countryCode}
+                    readOnly
                     placeholder="Country Code *"
                     className="w-full rounded-md text-[14px]"
                     style={{ padding: "14px 16px", background: "#bfbfbf", border: "none" }}
@@ -240,6 +296,9 @@ export default function ContactHero() {
 
                 <select
                   required
+                  name="category"
+                  value={formData.category}
+                  onChange={handleChange}
                   className="w-full rounded-md text-[14px]"
                   style={{ padding: "14px 16px", background: "#bfbfbf", border: "none" }}
                 >
@@ -251,6 +310,9 @@ export default function ContactHero() {
 
                 <textarea
                   rows={6}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Message"
                   className="w-full rounded-md text-[14px]"
                   style={{ padding: "14px 16px", background: "#bfbfbf", border: "none" }}
@@ -258,23 +320,24 @@ export default function ContactHero() {
 
                 <button
                   type="submit"
+                  disabled={loading}
                   className="mt-2 w-full rounded-md text-sm monts-reg text-[#eeedd3]"
                   style={{ padding: "14px", background: "#2b2b2b", border: "none" }}
                 >
-                  Submit
+                  {loading ? "Submitting..." : "Submit"}
                 </button>
               </form>
 
-              
               <div ref={formEndRef} className="h-[1px]" />
             </div>
           </section>
         </div>
 
+        {/* RIGHT COLUMN – MAP */}
         <div ref={rightColRef} className="hidden lg:block relative">
           <div className="relative min-h-full">
             <div
-              className={isFixed ? "fixed top-[72px]" : "absolute bottom-0"}
+              className={isFixed ? "fixed top-[110px]" : "absolute bottom-0"}
               style={{
                 right: "2.5%",
                 width: `${MAP_WIDTH}px`,
@@ -287,14 +350,12 @@ export default function ContactHero() {
                 className="w-full h-full rounded-md"
                 style={{ border: 0 }}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </div>
         </div>
       </div>
 
-      
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-6">
           <div className="bg-[#1e1e1e] p-8 rounded-md max-w-[420px] w-full text-center">
