@@ -4,6 +4,17 @@ import ContactBg from "../../assets/ContactBg.png";
 export default function Section5() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [showPopup, setShowPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // 🔹 ADDED: form state (logic only)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+    source_form: "Website Contact Form",
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -14,10 +25,54 @@ export default function Section5() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-    setShowPopup(true);
+  // input handler
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  // 🔹  submit logic 
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+
+  try {
+    const res = await fetch("/tmm/api/enquiry.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const text = await res.text();              
+    console.log("RAW RESPONSE:", text);
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      throw new Error("Invalid JSON from server");
+    }
+
+    if (data.success === true) {
+      setShowPopup(true);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+        source_form: "Website Contact Form",
+      });
+    } else {
+      throw new Error("Backend returned failure");
+    }
+
+  } catch (err) {
+    alert("Submission failed.\n" + err.message);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div
@@ -47,6 +102,7 @@ export default function Section5() {
           paddingTop: isMobile ? "20px" : "60px",
         }}
       >
+        {/* LEFT TEXT */}
         <div style={{ textAlign: isMobile ? "center" : "left" }}>
           <h1
             style={{
@@ -71,7 +127,7 @@ export default function Section5() {
           </p>
         </div>
 
-     
+        {/* FORM */}
         <form
           onSubmit={handleSubmit}
           style={{
@@ -82,7 +138,14 @@ export default function Section5() {
             color: "#000",
           }}
         >
-          <input placeholder="Name *" style={inputStyle} required />
+          <input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Name *"
+            style={inputStyle}
+            required
+          />
 
           <div
             style={{
@@ -91,20 +154,48 @@ export default function Section5() {
               gap: "12px",
             }}
           >
-            <input placeholder="Email *" style={inputStyle} required />
-            <input placeholder="Contact Number *" style={inputStyle} required />
+            <input
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email *"
+              style={inputStyle}
+              required
+            />
+            <input
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Contact Number *"
+              style={inputStyle}
+              required
+            />
           </div>
 
-          <input placeholder="Subject *" style={inputStyle} required />
-          <textarea placeholder="Message" rows="4" style={inputStyle} />
+          <input
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            placeholder="Subject *"
+            style={inputStyle}
+            required
+          />
 
-          <button type="submit" style={buttonStyle}>
-            Submit
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Message"
+            rows="4"
+            style={inputStyle}
+          />
+
+          <button type="submit" style={buttonStyle} disabled={loading}>
+            {loading ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>
 
-      
       {showPopup && (
         <div
           style={{
@@ -132,7 +223,7 @@ export default function Section5() {
             <h2
               style={{
                 fontSize: "22px",
-                fontFamily:"oswaldRegular",
+                fontFamily: "oswaldRegular",
                 marginBottom: "12px",
                 color: "#eeedd3",
               }}
