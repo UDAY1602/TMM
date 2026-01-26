@@ -11,12 +11,15 @@ export default function Section3() {
   const [activeSize, setActiveSize] = useState("0.1-0.4");
 
   return (
-    <section className="section3-quartz">
-      
+    <section
+      className="section3-quartz"
+      style={{
+        backgroundColor: "#FFFFFF", 
+        width: "100%",
+      }}
+    >
       <div className="quartzOuter">
         <div className="quartzInner">
-
-      
           <div className="quartzTextBox">
             <p className="tagline">
               High-purity powder ideal for composite materials,
@@ -37,7 +40,6 @@ export default function Section3() {
               strength, surface finish, and visual consistency.
             </p>
 
-            
             <button
               className="monts-semibold"
               onClick={() => setOpen(!open)}
@@ -56,17 +58,14 @@ export default function Section3() {
             </button>
           </div>
 
-         
           <div className="quartzImageWrap">
             <div className="quartzImageBox">
               <img src={Sec3} alt="Quartz Grits Supreme" />
             </div>
           </div>
-
         </div>
       </div>
 
-      
       <div className="desktop-dropdown">
         <DropdownDesk
           open={open}
@@ -79,8 +78,8 @@ export default function Section3() {
         />
       </div>
 
-   
-      <div className="mobile-dropdown">
+      {/* 🔑 FIX 2: collapse mobile dropdown when closed */}
+      <div className={`mobile-dropdown ${open ? "open" : "closed"}`}>
         <DropdownMobile
           open={open}
           title="Quartz Grits – Supreme Product Size"
@@ -93,7 +92,6 @@ export default function Section3() {
         />
       </div>
 
-      
       <style>
         {`
         .mobile-dropdown { display: none; }
@@ -101,17 +99,22 @@ export default function Section3() {
 
         @media (max-width: 768px) {
 
-         
           .desktop-dropdown { display: none; }
           .mobile-dropdown { display: block; }
 
-         
+          /* 🔥 collapse dropdown when closed */
+          .mobile-dropdown.closed {
+            height: 0 !important;
+            overflow: hidden !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+
           .section3-quartz {
             padding-left: 0 !important;
             padding-right: 0 !important;
           }
 
-         
           .section3-quartz .quartzInner {
             display: flex !important;
             flex-direction: column !important;
@@ -119,7 +122,6 @@ export default function Section3() {
             padding: 0 !important;
           }
 
-        
           .section3-quartz .quartzTextBox {
             padding: 30px 20px 20px !important;
           }
