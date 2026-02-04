@@ -14,25 +14,23 @@ export default function Section3() {
     <section
       className="section3-quartz"
       style={{
-        backgroundColor: "#FFFFFF", 
+        backgroundColor: "#FFFFFF",
         width: "100%",
       }}
     >
+      {/* Main Content */}
       <div className="quartzOuter">
         <div className="quartzInner">
+          {/* Text */}
           <div className="quartzTextBox">
             <p className="tagline">
               High-purity powder ideal for composite materials,
               coatings, and industrial formulations.
             </p>
 
-            <h2 className="title">
-              Quartz Grits – Supreme
-            </h2>
+            <h2 className="title">Quartz Grits – Supreme</h2>
 
-            <p className="size">
-              0.1 – 0.4 mm
-            </p>
+            <p className="size">0.1 – 0.4 mm</p>
 
             <p className="description">
               High-purity quartz grits with tight granulometry and superior
@@ -58,6 +56,7 @@ export default function Section3() {
             </button>
           </div>
 
+          {/* Image */}
           <div className="quartzImageWrap">
             <div className="quartzImageBox">
               <img src={Sec3} alt="Quartz Grits Supreme" />
@@ -66,6 +65,7 @@ export default function Section3() {
         </div>
       </div>
 
+      {/* Desktop Dropdown */}
       <div className="desktop-dropdown">
         <DropdownDesk
           open={open}
@@ -78,7 +78,7 @@ export default function Section3() {
         />
       </div>
 
-      {/* 🔑 FIX 2: collapse mobile dropdown when closed */}
+      {/* Mobile Dropdown */}
       <div className={`mobile-dropdown ${open ? "open" : "closed"}`}>
         <DropdownMobile
           open={open}
@@ -92,22 +92,39 @@ export default function Section3() {
         />
       </div>
 
+      {/* Responsive Styles */}
       <style>
         {`
-        .mobile-dropdown { display: none; }
-        .desktop-dropdown { display: block; }
+        /* Desktop default */
+        .mobile-dropdown {
+          display: none;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+        }
 
+        .desktop-dropdown {
+          display: block;
+        }
+
+        /* Mobile */
         @media (max-width: 768px) {
 
-          .desktop-dropdown { display: none; }
-          .mobile-dropdown { display: block; }
+          .desktop-dropdown {
+            display: none;
+          }
 
-          /* 🔥 collapse dropdown when closed */
+          .mobile-dropdown {
+            display: block;
+            overflow: hidden;
+          }
+
+          /* ✅ Safe collapse (no scroll break) */
           .mobile-dropdown.closed {
-            height: 0 !important;
-            overflow: hidden !important;
-            margin: 0 !important;
-            padding: 0 !important;
+            max-height: 0;
+          }
+
+          .mobile-dropdown.open {
+            max-height: 2000px;
           }
 
           .section3-quartz {
