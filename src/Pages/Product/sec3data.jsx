@@ -29,7 +29,7 @@ export const SIZE_DATA = {
         "Contamination Analysis",
         "Colour Impurity\nBlack Impurity",
         "-\n-",
-         "Without Black particals\nMetal,Wood & Rubber\nContaination",
+         "Without Metal,Wood &\nRubber Containation",
       ],
       [
         "Humidity",
@@ -38,10 +38,10 @@ export const SIZE_DATA = {
         "Moisture Balance\n(Make: Lab Man)",
       ],
       [
-        "Shade Analysis",
+        "Whiteness Shade Analysis",
         "L\na\nb",
-        "92.00 Min\n0.60 Max\n3.50 Max",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
+        "92.00 Min\n0.40 Max\n2.80 Max",
+        "Spectrophotometer\n600d\n(Make: Konica Minolta)",
       ],
     ],
   },
@@ -54,7 +54,7 @@ export const SIZE_DATA = {
       [
         "Particle size Distribution",
         "+0.71mm(%)\n-0.30mm(%)",
-        "5.0 Max\n5.0 Max",
+        "8.0 Max\n8.0 Max",
         "Vibrating Sieve Shaker\nwith ASTM(Test Sieve)",
       ],
       [
@@ -70,10 +70,10 @@ export const SIZE_DATA = {
         "Moisture Balance\n(Make: Lab Man)",
       ],
       [
-        "Shade Analysis",
+        "Whiteness Shade Analysis",
         "L\na\nb",
-        "88.00 Min\n0.30 Max\n2.80 Max",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
+        "86.00 Min\n0.40 Max\n2.80 Max",
+        "Spectrophotometer\n600d\n(Make: Konica Minolta)",
       ],
     ],
   },
@@ -92,7 +92,7 @@ export const SIZE_DATA = {
       [
         "Contamination Analysis",
         "Colour Impurity\nBlack Impurity",
-        "0.5 Max\n-",
+        "-\n-",
         "Without Black particals\nMetal,Wood & Rubber\nContaination",
       ],
       [
@@ -101,12 +101,12 @@ export const SIZE_DATA = {
         "0.03 Max",
         "Moisture Balance\n(Make: Lab Man)",
       ],
-      [
-        "Shade Analysis",
-        "L\na\nb",
-        "82.00 Min\n0.80 Max\n2.00 Max",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
-      ],
+      // [
+      //   "Shade Analysis",
+      //   "L\na\nb",
+      //   "82.00 Min\n0.80 Max\n2.00 Max",
+      //   "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
+      // ],
     ],
   },
 
@@ -118,13 +118,13 @@ export const SIZE_DATA = {
       [
         "Particle size Distribution",
         "+2.36mm(%)\n-1.18mm(%)",
-        "10.0 Max\n10.0 Max",
+        "8.0 Max\n8.0 Max",
         "Vibrating Sieve Shaker\nwith ASTM Test Sieve",
       ],
       [
         "Contamination Analysis",
         "Colour Impurity\nBlack Impurity",
-        "8 Max\n-",
+        "-\n-",
         "Without Black particals\nMetal,Wood & Rubber\nContaination",
       ],
       [
@@ -133,12 +133,12 @@ export const SIZE_DATA = {
         "0.03 Max",
         "Moisture Balance\n(Make: Lab Man)",
       ],
-      [
-        "Shade Analysis",
-        "L\na\nb",
-        "-\n-\n-",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
-      ],
+      // [
+      //   "Shade Analysis",
+      //   "L\na\nb",
+      //   "-\n-\n-",
+      //   "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
+      // ],
     ],
   },
 
@@ -149,7 +149,7 @@ export const SIZE_DATA = {
       [
         "Particle size Distribution",
         "+4.00mm(%)\n-2.36mm(%)",
-        "10.0 Max\n10.0 Max",
+        "8.0 Max\n8.0 Max",
         "Vibrating Sieve Shaker\nwith ASTM Test Sieve",
       ],
       [
@@ -164,12 +164,12 @@ export const SIZE_DATA = {
         "0.03 Max",
         "Moisture Balance\n(Make: Lab Man)",
       ],
-      [
-        "Shade Analysis",
-        "L\na\nb",
-        "-\n-\n-",
-        "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
-      ],
+      // [
+      //   "Shade Analysis",
+      //   "L\na\nb",
+      //   "-\n-\n-",
+      //   "Spectrophotometer CM-600d\n(Make: Konica Minolta)",
+      // ],
     ],
   },
 };
