@@ -107,9 +107,9 @@
   font-family: "montssemibold";
   src: url("../src/assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
 }
-html, body {
-  overscroll-behavior: none;
-}
+
+
+
 /* utility classes */
 .monts-semibold{
   font-family:"montssemibold";
@@ -148,4 +148,26 @@ html, body {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding: 2%;
+}
+
+
+
+html,
+body,
+#root {
+  overscroll-behavior: auto !important;
+  touch-action: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fullMoon,
+.itemsLayer {
+  pointer-events: none;
+}
+
+/* Desktop keeps original behavior */
+@media (min-width: 1024px) {
+  .section3 {
+    overflow: hidden;
+  }
 }

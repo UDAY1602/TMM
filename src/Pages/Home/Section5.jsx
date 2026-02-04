@@ -36,7 +36,7 @@ export default function Section5() {
   setLoading(true);
 
   try {
-    const res = await fetch("/tmm/api/enquiry.php", {
+    const res = await fetch("/api/enquiry.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
