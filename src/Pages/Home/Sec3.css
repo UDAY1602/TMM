@@ -21,7 +21,13 @@
   height: 420vh;
   background: #1A1A1A;
   position: relative;
-  overflow: hidden;
+}
+
+/* Desktop only */
+@media (min-width: 1024px) {
+  .section3 {
+    overflow: hidden;
+  }
 }
 
 .pinScene {
