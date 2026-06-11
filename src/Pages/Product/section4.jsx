@@ -114,7 +114,7 @@ export default function Section4() {
                     fontFamily: "bankgoB",
                   }}
                 >
-                  0.1 – 0.4 MM
+                  0.1 – 4.0 MM
                 </p>
 
                 <p

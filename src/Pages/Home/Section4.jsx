@@ -113,7 +113,7 @@ export default function Section4() {
         sm:text-center lg:text-left
       "
     >
-      <h3 className="oswaldbold text-3xl">50,000+ tons</h3>
+      <h3 className="oswaldbold text-3xl">2,00,000+ tons</h3>
       <p className="para-font text-base sm:text-lg lg:text-xl">
         Quartz processed <br /> annually
       </p>
@@ -129,7 +129,7 @@ export default function Section4() {
         sm:text-center lg:text-left
       "
     >
-      <h3 className="oswaldbold text-3xl">3.24 Acres</h3>
+      <h3 className="oswaldbold text-3xl">5 Hectares</h3>
       <p className="para-font text-base sm:text-lg lg:text-xl">
         of manufacturing <br /> infrastructure
       </p>

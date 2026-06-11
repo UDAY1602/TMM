@@ -14,7 +14,7 @@ export const COLORS = {
 
 export const SIZE_DATA = {
   "0.1-0.4": {
-    label: "0.1 – 0.4 mm",
+    label: "0.1 – 4.0 mm",
     image:img_01_04,
     imageText: "Grade B Quartz Grits\n0.1 – 0.4 mm",
     rows: [

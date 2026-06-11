@@ -6,13 +6,12 @@ export default function Footer() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const navigate = useNavigate();
 
-const goTo = (path) => {
-  navigate(path);
-  if (!path.includes("#")) {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-};
-
+  const goTo = (path) => {
+    navigate(path);
+    if (!path.includes("#")) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -24,9 +23,9 @@ const goTo = (path) => {
     <div
       style={{
         backgroundColor: "#eeedd3",
-        padding: isMobile ? "60px 20px" : "80px 32px",
+        padding: isMobile ? "60px 20px 10px" : "80px 32px 10px",
         color: "#333",
-        overflowX: "hidden", 
+        overflowX: "hidden",
       }}
     >
       <div
@@ -34,13 +33,10 @@ const goTo = (path) => {
           maxWidth: "1200px",
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: isMobile
-            ? "1fr"
-            : "2fr 1fr 1fr 1fr",
+          gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr 1fr 1fr",
           gap: isMobile ? "40px" : "80px",
         }}
       >
-       
         <div style={{ textAlign: isMobile ? "center" : "left" }}>
           <img
             src={Logo}
@@ -72,52 +68,78 @@ const goTo = (path) => {
           </p>
         </div>
 
-       
         <div style={{ marginTop: isMobile ? "0px" : "170px" }}>
           <h4 style={titleStyle}>Regd. Address</h4>
           <p style={textStyle}>
-            Sy No: 440/Musunuru (V),<br />
-            C.S Puram (M), Prakasam (DT),<br />
-            Andhra Pradesh,<br />
+            Sy No: 440/Musunuru (V),
+            <br />
+            C.S Puram (M), Prakasam (DT),
+            <br />
+            Andhra Pradesh,
+            <br />
             India – 523112
           </p>
         </div>
 
-        
         <div style={{ marginTop: isMobile ? "0px" : "170px" }}>
           <h4 style={titleStyle}>Contact</h4>
           <p style={textStyle}>
-            +91 961 235 5555<br />
+            +91 961 235 5555
+            <br />
             info@tanujasreekesh.com
           </p>
         </div>
 
-        
         <div style={{ marginTop: isMobile ? "0px" : "170px" }}>
           <h4 style={titleStyle}>Quick Links</h4>
-         <ul style={{ listStyle: "none", padding: 0, fontSize: "14px" }}>
-  <li style={linkStyle} onClick={() => goTo("/products")}>
-    Our Products
-  </li>
+          <ul style={{ listStyle: "none", padding: 0, fontSize: "14px" }}>
+            <li style={linkStyle} onClick={() => goTo("/products")}>
+              Our Products
+            </li>
 
-  <li style={linkStyle} onClick={() => goTo("/about")}>
-    Our Story
-  </li>
+            <li style={linkStyle} onClick={() => goTo("/about")}>
+              Our Story
+            </li>
 
-  <li style={linkStyle} onClick={() => goTo("/products#quality-assurance")}>
-    Quality Assurance
-  </li>
+            <li
+              style={linkStyle}
+              onClick={() => goTo("/products#quality-assurance")}
+            >
+              Quality Assurance
+            </li>
 
-  <li style={linkStyle} onClick={() => goTo("/about#manifacturing-facility")}>
-    Manufacturing Facility
-  </li>
+            <li
+              style={linkStyle}
+              onClick={() => goTo("/about#manifacturing-facility")}
+            >
+              Manufacturing Facility
+            </li>
 
-  <li style={linkStyle} onClick={() => goTo("/contact#contact-form")}>
-    Enquire Now
-  </li>
-</ul>
-
+            <li style={linkStyle} onClick={() => goTo("/contact#contact-form")}>
+              Enquire Now
+            </li>
+          </ul>
         </div>
+      </div>
+      <div
+        style={{
+          borderTop: "3px solid #black",
+          marginTop: "20px",
+          paddingTop: "10px",
+          textAlign: "center",
+        }}
+      >
+        <p
+          style={{
+            margin: 0,
+            color: "black",
+            fontStyle: "italic",
+            fontWeight: "600",
+            fontSize: isMobile ? "14px" : "16px",
+          }}
+        >
+          Website Designed and developed by CUBE R GROUP
+        </p>
       </div>
     </div>
   );

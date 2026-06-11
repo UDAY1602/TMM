@@ -1,6 +1,6 @@
 import ContactHero from "./ContactHero";
 import ContactInfo from "./ContactInfo";
-import ContactLocation from "./contactLocation";
+import ContactLocation from "./ContactLocation";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 

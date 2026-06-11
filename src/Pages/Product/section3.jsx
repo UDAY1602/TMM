@@ -30,7 +30,7 @@ export default function Section3() {
 
             <h2 className="title">Quartz Grits – Supreme</h2>
 
-            <p className="size">0.1 – 0.4 mm</p>
+            <p className="size">0.1 – 4.0 mm</p>
 
             <p className="description">
               High-purity quartz grits with tight granulometry and superior
